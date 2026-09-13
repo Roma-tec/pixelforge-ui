@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="1024" viewBox="0 0 1440 1024">
+
+<defs>
+  <linearGradient id="hue" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#FF3B30"/>
+    <stop offset="17%" stop-color="#FF9500"/>
+    <stop offset="33%" stop-color="#FFD60A"/>
+    <stop offset="50%" stop-color="#34C759"/>
+    <stop offset="67%" stop-color="#00C7BE"/>
+    <stop offset="83%" stop-color="#0A84FF"/>
+    <stop offset="100%" stop-color="#BF5AF2"/>
+  </linearGradient>
+  <linearGradient id="shade" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.95"/>
+    <stop offset="45%" stop-color="#FFFFFF" stop-opacity="0"/>
+    <stop offset="55%" stop-color="#000000" stop-opacity="0"/>
+    <stop offset="100%" stop-color="#000000" stop-opacity="0.85"/>
+  </linearGradient>
+  <linearGradient id="brand" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0%" stop-color="#6C4CF1"/>
+    <stop offset="50%" stop-color="#B14CF1"/>
+    <stop offset="100%" stop-color="#F14CA6"/>
+  </linearGradient>
+  <linearGradient id="cool" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#6C4CF1"/>
+    <stop offset="100%" stop-color="#3E8BFF"/>
+  </linearGradient>
+  <linearGradient id="skywarm" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#F5A623"/>
+    <stop offset="100%" stop-color="#F14CA6"/>
+  </linearGradient>
+  <linearGradient id="photo" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0%" stop-color="#1B1B4A"/>
+    <stop offset="55%" stop-color="#5A2E96"/>
+    <stop offset="100%" stop-color="#D9488B"/>
+  </linearGradient>
+  <linearGradient id="sun" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0%" stop-color="#F5A623"/>
+    <stop offset="100%" stop-color="#F14CA6"/>
+  </linearGradient>
+  <pattern id="checker" width="24" height="24" patternUnits="userSpaceOnUse">
+    <rect width="24" height="24" fill="#2A2A34"/>
+    <rect width="12" height="12" fill="#22222B"/>
+    <rect x="12" y="12" width="12" height="12" fill="#22222B"/>
+  </pattern>
+  <pattern id="checkerL" width="24" height="24" patternUnits="userSpaceOnUse">
+    <rect width="24" height="24" fill="#FFFFFF"/>
+    <rect width="12" height="12" fill="#E6E6EC"/>
+    <rect x="12" y="12" width="12" height="12" fill="#E6E6EC"/>
+  </pattern>
+  <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
+    <path d="M32 0 L0 0 0 32" fill="none" stroke="#2A2A34" stroke-width="1"/>
+  </pattern>
+</defs>
+<rect x="0" y="0" width="1440" height="1024" fill="#121218"/>
+<rect x="0" y="0" width="240" height="1024" rx="0" fill="#1B1B23"/>
+<line x1="240" y1="0" x2="240" y2="1024" stroke="#2F2F3B" stroke-width="1" stroke-linecap="round"/>
+<circle cx="36" cy="36" r="13" fill="url(#brand)"/>
+<text x="56" y="42" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="15" font-weight="700" fill="#F2F2F7" text-anchor="start">PixelForge</text>
+<text x="56" y="58" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="10" font-weight="400" fill="#F5A623" text-anchor="start">Администрирование</text>
+<rect x="16" y="104" width="208" height="40" rx="8" fill="#2A2440"/>
+<rect x="26" y="116" width="4" height="4" rx="1" fill="#8A73F5"/>
+<rect x="26" y="122" width="4" height="4" rx="1" fill="#8A73F5"/>
+<rect x="26" y="128" width="4" height="4" rx="1" fill="#8A73F5"/>
+<rect x="32" y="116" width="4" height="4" rx="1" fill="#8A73F5"/>
+<rect x="32" y="122" width="4" height="4" rx="1" fill="#8A73F5"/>
+<rect x="32" y="128" width="4" height="4" rx="1" fill="#8A73F5"/>
+<rect x="38" y="116" width="4" height="4" rx="1" fill="#8A73F5"/>
+<rect x="38" y="122" width="4" height="4" rx="1" fill="#8A73F5"/>
+<rect x="38" y="128" width="4" height="4" rx="1" fill="#8A73F5"/>
+<text x="54" y="129" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="13" font-weight="500" fill="#8A73F5" text-anchor="start">Дашборд</text>
+<path d="M33 160 l2.5 5.5 6 .7 -4.4 4.1 1.2 5.9 -5.3 -3 -5.3 3 1.2 -5.9 -4.4 -4.1 6 -.7 z" fill="#A8A8B8"/>
+<text x="54" y="173" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="13" font-weight="400" fill="#F2F2F7" text-anchor="start">Шаблоны</text>
+<path d="M34 203 L34 221" fill="none" stroke="#A8A8B8" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M25 212 L43 212" fill="none" stroke="#A8A8B8" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M29 207 L39 217" fill="none" stroke="#A8A8B8" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M39 207 L29 217" fill="none" stroke="#A8A8B8" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="54" y="217" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="13" font-weight="400" fill="#F2F2F7" text-anchor="start">Пресеты фильтров</text>
+<path d="M25 249 h14 a2 2 0 0 1 2 2 v7 a2 2 0 0 1 -2 2 h-8 l-5 4 v-4 h-1 a2 2 0 0 1 -2 -2 v-7 a2 2 0 0 1 2 -2 z" fill="none" stroke="#A8A8B8" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="54" y="261" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="13" font-weight="400" fill="#F2F2F7" text-anchor="start">Модерация галереи</text>
+<path d="M34 292 L43 297 L25 297 Z" fill="none" stroke="#A8A8B8" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M25 301 L34 306 L43 301" fill="none" stroke="#A8A8B8" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="54" y="305" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="13" font-weight="400" fill="#F2F2F7" text-anchor="start">Пользователи</text>
+<circle cx="34" cy="344" r="4" fill="none" stroke="#A8A8B8" stroke-width="1.6"/>
+<line x1="41" y1="344" x2="44" y2="344" stroke="#A8A8B8" stroke-width="1.6" stroke-linecap="round"/>
+<line x1="38.9497" y1="348.95" x2="41.0711" y2="351.071" stroke="#A8A8B8" stroke-width="1.6" stroke-linecap="round"/>
+<line x1="34" y1="351" x2="34" y2="354" stroke="#A8A8B8" stroke-width="1.6" stroke-linecap="round"/>
+<line x1="29.0503" y1="348.95" x2="26.9289" y2="351.071" stroke="#A8A8B8" stroke-width="1.6" stroke-linecap="round"/>
+<line x1="27" y1="344" x2="24" y2="344" stroke="#A8A8B8" stroke-width="1.6" stroke-linecap="round"/>
+<line x1="29.0503" y1="339.05" x2="26.9289" y2="336.929" stroke="#A8A8B8" stroke-width="1.6" stroke-linecap="round"/>
+<line x1="34" y1="337" x2="34" y2="334" stroke="#A8A8B8" stroke-width="1.6" stroke-linecap="round"/>
+<line x1="38.9497" y1="339.05" x2="41.0711" y2="336.929" stroke="#A8A8B8" stroke-width="1.6" stroke-linecap="round"/>
+<text x="54" y="349" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="13" font-weight="400" fill="#F2F2F7" text-anchor="start">Лимиты и тарифы</text>
+<circle cx="27" cy="383" r="1.5" fill="#A8A8B8"/>
+<rect x="31" y="382" width="11" height="2" rx="1" fill="#A8A8B8"/>
+<circle cx="27" cy="388" r="1.5" fill="#A8A8B8"/>
+<rect x="31" y="387" width="11" height="2" rx="1" fill="#A8A8B8"/>
+<circle cx="27" cy="393" r="1.5" fill="#A8A8B8"/>
+<rect x="31" y="392" width="11" height="2" rx="1" fill="#A8A8B8"/>
+<text x="54" y="393" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="13" font-weight="400" fill="#F2F2F7" text-anchor="start">Логи и аудит</text>
+<path d="M34 425 L34 436" fill="none" stroke="#A8A8B8" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M34 436 l-5 -5 M34 436 l5 -5" fill="none" stroke="#A8A8B8" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M26 441 L42 441" fill="none" stroke="#A8A8B8" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="54" y="437" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="13" font-weight="400" fill="#F2F2F7" text-anchor="start">Рассылки</text>
+<text x="272" y="60" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="22" font-weight="700" fill="#F2F2F7" text-anchor="start">Дашборд</text>
+<text x="272" y="84" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="12" font-weight="400" fill="#6E6E80" text-anchor="start">Обновлено 1 минуту назад · период: последние 30 дней</text>
+<rect x="272" y="108" width="264" height="100" rx="12" fill="#1B1B23" stroke="#2F2F3B" stroke-width="1"/>
+<text x="292" y="148" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="32" font-weight="700" fill="#F2F2F7" text-anchor="start">12 480</text>
+<text x="292" y="172" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="11.5" font-weight="400" fill="#A8A8B8" text-anchor="start">Активных пользователей</text>
+<text x="292" y="194" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="11.5" font-weight="600" fill="#2FBF71" text-anchor="start">+8,4 %</text>
+<text x="512" y="194" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#6E6E80" text-anchor="end">за 30 дн.</text>
+<rect x="560" y="108" width="264" height="100" rx="12" fill="#1B1B23" stroke="#2F2F3B" stroke-width="1"/>
+<text x="580" y="148" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="32" font-weight="700" fill="#F2F2F7" text-anchor="start">48 320</text>
+<text x="580" y="172" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="11.5" font-weight="400" fill="#A8A8B8" text-anchor="start">Созданных проектов</text>
+<text x="580" y="194" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="11.5" font-weight="600" fill="#2FBF71" text-anchor="start">+12,1 %</text>
+<text x="800" y="194" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#6E6E80" text-anchor="end">за 30 дн.</text>
+<rect x="848" y="108" width="264" height="100" rx="12" fill="#1B1B23" stroke="#2F2F3B" stroke-width="1"/>
+<text x="868" y="148" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="32" font-weight="700" fill="#F2F2F7" text-anchor="start">31 940</text>
+<text x="868" y="172" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="11.5" font-weight="400" fill="#A8A8B8" text-anchor="start">Экспортов</text>
+<text x="868" y="194" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="11.5" font-weight="600" fill="#E5484D" text-anchor="start">−2,3 %</text>
+<text x="1088" y="194" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#6E6E80" text-anchor="end">за 30 дн.</text>
+<rect x="1136" y="108" width="264" height="100" rx="12" fill="#1B1B23" stroke="#2F2F3B" stroke-width="1"/>
+<text x="1156" y="148" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="32" font-weight="700" fill="#F2F2F7" text-anchor="start">6,8 %</text>
+<text x="1156" y="172" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="11.5" font-weight="400" fill="#A8A8B8" text-anchor="start">Конверсия L1 → L2</text>
+<text x="1156" y="194" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="11.5" font-weight="600" fill="#2FBF71" text-anchor="start">+0,9 п.п.</text>
+<text x="1376" y="194" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#6E6E80" text-anchor="end">за 30 дн.</text>
+<rect x="272" y="232" width="640" height="280" rx="12" fill="#1B1B23" stroke="#2F2F3B" stroke-width="1"/>
+<text x="296" y="266" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="14" font-weight="600" fill="#F2F2F7" text-anchor="start">Активность создаваемых проектов</text>
+<text x="888" y="266" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="11.5" font-weight="400" fill="#6E6E80" text-anchor="end">День ▾</text>
+<rect x="296" y="430" width="12" height="40" rx="3" fill="url(#cool)" opacity="0.9"/>
+<rect x="316.5" y="376" width="12" height="94" rx="3" fill="#6C4CF1" opacity="0.9"/>
+<rect x="337" y="344" width="12" height="126" rx="3" fill="url(#cool)" opacity="0.9"/>
+<rect x="357.5" y="343" width="12" height="127" rx="3" fill="#6C4CF1" opacity="0.9"/>
+<rect x="378" y="371" width="12" height="99" rx="3" fill="url(#cool)" opacity="0.9"/>
+<rect x="398.5" y="406" width="12" height="64" rx="3" fill="#6C4CF1" opacity="0.9"/>
+<rect x="419" y="360" width="12" height="110" rx="3" fill="url(#cool)" opacity="0.9"/>
+<rect x="439.5" y="344" width="12" height="126" rx="3" fill="#6C4CF1" opacity="0.9"/>
+<rect x="460" y="359" width="12" height="111" rx="3" fill="url(#cool)" opacity="0.9"/>
+<rect x="480.5" y="393" width="12" height="77" rx="3" fill="#6C4CF1" opacity="0.9"/>
+<rect x="501" y="385" width="12" height="85" rx="3" fill="url(#cool)" opacity="0.9"/>
+<rect x="521.5" y="352" width="12" height="118" rx="3" fill="#6C4CF1" opacity="0.9"/>
+<rect x="542" y="353" width="12" height="117" rx="3" fill="url(#cool)" opacity="0.9"/>
+<rect x="562.5" y="381" width="12" height="89" rx="3" fill="#6C4CF1" opacity="0.9"/>
+<rect x="583" y="369" width="12" height="101" rx="3" fill="url(#cool)" opacity="0.9"/>
+<rect x="603.5" y="369" width="12" height="101" rx="3" fill="#6C4CF1" opacity="0.9"/>
+<rect x="624" y="353" width="12" height="117" rx="3" fill="url(#cool)" opacity="0.9"/>
+<rect x="644.5" y="369" width="12" height="101" rx="3" fill="#6C4CF1" opacity="0.9"/>
+<rect x="665" y="401" width="12" height="69" rx="3" fill="url(#cool)" opacity="0.9"/>
+<rect x="685.5" y="348" width="12" height="122" rx="3" fill="#6C4CF1" opacity="0.9"/>
+<rect x="706" y="361" width="12" height="109" rx="3" fill="url(#cool)" opacity="0.9"/>
+<rect x="726.5" y="362" width="12" height="108" rx="3" fill="#6C4CF1" opacity="0.9"/>
+<rect x="747" y="391" width="12" height="79" rx="3" fill="url(#cool)" opacity="0.9"/>
+<rect x="767.5" y="377" width="12" height="93" rx="3" fill="#6C4CF1" opacity="0.9"/>
+<rect x="788" y="332" width="12" height="138" rx="3" fill="url(#cool)" opacity="0.9"/>
+<rect x="808.5" y="362" width="12" height="108" rx="3" fill="#6C4CF1" opacity="0.9"/>
+<rect x="829" y="379" width="12" height="91" rx="3" fill="url(#cool)" opacity="0.9"/>
+<rect x="849.5" y="409" width="12" height="61" rx="3" fill="#6C4CF1" opacity="0.9"/>
+<rect x="870" y="356" width="12" height="114" rx="3" fill="url(#cool)" opacity="0.9"/>
+<rect x="890.5" y="325" width="12" height="145" rx="3" fill="#6C4CF1" opacity="0.9"/>
+<line x1="296" y1="470" x2="888" y2="470" stroke="#2F2F3B" stroke-width="1" stroke-linecap="round"/>
+<text x="300" y="488" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="10" font-weight="400" fill="#6E6E80" text-anchor="middle">1</text>
+<text x="396" y="488" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="10" font-weight="400" fill="#6E6E80" text-anchor="middle">5</text>
+<text x="492" y="488" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="10" font-weight="400" fill="#6E6E80" text-anchor="middle">10</text>
+<text x="588" y="488" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="10" font-weight="400" fill="#6E6E80" text-anchor="middle">15</text>
+<text x="684" y="488" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="10" font-weight="400" fill="#6E6E80" text-anchor="middle">20</text>
+<text x="780" y="488" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="10" font-weight="400" fill="#6E6E80" text-anchor="middle">25</text>
+<text x="876" y="488" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="10" font-weight="400" fill="#6E6E80" text-anchor="middle">30</text>
+<rect x="928" y="232" width="480" height="280" rx="12" fill="#1B1B23" stroke="#2F2F3B" stroke-width="1"/>
+<text x="952" y="266" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="14" font-weight="600" fill="#F2F2F7" text-anchor="start">Топ фильтров</text>
+<text x="952" y="306" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="12" font-weight="400" fill="#F2F2F7" text-anchor="start">Тёплый закат</text>
+<text x="1384" y="306" font-family="&apos;JetBrains Mono&apos;, Consolas, &apos;Courier New&apos;, monospace" font-size="12" font-weight="400" fill="#A8A8B8" text-anchor="end">8420</text>
+<rect x="952" y="314" width="432" height="6" rx="3" fill="#2E2E3A"/>
+<rect x="952" y="314" width="432" height="6" rx="3" fill="#6C4CF1"/>
+<text x="952" y="342" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="12" font-weight="400" fill="#F2F2F7" text-anchor="start">Киноплёнка 80-х</text>
+<text x="1384" y="342" font-family="&apos;JetBrains Mono&apos;, Consolas, &apos;Courier New&apos;, monospace" font-size="12" font-weight="400" fill="#A8A8B8" text-anchor="end">6180</text>
+<rect x="952" y="350" width="432" height="6" rx="3" fill="#2E2E3A"/>
+<rect x="952" y="350" width="317.074" height="6" rx="3" fill="#F14CA6"/>
+<text x="952" y="378" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="12" font-weight="400" fill="#F2F2F7" text-anchor="start">Размытие по Гауссу</text>
+<text x="1384" y="378" font-family="&apos;JetBrains Mono&apos;, Consolas, &apos;Courier New&apos;, monospace" font-size="12" font-weight="400" fill="#A8A8B8" text-anchor="end">5470</text>
+<rect x="952" y="386" width="432" height="6" rx="3" fill="#2E2E3A"/>
+<rect x="952" y="386" width="280.646" height="6" rx="3" fill="#3E8BFF"/>
+<text x="952" y="414" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="12" font-weight="400" fill="#F2F2F7" text-anchor="start">Акварель</text>
+<text x="1384" y="414" font-family="&apos;JetBrains Mono&apos;, Consolas, &apos;Courier New&apos;, monospace" font-size="12" font-weight="400" fill="#A8A8B8" text-anchor="end">4210</text>
+<rect x="952" y="422" width="432" height="6" rx="3" fill="#2E2E3A"/>
+<rect x="952" y="422" width="216" height="6" rx="3" fill="#2BD9C3"/>
+<text x="952" y="450" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="12" font-weight="400" fill="#F2F2F7" text-anchor="start">Неон</text>
+<text x="1384" y="450" font-family="&apos;JetBrains Mono&apos;, Consolas, &apos;Courier New&apos;, monospace" font-size="12" font-weight="400" fill="#A8A8B8" text-anchor="end">3660</text>
+<rect x="952" y="458" width="432" height="6" rx="3" fill="#2E2E3A"/>
+<rect x="952" y="458" width="187.781" height="6" rx="3" fill="#F5A623"/>
+<text x="952" y="486" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="12" font-weight="400" fill="#F2F2F7" text-anchor="start">Зерно плёнки</text>
+<text x="1384" y="486" font-family="&apos;JetBrains Mono&apos;, Consolas, &apos;Courier New&apos;, monospace" font-size="12" font-weight="400" fill="#A8A8B8" text-anchor="end">2980</text>
+<rect x="952" y="494" width="432" height="6" rx="3" fill="#2E2E3A"/>
+<rect x="952" y="494" width="152.893" height="6" rx="3" fill="#16A34A"/>
+<rect x="272" y="536" width="1136" height="440" rx="12" fill="#1B1B23" stroke="#2F2F3B" stroke-width="1"/>
+<text x="296" y="570" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="14" font-weight="600" fill="#F2F2F7" text-anchor="start">Пользователи</text>
+<rect x="1080" y="550" width="160" height="30" rx="6" fill="#24242E"/>
+<text x="1094" y="570" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="11" font-weight="400" fill="#6E6E80" text-anchor="start">Поиск по e-mail</text>
+<rect x="1252" y="550" width="132" height="30" rx="8" fill="#24242E" stroke="#2F2F3B" stroke-width="1"/>
+<text x="1318" y="570" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="11" font-weight="600" fill="#F2F2F7" text-anchor="middle">Экспорт CSV</text>
+<line x1="296" y1="594" x2="1384" y2="594" stroke="#2F2F3B" stroke-width="1" stroke-linecap="round"/>
+<text x="296" y="612" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="11" font-weight="600" fill="#6E6E80" text-anchor="start" letter-spacing="0.4">Пользователь</text>
+<text x="520" y="612" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="11" font-weight="600" fill="#6E6E80" text-anchor="start" letter-spacing="0.4">E-mail</text>
+<text x="740" y="612" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="11" font-weight="600" fill="#6E6E80" text-anchor="start" letter-spacing="0.4">Роль</text>
+<text x="850" y="612" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="11" font-weight="600" fill="#6E6E80" text-anchor="start" letter-spacing="0.4">Уровень</text>
+<text x="950" y="612" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="11" font-weight="600" fill="#6E6E80" text-anchor="start" letter-spacing="0.4">Тариф</text>
+<text x="1060" y="612" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="11" font-weight="600" fill="#6E6E80" text-anchor="start" letter-spacing="0.4">Хранилище</text>
+<text x="1180" y="612" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="11" font-weight="600" fill="#6E6E80" text-anchor="start" letter-spacing="0.4">Последний вход</text>
+<text x="1408" y="612" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="11" font-weight="600" fill="#6E6E80" text-anchor="end" letter-spacing="0.4">Статус</text>
+<circle cx="310" cy="648" r="14" fill="#6C4CF1"/>
+<text x="310" y="652.9" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="11.9" font-weight="600" fill="#FFFFFF" text-anchor="middle">ИС</text>
+<text x="332" y="653" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="12" font-weight="500" fill="#F2F2F7" text-anchor="start">Ирина Соколова</text>
+<text x="520" y="653" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="11.5" font-weight="400" fill="#A8A8B8" text-anchor="start">irina@studio.ru</text>
+<text x="740" y="653" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="11.5" font-weight="400" fill="#A8A8B8" text-anchor="start">PRO</text>
+<text x="850" y="653" font-family="&apos;JetBrains Mono&apos;, Consolas, &apos;Courier New&apos;, monospace" font-size="11.5" font-weight="400" fill="#A8A8B8" text-anchor="start">L2</text>
+<text x="950" y="653" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="11.5" font-weight="400" fill="#A8A8B8" text-anchor="start">PRO 50 ГБ</text>
+<text x="1060" y="653" font-family="&apos;JetBrains Mono&apos;, Consolas, &apos;Courier New&apos;, monospace" font-size="11.5" font-weight="400" fill="#A8A8B8" text-anchor="start">18,4 ГБ</text>
+<text x="1180" y="653" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="11.5" font-weight="400" fill="#6E6E80" text-anchor="start">сегодня 14:32</text>
+<text x="1408" y="653" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="11.5" font-weight="600" fill="#2FBF71" text-anchor="end">● Активен</text>
+<rect x="288" y="672" width="1104" height="48" rx="6" fill="#24242E" opacity="0.4"/>
+<circle cx="310" cy="696" r="14" fill="#F14CA6"/>
+<text x="310" y="700.9" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="11.9" font-weight="600" fill="#FFFFFF" text-anchor="middle">АП</text>
+<text x="332" y="701" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="12" font-weight="500" fill="#F2F2F7" text-anchor="start">Артём Петров</text>
+<text x="520" y="701" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="11.5" font-weight="400" fill="#A8A8B8" text-anchor="start">artem@smm.ru</text>
+<text x="740" y="701" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="11.5" font-weight="400" fill="#A8A8B8" text-anchor="start">Пользователь</text>
+<text x="850" y="701" font-family="&apos;JetBrains Mono&apos;, Consolas, &apos;Courier New&apos;, monospace" font-size="11.5" font-weight="400" fill="#A8A8B8" text-anchor="start">L1</text>
+<text x="950" y="701" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="11.5" font-weight="400" fill="#A8A8B8" text-anchor="start">Базовый 2 ГБ</text>
+<text x="1060" y="701" font-family="&apos;JetBrains Mono&apos;, Consolas, &apos;Courier New&apos;, monospace" font-size="11.5" font-weight="400" fill="#A8A8B8" text-anchor="start">1,3 ГБ</text>
+<text x="1180" y="701" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="11.5" font-weight="400" fill="#6E6E80" text-anchor="start">сегодня 11:04</text>
+<text x="1408" y="701" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="11.5" font-weight="600" fill="#2FBF71" text-anchor="end">● Активен</text>
+<circle cx="310" cy="744" r="14" fill="#2BD9C3"/>
+<text x="310" y="748.9" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="11.9" font-weight="600" fill="#FFFFFF" text-anchor="middle">МК</text>
+<text x="332" y="749" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="12" font-weight="500" fill="#F2F2F7" text-anchor="start">Мария Ким</text>
+<text x="520" y="749" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="11.5" font-weight="400" fill="#A8A8B8" text-anchor="start">maria@edu.ru</text>
+<text x="740" y="749" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="11.5" font-weight="400" fill="#A8A8B8" text-anchor="start">Пользователь</text>
+<text x="850" y="749" font-family="&apos;JetBrains Mono&apos;, Consolas, &apos;Courier New&apos;, monospace" font-size="11.5" font-weight="400" fill="#A8A8B8" text-anchor="start">L1</text>
+<text x="950" y="749" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="11.5" font-weight="400" fill="#A8A8B8" text-anchor="start">Базовый 2 ГБ</text>
+<text x="1060" y="749" font-family="&apos;JetBrains Mono&apos;, Consolas, &apos;Courier New&apos;, monospace" font-size="11.5" font-weight="400" fill="#A8A8B8" text-anchor="start">0,8 ГБ</text>
+<text x="1180" y="749" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="11.5" font-weight="400" fill="#6E6E80" text-anchor="start">вчера 20:11</text>
+<text x="1408" y="749" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="11.5" font-weight="600" fill="#2FBF71" text-anchor="end">● Активен</text>
+<rect x="288" y="768" width="1104" height="48" rx="6" fill="#24242E" opacity="0.4"/>
+<circle cx="310" cy="792" r="14" fill="#3E8BFF"/>
+<text x="310" y="796.9" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="11.9" font-weight="600" fill="#FFFFFF" text-anchor="middle">ОС</text>
+<text x="332" y="797" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="12" font-weight="500" fill="#F2F2F7" text-anchor="start">Олег Сидоров</text>
+<text x="520" y="797" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="11.5" font-weight="400" fill="#A8A8B8" text-anchor="start">oleg@mail.ru</text>
+<text x="740" y="797" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="11.5" font-weight="400" fill="#A8A8B8" text-anchor="start">Администратор</text>
+<text x="850" y="797" font-family="&apos;JetBrains Mono&apos;, Consolas, &apos;Courier New&apos;, monospace" font-size="11.5" font-weight="400" fill="#A8A8B8" text-anchor="start">L3</text>
+<text x="950" y="797" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="11.5" font-weight="400" fill="#A8A8B8" text-anchor="start">Команда</text>
+<text x="1060" y="797" font-family="&apos;JetBrains Mono&apos;, Consolas, &apos;Courier New&apos;, monospace" font-size="11.5" font-weight="400" fill="#A8A8B8" text-anchor="start">64,0 ГБ</text>
+<text x="1180" y="797" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="11.5" font-weight="400" fill="#6E6E80" text-anchor="start">сегодня 09:15</text>
+<text x="1408" y="797" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="11.5" font-weight="600" fill="#2FBF71" text-anchor="end">● Активен</text>
+<circle cx="310" cy="840" r="14" fill="#F5A623"/>
+<text x="310" y="844.9" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="11.9" font-weight="600" fill="#FFFFFF" text-anchor="middle">ЮО</text>
+<text x="332" y="845" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="12" font-weight="500" fill="#F2F2F7" text-anchor="start">Юлия Орлова</text>
+<text x="520" y="845" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="11.5" font-weight="400" fill="#A8A8B8" text-anchor="start">julia@design.io</text>
+<text x="740" y="845" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="11.5" font-weight="400" fill="#A8A8B8" text-anchor="start">PRO</text>
+<text x="850" y="845" font-family="&apos;JetBrains Mono&apos;, Consolas, &apos;Courier New&apos;, monospace" font-size="11.5" font-weight="400" fill="#A8A8B8" text-anchor="start">L2</text>
+<text x="950" y="845" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="11.5" font-weight="400" fill="#A8A8B8" text-anchor="start">PRO 50 ГБ</text>
+<text x="1060" y="845" font-family="&apos;JetBrains Mono&apos;, Consolas, &apos;Courier New&apos;, monospace" font-size="11.5" font-weight="400" fill="#A8A8B8" text-anchor="start">44,1 ГБ</text>
+<text x="1180" y="845" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="11.5" font-weight="400" fill="#6E6E80" text-anchor="start">3 дня назад</text>
+<text x="1408" y="845" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="11.5" font-weight="600" fill="#E5484D" text-anchor="end">● Заблокирован</text>
+<rect x="288" y="864" width="1104" height="48" rx="6" fill="#24242E" opacity="0.4"/>
+<circle cx="310" cy="888" r="14" fill="#16A34A"/>
+<text x="310" y="892.9" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="11.9" font-weight="600" fill="#FFFFFF" text-anchor="middle">ДВ</text>
+<text x="332" y="893" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="12" font-weight="500" fill="#F2F2F7" text-anchor="start">Дмитрий Волков</text>
+<text x="520" y="893" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="11.5" font-weight="400" fill="#A8A8B8" text-anchor="start">dmitry@photo.ru</text>
+<text x="740" y="893" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="11.5" font-weight="400" fill="#A8A8B8" text-anchor="start">Пользователь</text>
+<text x="850" y="893" font-family="&apos;JetBrains Mono&apos;, Consolas, &apos;Courier New&apos;, monospace" font-size="11.5" font-weight="400" fill="#A8A8B8" text-anchor="start">L1</text>
+<text x="950" y="893" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="11.5" font-weight="400" fill="#A8A8B8" text-anchor="start">Базовый 2 ГБ</text>
+<text x="1060" y="893" font-family="&apos;JetBrains Mono&apos;, Consolas, &apos;Courier New&apos;, monospace" font-size="11.5" font-weight="400" fill="#A8A8B8" text-anchor="start">1,9 ГБ</text>
+<text x="1180" y="893" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="11.5" font-weight="400" fill="#6E6E80" text-anchor="start">5 дней назад</text>
+<text x="1408" y="893" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="11.5" font-weight="600" fill="#F5A623" text-anchor="end">● Нет входа</text>
+</svg>
