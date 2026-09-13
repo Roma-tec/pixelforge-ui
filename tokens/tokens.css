@@ -1,0 +1,59 @@
+:root {
+  /* ---------- ЦВЕТА: акценты ---------- */
+  --accent-500: #6C4CF1;
+  --accent-600: #5A3ADF;
+  --accent-400: #8A73F5;
+  --accent-100: #EDE9FE;
+  --accent-soft-dark: #2A2440;
+  --accent-secondary: #F14CA6;
+  --accent-tertiary: #2BD9C3;
+
+  /* ---------- СВЕТЛАЯ ТЕМА ---------- */
+  --bg-1: #F7F7FA;
+  --bg-2: #FFFFFF;
+  --bg-3: #EFF0F5;
+  --border: #E4E4EC;
+  --text-1: #0F0F14;
+  --text-2: #5A5A6E;
+  --text-3: #8E8E9E;
+  --canvas: #EDEDF2;
+
+  /* ---------- СЕМАНТИКА ---------- */
+  --success: #16A34A;
+  --warning: #D97706;
+  --error: #DC2626;
+  --info: #2563EB;
+  --guide: #F14CA6;
+
+  /* ---------- ТИПОГРАФИКА ---------- */
+  --font-ui: Inter, 'Segoe UI', Roboto, Arial, sans-serif;
+  --font-mono: 'JetBrains Mono', Consolas, monospace;
+
+  /* ---------- SPACING / RADIUS / SHADOW ---------- */
+  --space-1: 4px; --space-2: 8px; --space-3: 12px; --space-4: 16px;
+  --space-5: 20px; --space-6: 24px; --space-8: 32px; --space-10: 40px;
+  --space-12: 48px; --space-16: 64px;
+  --radius-sm: 4px; --radius-md: 8px; --radius-lg: 12px;
+  --radius-xl: 16px; --radius-pill: 999px;
+  --shadow-1: 0 1px 2px rgba(16,16,24,.06);
+  --shadow-2: 0 4px 12px rgba(16,16,24,.10);
+  --shadow-3: 0 12px 32px rgba(16,16,24,.16);
+
+  /* ---------- АНИМАЦИЯ ---------- */
+  --dur-instant: 120ms; --dur-fast: 180ms; --dur-base: 240ms;
+  --dur-slow: 320ms; --dur-slower: 480ms;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in: cubic-bezier(0.7, 0, 0.84, 0);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+[data-theme='dark'] {
+  --bg-1: #121218; --bg-2: #1B1B23; --bg-3: #24242E;
+  --border: #2F2F3B; --text-1: #F2F2F7; --text-2: #A8A8B8;
+  --text-3: #6E6E80; --canvas: #1B1B23;
+  --accent-500: #8A73F5; --accent-100: #2A2440;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root { --dur-fast: 60ms; --dur-base: 60ms; --dur-slow: 60ms; }
+}
