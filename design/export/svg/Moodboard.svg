@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="1024" viewBox="0 0 1440 1024">
+
+<defs>
+  <linearGradient id="hue" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#FF3B30"/>
+    <stop offset="17%" stop-color="#FF9500"/>
+    <stop offset="33%" stop-color="#FFD60A"/>
+    <stop offset="50%" stop-color="#34C759"/>
+    <stop offset="67%" stop-color="#00C7BE"/>
+    <stop offset="83%" stop-color="#0A84FF"/>
+    <stop offset="100%" stop-color="#BF5AF2"/>
+  </linearGradient>
+  <linearGradient id="shade" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.95"/>
+    <stop offset="45%" stop-color="#FFFFFF" stop-opacity="0"/>
+    <stop offset="55%" stop-color="#000000" stop-opacity="0"/>
+    <stop offset="100%" stop-color="#000000" stop-opacity="0.85"/>
+  </linearGradient>
+  <linearGradient id="brand" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0%" stop-color="#6C4CF1"/>
+    <stop offset="50%" stop-color="#B14CF1"/>
+    <stop offset="100%" stop-color="#F14CA6"/>
+  </linearGradient>
+  <linearGradient id="cool" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#6C4CF1"/>
+    <stop offset="100%" stop-color="#3E8BFF"/>
+  </linearGradient>
+  <linearGradient id="skywarm" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#F5A623"/>
+    <stop offset="100%" stop-color="#F14CA6"/>
+  </linearGradient>
+  <linearGradient id="photo" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0%" stop-color="#1B1B4A"/>
+    <stop offset="55%" stop-color="#5A2E96"/>
+    <stop offset="100%" stop-color="#D9488B"/>
+  </linearGradient>
+  <linearGradient id="sun" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0%" stop-color="#F5A623"/>
+    <stop offset="100%" stop-color="#F14CA6"/>
+  </linearGradient>
+  <pattern id="checker" width="24" height="24" patternUnits="userSpaceOnUse">
+    <rect width="24" height="24" fill="#2A2A34"/>
+    <rect width="12" height="12" fill="#22222B"/>
+    <rect x="12" y="12" width="12" height="12" fill="#22222B"/>
+  </pattern>
+  <pattern id="checkerL" width="24" height="24" patternUnits="userSpaceOnUse">
+    <rect width="24" height="24" fill="#FFFFFF"/>
+    <rect width="12" height="12" fill="#E6E6EC"/>
+    <rect x="12" y="12" width="12" height="12" fill="#E6E6EC"/>
+  </pattern>
+  <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
+    <path d="M32 0 L0 0 0 32" fill="none" stroke="#2A2A34" stroke-width="1"/>
+  </pattern>
+</defs>
+<rect x="0" y="0" width="1440" height="1024" fill="#0E0E13"/>
+<text x="40" y="64" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="28" font-weight="700" fill="#F2F2F7" text-anchor="start">PixelForge — Moodboard</text>
+<text x="40" y="92" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="14" font-weight="400" fill="#A8A8B8" text-anchor="start">«Точный инструмент в тёмной мастерской»</text>
+<line x1="40" y1="112" x2="1400" y2="112" stroke="#2F2F3B" stroke-width="1" stroke-linecap="round"/>
+<text x="40" y="146" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="11" font-weight="600" fill="#6E6E80" text-anchor="start" letter-spacing="1.2">01 · НАСТРОЕНИЕ</text>
+<rect x="40" y="162" width="212" height="140" rx="10" fill="#1B1B4A"/>
+<rect x="40" y="232" width="212" height="70" rx="10" fill="#0E0E13" opacity="0.85"/>
+<text x="40" y="320" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="12" font-weight="400" fill="#A8A8B8" text-anchor="start">Тёмная студия</text>
+<rect x="268" y="162" width="212" height="140" rx="10" fill="#5A2E96"/>
+<rect x="268" y="232" width="212" height="70" rx="10" fill="#F14CA6" opacity="0.85"/>
+<text x="268" y="320" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="12" font-weight="400" fill="#A8A8B8" text-anchor="start">Свет планшета</text>
+<rect x="496" y="162" width="212" height="140" rx="10" fill="#F5A623"/>
+<rect x="496" y="232" width="212" height="70" rx="10" fill="#D9488B" opacity="0.85"/>
+<text x="496" y="320" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="12" font-weight="400" fill="#A8A8B8" text-anchor="start">Тёплый акцент</text>
+<rect x="724" y="162" width="212" height="140" rx="10" fill="#2BD9C3"/>
+<rect x="724" y="232" width="212" height="70" rx="10" fill="#1B1B23" opacity="0.85"/>
+<text x="724" y="320" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="12" font-weight="400" fill="#A8A8B8" text-anchor="start">Цифровой холод</text>
+<rect x="952" y="162" width="212" height="140" rx="10" fill="#2A2A34"/>
+<rect x="952" y="232" width="212" height="70" rx="10" fill="#F2F2F7" opacity="0.85"/>
+<text x="952" y="320" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="12" font-weight="400" fill="#A8A8B8" text-anchor="start">Сетка и бумага</text>
+<rect x="1180" y="162" width="212" height="140" rx="10" fill="#3E8BFF"/>
+<rect x="1180" y="232" width="212" height="70" rx="10" fill="#6C4CF1" opacity="0.85"/>
+<text x="1180" y="320" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="12" font-weight="400" fill="#A8A8B8" text-anchor="start">Цветокоррекция</text>
+<text x="40" y="366" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="11" font-weight="600" fill="#6E6E80" text-anchor="start" letter-spacing="1.2">02 · ПАЛИТРА</text>
+<text x="40" y="390" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="13" font-weight="600" fill="#F2F2F7" text-anchor="start">Brand</text>
+<rect x="40" y="400" width="60" height="60" rx="8" fill="#6C4CF1" stroke="#2F2F3B" stroke-width="1"/>
+<text x="40" y="476" font-family="&apos;JetBrains Mono&apos;, Consolas, &apos;Courier New&apos;, monospace" font-size="8.5" font-weight="400" fill="#6E6E80" text-anchor="start">#6C4CF1</text>
+<rect x="106" y="400" width="60" height="60" rx="8" fill="#B14CF1" stroke="#2F2F3B" stroke-width="1"/>
+<text x="106" y="476" font-family="&apos;JetBrains Mono&apos;, Consolas, &apos;Courier New&apos;, monospace" font-size="8.5" font-weight="400" fill="#6E6E80" text-anchor="start">#B14CF1</text>
+<rect x="172" y="400" width="60" height="60" rx="8" fill="#F14CA6" stroke="#2F2F3B" stroke-width="1"/>
+<text x="172" y="476" font-family="&apos;JetBrains Mono&apos;, Consolas, &apos;Courier New&apos;, monospace" font-size="8.5" font-weight="400" fill="#6E6E80" text-anchor="start">#F14CA6</text>
+<rect x="238" y="400" width="60" height="60" rx="8" fill="#8A73F5" stroke="#2F2F3B" stroke-width="1"/>
+<text x="238" y="476" font-family="&apos;JetBrains Mono&apos;, Consolas, &apos;Courier New&apos;, monospace" font-size="8.5" font-weight="400" fill="#6E6E80" text-anchor="start">#8A73F5</text>
+<rect x="304" y="400" width="60" height="60" rx="8" fill="#EDE9FE" stroke="#2F2F3B" stroke-width="1"/>
+<text x="304" y="476" font-family="&apos;JetBrains Mono&apos;, Consolas, &apos;Courier New&apos;, monospace" font-size="8.5" font-weight="400" fill="#6E6E80" text-anchor="start">#EDE9FE</text>
+<text x="390" y="390" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="13" font-weight="600" fill="#F2F2F7" text-anchor="start">Dark UI</text>
+<rect x="390" y="400" width="60" height="60" rx="8" fill="#0E0E13" stroke="#2F2F3B" stroke-width="1"/>
+<text x="390" y="476" font-family="&apos;JetBrains Mono&apos;, Consolas, &apos;Courier New&apos;, monospace" font-size="8.5" font-weight="400" fill="#6E6E80" text-anchor="start">#0E0E13</text>
+<rect x="456" y="400" width="60" height="60" rx="8" fill="#121218" stroke="#2F2F3B" stroke-width="1"/>
+<text x="456" y="476" font-family="&apos;JetBrains Mono&apos;, Consolas, &apos;Courier New&apos;, monospace" font-size="8.5" font-weight="400" fill="#6E6E80" text-anchor="start">#121218</text>
+<rect x="522" y="400" width="60" height="60" rx="8" fill="#1B1B23" stroke="#2F2F3B" stroke-width="1"/>
+<text x="522" y="476" font-family="&apos;JetBrains Mono&apos;, Consolas, &apos;Courier New&apos;, monospace" font-size="8.5" font-weight="400" fill="#6E6E80" text-anchor="start">#1B1B23</text>
+<rect x="588" y="400" width="60" height="60" rx="8" fill="#24242E" stroke="#2F2F3B" stroke-width="1"/>
+<text x="588" y="476" font-family="&apos;JetBrains Mono&apos;, Consolas, &apos;Courier New&apos;, monospace" font-size="8.5" font-weight="400" fill="#6E6E80" text-anchor="start">#24242E</text>
+<rect x="654" y="400" width="60" height="60" rx="8" fill="#2E2E3A" stroke="#2F2F3B" stroke-width="1"/>
+<text x="654" y="476" font-family="&apos;JetBrains Mono&apos;, Consolas, &apos;Courier New&apos;, monospace" font-size="8.5" font-weight="400" fill="#6E6E80" text-anchor="start">#2E2E3A</text>
+<text x="740" y="390" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="13" font-weight="600" fill="#F2F2F7" text-anchor="start">Light UI</text>
+<rect x="740" y="400" width="60" height="60" rx="8" fill="#FFFFFF" stroke="#2F2F3B" stroke-width="1"/>
+<text x="740" y="476" font-family="&apos;JetBrains Mono&apos;, Consolas, &apos;Courier New&apos;, monospace" font-size="8.5" font-weight="400" fill="#6E6E80" text-anchor="start">#FFFFFF</text>
+<rect x="806" y="400" width="60" height="60" rx="8" fill="#F7F7FA" stroke="#2F2F3B" stroke-width="1"/>
+<text x="806" y="476" font-family="&apos;JetBrains Mono&apos;, Consolas, &apos;Courier New&apos;, monospace" font-size="8.5" font-weight="400" fill="#6E6E80" text-anchor="start">#F7F7FA</text>
+<rect x="872" y="400" width="60" height="60" rx="8" fill="#EFF0F5" stroke="#2F2F3B" stroke-width="1"/>
+<text x="872" y="476" font-family="&apos;JetBrains Mono&apos;, Consolas, &apos;Courier New&apos;, monospace" font-size="8.5" font-weight="400" fill="#6E6E80" text-anchor="start">#EFF0F5</text>
+<rect x="938" y="400" width="60" height="60" rx="8" fill="#E4E4EC" stroke="#2F2F3B" stroke-width="1"/>
+<text x="938" y="476" font-family="&apos;JetBrains Mono&apos;, Consolas, &apos;Courier New&apos;, monospace" font-size="8.5" font-weight="400" fill="#6E6E80" text-anchor="start">#E4E4EC</text>
+<rect x="1004" y="400" width="60" height="60" rx="8" fill="#0F0F14" stroke="#2F2F3B" stroke-width="1"/>
+<text x="1004" y="476" font-family="&apos;JetBrains Mono&apos;, Consolas, &apos;Courier New&apos;, monospace" font-size="8.5" font-weight="400" fill="#6E6E80" text-anchor="start">#0F0F14</text>
+<text x="1090" y="390" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="13" font-weight="600" fill="#F2F2F7" text-anchor="start">Semantic</text>
+<rect x="1090" y="400" width="60" height="60" rx="8" fill="#16A34A" stroke="#2F2F3B" stroke-width="1"/>
+<text x="1090" y="476" font-family="&apos;JetBrains Mono&apos;, Consolas, &apos;Courier New&apos;, monospace" font-size="8.5" font-weight="400" fill="#6E6E80" text-anchor="start">#16A34A</text>
+<rect x="1156" y="400" width="60" height="60" rx="8" fill="#D97706" stroke="#2F2F3B" stroke-width="1"/>
+<text x="1156" y="476" font-family="&apos;JetBrains Mono&apos;, Consolas, &apos;Courier New&apos;, monospace" font-size="8.5" font-weight="400" fill="#6E6E80" text-anchor="start">#D97706</text>
+<rect x="1222" y="400" width="60" height="60" rx="8" fill="#DC2626" stroke="#2F2F3B" stroke-width="1"/>
+<text x="1222" y="476" font-family="&apos;JetBrains Mono&apos;, Consolas, &apos;Courier New&apos;, monospace" font-size="8.5" font-weight="400" fill="#6E6E80" text-anchor="start">#DC2626</text>
+<rect x="1288" y="400" width="60" height="60" rx="8" fill="#2563EB" stroke="#2F2F3B" stroke-width="1"/>
+<text x="1288" y="476" font-family="&apos;JetBrains Mono&apos;, Consolas, &apos;Courier New&apos;, monospace" font-size="8.5" font-weight="400" fill="#6E6E80" text-anchor="start">#2563EB</text>
+<rect x="1354" y="400" width="60" height="60" rx="8" fill="#F14CA6" stroke="#2F2F3B" stroke-width="1"/>
+<text x="1354" y="476" font-family="&apos;JetBrains Mono&apos;, Consolas, &apos;Courier New&apos;, monospace" font-size="8.5" font-weight="400" fill="#6E6E80" text-anchor="start">#F14CA6</text>
+<rect x="40" y="500" width="1360" height="24" rx="12" fill="url(#brand)"/>
+<rect x="40" y="532" width="1360" height="24" rx="12" fill="url(#cool)"/>
+<rect x="40" y="564" width="1360" height="24" rx="12" fill="url(#skywarm)"/>
+<text x="40" y="626" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="11" font-weight="600" fill="#6E6E80" text-anchor="start" letter-spacing="1.2">03 · ТИПОГРАФИКА И МАТЕРИАЛЫ</text>
+<rect x="40" y="642" width="640" height="340" rx="12" fill="#1B1B23" stroke="#2F2F3B" stroke-width="1"/>
+<text x="64" y="700" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="64" font-weight="700" fill="#F2F2F7" text-anchor="start">Aa</text>
+<text x="160" y="680" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="26" font-weight="700" fill="#F2F2F7" text-anchor="start">Inter</text>
+<text x="160" y="706" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="12" font-weight="400" fill="#A8A8B8" text-anchor="start">UI-шрифт · 100/125/150 % масштаб</text>
+<text x="64" y="746" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="30" font-weight="700" fill="#F2F2F7" text-anchor="start">Display</text>
+<text x="600" y="746" font-family="&apos;JetBrains Mono&apos;, Consolas, &apos;Courier New&apos;, monospace" font-size="10.5" font-weight="400" fill="#6E6E80" text-anchor="end">30 px</text>
+<text x="64" y="788" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="22" font-weight="600" fill="#F2F2F7" text-anchor="start">H2 Заголовок</text>
+<text x="600" y="788" font-family="&apos;JetBrains Mono&apos;, Consolas, &apos;Courier New&apos;, monospace" font-size="10.5" font-weight="400" fill="#6E6E80" text-anchor="end">22 px</text>
+<text x="64" y="830" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="17" font-weight="600" fill="#F2F2F7" text-anchor="start">H3 Панель</text>
+<text x="600" y="830" font-family="&apos;JetBrains Mono&apos;, Consolas, &apos;Courier New&apos;, monospace" font-size="10.5" font-weight="400" fill="#6E6E80" text-anchor="end">17 px</text>
+<text x="64" y="872" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="14" font-weight="400" fill="#F2F2F7" text-anchor="start">Body — основной текст</text>
+<text x="600" y="872" font-family="&apos;JetBrains Mono&apos;, Consolas, &apos;Courier New&apos;, monospace" font-size="10.5" font-weight="400" fill="#6E6E80" text-anchor="end">14 px</text>
+<text x="64" y="914" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="12" font-weight="500" fill="#F2F2F7" text-anchor="start">Caption 12 · подписи</text>
+<text x="600" y="914" font-family="&apos;JetBrains Mono&apos;, Consolas, &apos;Courier New&apos;, monospace" font-size="10.5" font-weight="400" fill="#6E6E80" text-anchor="end">12 px</text>
+<text x="64" y="962" font-family="&apos;JetBrains Mono&apos;, Consolas, &apos;Courier New&apos;, monospace" font-size="14" font-weight="400" fill="#8A73F5" text-anchor="start">JetBrains Mono — 1420 × 860 px · #6C4CF1 · 78 %</text>
+<rect x="704" y="642" width="320" height="340" rx="12" fill="#1B1B23" stroke="#2F2F3B" stroke-width="1"/>
+<text x="728" y="674" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="13" font-weight="600" fill="#F2F2F7" text-anchor="start">Формы и поверхности</text>
+<rect x="728" y="692" width="120" height="34" rx="4" fill="#2E2E3A"/>
+<text x="864" y="714" font-family="&apos;JetBrains Mono&apos;, Consolas, &apos;Courier New&apos;, monospace" font-size="11" font-weight="400" fill="#6E6E80" text-anchor="start">radius 4</text>
+<rect x="728" y="738" width="120" height="34" rx="8" fill="#2E2E3A"/>
+<text x="864" y="760" font-family="&apos;JetBrains Mono&apos;, Consolas, &apos;Courier New&apos;, monospace" font-size="11" font-weight="400" fill="#6E6E80" text-anchor="start">radius 8</text>
+<rect x="728" y="784" width="120" height="34" rx="12" fill="#2E2E3A"/>
+<text x="864" y="806" font-family="&apos;JetBrains Mono&apos;, Consolas, &apos;Courier New&apos;, monospace" font-size="11" font-weight="400" fill="#6E6E80" text-anchor="start">radius 12</text>
+<rect x="728" y="830" width="120" height="34" rx="16" fill="#2E2E3A"/>
+<text x="864" y="852" font-family="&apos;JetBrains Mono&apos;, Consolas, &apos;Courier New&apos;, monospace" font-size="11" font-weight="400" fill="#6E6E80" text-anchor="start">radius 16</text>
+<rect x="728" y="876" width="120" height="34" rx="17" fill="#2E2E3A"/>
+<text x="864" y="898" font-family="&apos;JetBrains Mono&apos;, Consolas, &apos;Courier New&apos;, monospace" font-size="11" font-weight="400" fill="#6E6E80" text-anchor="start">radius 999</text>
+<rect x="728" y="928" width="272" height="34" rx="12" fill="#1B1B23" stroke="#2F2F3B" stroke-width="1"/>
+<text x="864" y="950" font-family="&apos;JetBrains Mono&apos;, Consolas, &apos;Courier New&apos;, monospace" font-size="10" font-weight="400" fill="#6E6E80" text-anchor="middle">border 1 px #2F2F3B</text>
+<rect x="1048" y="642" width="352" height="340" rx="12" fill="#1B1B23" stroke="#2F2F3B" stroke-width="1"/>
+<text x="1072" y="674" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="13" font-weight="600" fill="#F2F2F7" text-anchor="start">Иконки · сетка 24 × 24</text>
+<rect x="1072" y="700" width="36" height="36" rx="8" fill="#24242E"/>
+<path d="M1082 718 L1098 718 M1090 710 L1090 726" fill="none" stroke="#A8A8B8" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M1082 718 l-4 4 M1082 718 l4 4" fill="none" stroke="#A8A8B8" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M1098 718 l-4 -4 M1098 718 l4 -4" fill="none" stroke="#A8A8B8" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M1090 710 l-4 -4 M1090 710 l-4 4" fill="none" stroke="#A8A8B8" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M1090 726 l4 -4 M1090 726 l4 4" fill="none" stroke="#A8A8B8" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="1113" y="700" width="36" height="36" rx="8" fill="#24242E"/>
+<rect x="1123" y="711.6" width="16" height="12.8" rx="2" fill="none" stroke="#A8A8B8" stroke-width="1.4" stroke-dasharray="4 3"/>
+<rect x="1154" y="700" width="36" height="36" rx="8" fill="#24242E"/>
+<ellipse cx="1172" cy="716" rx="7.2" ry="6" fill="none" stroke="#A8A8B8" stroke-width="1.4"/>
+<path d="M1165.6 722 q-2 6 3 8" fill="none" stroke="#A8A8B8" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M1174 727 q-3 4 1 6" fill="none" stroke="#A8A8B8" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="1195" y="700" width="36" height="36" rx="8" fill="#24242E"/>
+<path d="M1207 710 L1207 724 L1221 724" fill="none" stroke="#A8A8B8" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M1219 712 L1219 724 L1205 724" fill="none" stroke="#A8A8B8" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M1205 724 L1219 724" fill="none" stroke="#A8A8B8" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="1236" y="700" width="36" height="36" rx="8" fill="#24242E"/>
+<path d="M1259.6 710.8 L1252 720" fill="none" stroke="#A8A8B8" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M1250 720 q-6 2 -6 8 q6 1 8 -5 z" fill="#A8A8B8" opacity="0.9"/>
+<rect x="1277" y="700" width="36" height="36" rx="8" fill="#24242E"/>
+<rect x="1287" y="712" width="16" height="11" rx="3" fill="none" stroke="#A8A8B8" stroke-width="1.4"/>
+<path d="M1292 723 L1298 723" fill="none" stroke="#A8A8B8" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M1296 712 L1296 723" fill="none" stroke="#A8A8B8" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="1318" y="700" width="36" height="36" rx="8" fill="#24242E"/>
+<path d="M1330 710 L1342 710 L1344 720 L1328 720 Z" fill="none" stroke="#A8A8B8" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="1345" cy="724" r="3" fill="#A8A8B8"/>
+<rect x="1359" y="700" width="36" height="36" rx="8" fill="#24242E"/>
+<path d="M1371 711 L1383 711 M1377 711 L1377 725" fill="none" stroke="#A8A8B8" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M1374 725 L1380 725" fill="none" stroke="#A8A8B8" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="1072" y="756" width="36" height="36" rx="8" fill="#24242E"/>
+<rect x="1081" y="765" width="12" height="12" rx="2" fill="none" stroke="#A8A8B8" stroke-width="1.4"/>
+<circle cx="1095" cy="778" r="5" fill="none" stroke="#A8A8B8" stroke-width="1.4"/>
+<rect x="1113" y="756" width="36" height="36" rx="8" fill="#24242E"/>
+<path d="M1124 781 L1136 769" fill="none" stroke="#A8A8B8" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="1134" y="765" width="6" height="6" rx="1.5" fill="none" stroke="#A8A8B8" stroke-width="1.4"/>
+<circle cx="1123" cy="782" r="2.5" fill="#A8A8B8"/>
+<rect x="1154" y="756" width="36" height="36" rx="8" fill="#24242E"/>
+<circle cx="1170" cy="772" r="7" fill="none" stroke="#A8A8B8" stroke-width="1.4"/>
+<path d="M1175 777 L1181 783" fill="none" stroke="#A8A8B8" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="1195" y="756" width="36" height="36" rx="8" fill="#24242E"/>
+<path d="M1207 782 L1207 772 q0 -6 4 -6 q4 0 4 6" fill="none" stroke="#A8A8B8" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M1211 776 L1211 766" fill="none" stroke="#A8A8B8" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M1215 776 L1215 768" fill="none" stroke="#A8A8B8" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M1219 778 L1219 771 q0 -4 4 -4 q3 0 3 4 L1221 782" fill="none" stroke="#A8A8B8" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="1236" y="756" width="36" height="36" rx="8" fill="#24242E"/>
+<circle cx="1254" cy="774" r="6.8" fill="none" stroke="#A8A8B8" stroke-width="1.4"/>
+<path d="M1254 767.2 a6.8 6.8 0 0 1 0 13.6 z" fill="#A8A8B8"/>
+<rect x="1277" y="756" width="36" height="36" rx="8" fill="#24242E"/>
+<path d="M1295 766 L1304 771 L1286 771 Z" fill="none" stroke="#A8A8B8" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M1286 775 L1295 780 L1304 775" fill="none" stroke="#A8A8B8" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="1318" y="756" width="36" height="36" rx="8" fill="#24242E"/>
+<path d="M1337 774 a8 8 0 1 1 -3 -6" fill="none" stroke="#A8A8B8" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M1328 766 L1327 772 L1333 771" fill="none" stroke="#A8A8B8" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M1336 770 L1336 775" fill="none" stroke="#A8A8B8" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="1359" y="756" width="36" height="36" rx="8" fill="#24242E"/>
+<path d="M1377 765 L1377 783" fill="none" stroke="#A8A8B8" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M1368 774 L1386 774" fill="none" stroke="#A8A8B8" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M1372 769 L1382 779" fill="none" stroke="#A8A8B8" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M1382 769 L1372 779" fill="none" stroke="#A8A8B8" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="1072" y="812" width="36" height="36" rx="8" fill="#24242E"/>
+<circle cx="1090" cy="830" r="4" fill="none" stroke="#A8A8B8" stroke-width="1.4"/>
+<line x1="1097" y1="830" x2="1100" y2="830" stroke="#A8A8B8" stroke-width="1.4" stroke-linecap="round"/>
+<line x1="1094.95" y1="834.95" x2="1097.07" y2="837.071" stroke="#A8A8B8" stroke-width="1.4" stroke-linecap="round"/>
+<line x1="1090" y1="837" x2="1090" y2="840" stroke="#A8A8B8" stroke-width="1.4" stroke-linecap="round"/>
+<line x1="1085.05" y1="834.95" x2="1082.93" y2="837.071" stroke="#A8A8B8" stroke-width="1.4" stroke-linecap="round"/>
+<line x1="1083" y1="830" x2="1080" y2="830" stroke="#A8A8B8" stroke-width="1.4" stroke-linecap="round"/>
+<line x1="1085.05" y1="825.05" x2="1082.93" y2="822.929" stroke="#A8A8B8" stroke-width="1.4" stroke-linecap="round"/>
+<line x1="1090" y1="823" x2="1090" y2="820" stroke="#A8A8B8" stroke-width="1.4" stroke-linecap="round"/>
+<line x1="1094.95" y1="825.05" x2="1097.07" y2="822.929" stroke="#A8A8B8" stroke-width="1.4" stroke-linecap="round"/>
+<rect x="1113" y="812" width="36" height="36" rx="8" fill="#24242E"/>
+<path d="M1122 830 q9 -7 18 0 q-9 7 -18 0 z" fill="none" stroke="#A8A8B8" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="1131" cy="830" r="2.6" fill="#A8A8B8"/>
+<rect x="1154" y="812" width="36" height="36" rx="8" fill="#24242E"/>
+<rect x="1166" y="829" width="12" height="9" rx="2" fill="none" stroke="#A8A8B8" stroke-width="1.4"/>
+<path d="M1168 829 v-3 a4 4 0 0 1 8 0 v3" fill="none" stroke="#A8A8B8" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="1195" y="812" width="36" height="36" rx="8" fill="#24242E"/>
+<path d="M1212 822 l2.5 5.5 6 .7 -4.4 4.1 1.2 5.9 -5.3 -3 -5.3 3 1.2 -5.9 -4.4 -4.1 6 -.7 z" fill="#A8A8B8"/>
+<rect x="1236" y="812" width="36" height="36" rx="8" fill="#24242E"/>
+<rect x="1248" y="826" width="12" height="11" rx="2" fill="none" stroke="#A8A8B8" stroke-width="1.4"/>
+<path d="M1247 824 h14" fill="none" stroke="#A8A8B8" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M1252 824 v-3 h5 v3" fill="none" stroke="#A8A8B8" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="1277" y="812" width="36" height="36" rx="8" fill="#24242E"/>
+<path d="M1288 830 L1302 830 M1295 823 L1295 837" fill="none" stroke="#A8A8B8" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="1318" y="812" width="36" height="36" rx="8" fill="#24242E"/>
+<circle cx="1334" cy="828" r="6" fill="none" stroke="#A8A8B8" stroke-width="1.4"/>
+<path d="M1339 833 L1344 838" fill="none" stroke="#A8A8B8" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="1359" y="812" width="36" height="36" rx="8" fill="#24242E"/>
+<path d="M1377 823 L1377 834" fill="none" stroke="#A8A8B8" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M1377 834 l-5 -5 M1377 834 l5 -5" fill="none" stroke="#A8A8B8" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M1369 839 L1385 839" fill="none" stroke="#A8A8B8" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="1072" y="956" font-family="&apos;JetBrains Mono&apos;, Consolas, &apos;Courier New&apos;, monospace" font-size="10.5" font-weight="400" fill="#6E6E80" text-anchor="start">148 иконок · обводка 1.5 px · currentColor</text>
+<rect x="1384" y="380" width="16" height="600" rx="8" fill="url(#brand)" opacity="0.4"/>
+</svg>

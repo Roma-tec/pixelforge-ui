@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="1024" viewBox="0 0 1440 1024">
+
+<defs>
+  <linearGradient id="hue" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#FF3B30"/>
+    <stop offset="17%" stop-color="#FF9500"/>
+    <stop offset="33%" stop-color="#FFD60A"/>
+    <stop offset="50%" stop-color="#34C759"/>
+    <stop offset="67%" stop-color="#00C7BE"/>
+    <stop offset="83%" stop-color="#0A84FF"/>
+    <stop offset="100%" stop-color="#BF5AF2"/>
+  </linearGradient>
+  <linearGradient id="shade" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.95"/>
+    <stop offset="45%" stop-color="#FFFFFF" stop-opacity="0"/>
+    <stop offset="55%" stop-color="#000000" stop-opacity="0"/>
+    <stop offset="100%" stop-color="#000000" stop-opacity="0.85"/>
+  </linearGradient>
+  <linearGradient id="brand" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0%" stop-color="#6C4CF1"/>
+    <stop offset="50%" stop-color="#B14CF1"/>
+    <stop offset="100%" stop-color="#F14CA6"/>
+  </linearGradient>
+  <linearGradient id="cool" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#6C4CF1"/>
+    <stop offset="100%" stop-color="#3E8BFF"/>
+  </linearGradient>
+  <linearGradient id="skywarm" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#F5A623"/>
+    <stop offset="100%" stop-color="#F14CA6"/>
+  </linearGradient>
+  <linearGradient id="photo" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0%" stop-color="#1B1B4A"/>
+    <stop offset="55%" stop-color="#5A2E96"/>
+    <stop offset="100%" stop-color="#D9488B"/>
+  </linearGradient>
+  <linearGradient id="sun" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0%" stop-color="#F5A623"/>
+    <stop offset="100%" stop-color="#F14CA6"/>
+  </linearGradient>
+  <pattern id="checker" width="24" height="24" patternUnits="userSpaceOnUse">
+    <rect width="24" height="24" fill="#2A2A34"/>
+    <rect width="12" height="12" fill="#22222B"/>
+    <rect x="12" y="12" width="12" height="12" fill="#22222B"/>
+  </pattern>
+  <pattern id="checkerL" width="24" height="24" patternUnits="userSpaceOnUse">
+    <rect width="24" height="24" fill="#FFFFFF"/>
+    <rect width="12" height="12" fill="#E6E6EC"/>
+    <rect x="12" y="12" width="12" height="12" fill="#E6E6EC"/>
+  </pattern>
+  <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
+    <path d="M32 0 L0 0 0 32" fill="none" stroke="#2A2A34" stroke-width="1"/>
+  </pattern>
+</defs>
+<rect x="0" y="0" width="1440" height="1024" fill="#0E0E13"/>
+<rect x="0" y="0" width="1440" height="1024" rx="0" fill="url(#brand)" opacity="0.14"/>
+<circle cx="1180" cy="200" r="320" fill="#6C4CF1" opacity="0.1"/>
+<circle cx="300" cy="900" r="260" fill="#F14CA6" opacity="0.08"/>
+<circle cx="120" cy="110" r="26" fill="url(#brand)"/>
+<text x="164" y="104" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="24" font-weight="700" fill="#F2F2F7" text-anchor="start">PixelForge</text>
+<text x="164" y="130" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="13" font-weight="400" fill="#A8A8B8" text-anchor="start">графический редактор</text>
+<text x="120" y="380" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="16" font-weight="700" fill="#8A73F5" text-anchor="start" letter-spacing="4">S2G11</text>
+<text x="120" y="452" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="54" font-weight="700" fill="#F2F2F7" text-anchor="start">Проект интерфейса</text>
+<text x="120" y="516" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="54" font-weight="700" fill="#F2F2F7" text-anchor="start">программной системы</text>
+<text x="120" y="580" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="22" font-weight="400" fill="#8A73F5" text-anchor="start">Вариант № 3 — Графический редактор</text>
+<rect x="120" y="636" width="520" height="2" rx="0" fill="url(#brand)"/>
+<text x="120" y="686" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="12" font-weight="400" fill="#6E6E80" text-anchor="start">Продукт</text>
+<text x="360" y="686" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="13" font-weight="500" fill="#F2F2F7" text-anchor="start">PixelForge — растрово-векторный редактор</text>
+<text x="120" y="720" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="12" font-weight="400" fill="#6E6E80" text-anchor="start">Инструмент разработки</text>
+<text x="360" y="720" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="13" font-weight="500" fill="#F2F2F7" text-anchor="start">Figma · PDF · GitHub</text>
+<text x="120" y="754" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="12" font-weight="400" fill="#6E6E80" text-anchor="start">Состав</text>
+<text x="360" y="754" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="13" font-weight="500" fill="#F2F2F7" text-anchor="start">12 экранов · 3 UI-кита · UML Use-Case · User Flow Map</text>
+<text x="120" y="788" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="12" font-weight="400" fill="#6E6E80" text-anchor="start">Исполнитель</text>
+<text x="360" y="788" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="13" font-weight="500" fill="#F2F2F7" text-anchor="start">______________________________________</text>
+<text x="120" y="822" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="12" font-weight="400" fill="#6E6E80" text-anchor="start">Группа</text>
+<text x="360" y="822" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="13" font-weight="500" fill="#F2F2F7" text-anchor="start">______________________</text>
+<text x="120" y="856" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="12" font-weight="400" fill="#6E6E80" text-anchor="start">Преподаватель</text>
+<text x="360" y="856" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="13" font-weight="500" fill="#F2F2F7" text-anchor="start">______________________________________</text>
+<text x="120" y="960" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="14" font-weight="400" fill="#6E6E80" text-anchor="start">2025</text>
+<rect x="760" y="240" width="560" height="480" rx="12" fill="#FFFFFF" opacity="0.06"/>
+<rect x="784" y="264" width="248" height="200" rx="10" fill="url(#photo)"/>
+<rect x="796" y="414" width="120" height="12" rx="6" fill="#FFFFFF" opacity="0.8"/>
+<rect x="796" y="434" width="180" height="8" rx="4" fill="#FFFFFF" opacity="0.5"/>
+<rect x="1052" y="264" width="248" height="200" rx="10" fill="url(#cool)"/>
+<rect x="1064" y="414" width="120" height="12" rx="6" fill="#FFFFFF" opacity="0.8"/>
+<rect x="1064" y="434" width="180" height="8" rx="4" fill="#FFFFFF" opacity="0.5"/>
+<rect x="784" y="488" width="248" height="200" rx="10" fill="url(#skywarm)"/>
+<rect x="796" y="638" width="120" height="12" rx="6" fill="#FFFFFF" opacity="0.8"/>
+<rect x="796" y="658" width="180" height="8" rx="4" fill="#FFFFFF" opacity="0.5"/>
+<rect x="1052" y="488" width="248" height="200" rx="10" fill="url(#brand)"/>
+<rect x="1064" y="638" width="120" height="12" rx="6" fill="#FFFFFF" opacity="0.8"/>
+<rect x="1064" y="658" width="180" height="8" rx="4" fill="#FFFFFF" opacity="0.5"/>
+</svg>
