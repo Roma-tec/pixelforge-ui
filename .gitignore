@@ -1,0 +1,14 @@
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Figma / Zeplin
+*.fig.bak
+*.sketch
+
+# Экспорт-черновики
+*.tmp
+*.log
+_preview/
+tmp/
