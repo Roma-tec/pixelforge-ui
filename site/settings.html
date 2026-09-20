@@ -3,84 +3,189 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>S3 · Настройки профиля — PixelForge</title>
+<title>Настройки — PixelForge</title>
+<link rel="stylesheet" href="assets/css/app.css">
 <style>
-*{box-sizing:border-box}
-html,body{margin:0;height:100%;font-family:Inter,'Segoe UI',Roboto,Arial,sans-serif;
-  background:#08080B;color:#F2F2F7;overflow:hidden}
-html[data-theme=light] body{background:#E9E9EF}
-.stage{position:fixed;inset:0;display:flex;align-items:center;justify-content:center}
-.screen{position:relative;box-shadow:0 24px 70px rgba(0,0,0,.55)}
-html[data-theme=light] .screen{box-shadow:0 24px 70px rgba(20,20,40,.22)}
-.screen img{position:absolute;inset:0;width:100%;height:100%;display:block}
-html[data-theme=dark] img.light,html[data-theme=light] img.dark{display:none}
-.hot{position:absolute;display:block;border-radius:8px;background:rgba(108,76,241,0);
-  transition:background .15s,box-shadow .15s;text-decoration:none}
-a.hot{cursor:pointer}
-.hot:hover{background:rgba(108,76,241,.26);box-shadow:inset 0 0 0 3px #8A73F5}
-.hot.info:hover{background:rgba(43,217,195,.20);box-shadow:inset 0 0 0 3px #2BD9C3}
-body.zones .hot{background:rgba(108,76,241,.16);box-shadow:inset 0 0 0 2px #6C4CF1}
-body.zones .hot.info{background:rgba(43,217,195,.13);box-shadow:inset 0 0 0 2px #2BD9C3}
-.dock{position:fixed;right:14px;bottom:14px;display:flex;gap:8px;z-index:9}
-.dock a,.dock button{width:42px;height:42px;border-radius:13px;border:1px solid #2F2F3B;
-  background:rgba(27,27,35,.92);color:#F2F2F7;display:flex;align-items:center;
-  justify-content:center;font-size:17px;cursor:pointer;text-decoration:none;
-  backdrop-filter:blur(8px);transition:background .15s,border-color .15s}
-.dock a:hover,.dock button:hover{background:#2E2E3A;border-color:#6C4CF1}
-.dock button.on{background:#2A2440;border-color:#8A73F5;color:#8A73F5}
-.tip{position:fixed;left:50%;top:16px;transform:translateX(-50%);z-index:9;
-  background:rgba(27,27,35,.94);border:1px solid #2F2F3B;border-radius:10px;
-  padding:8px 14px;font-size:12.5px;color:#A8A8B8;opacity:0;transition:opacity .2s;
-  pointer-events:none;backdrop-filter:blur(8px)}
-.tip.on{opacity:1}
-.tip b{color:#F2F2F7;font-weight:600}
+  .sec{background:var(--bg2);border:1px solid var(--brd);border-radius:var(--r-lg);padding:20px;margin-bottom:16px;max-width:820px}
+  .sec h3{margin-bottom:4px}
+  .sec > p{margin:0 0 18px}
+  .line{display:flex;align-items:center;gap:16px;padding:12px 0;border-top:1px solid var(--brd)}
+  .line:first-of-type{border-top:0}
+  .line .lbl{flex:1}
+  .line .lbl b{display:block;font-size:13.5px;font-weight:500}
+  .line .lbl small{color:var(--t3);font-size:11.5px}
+  .themes{display:flex;gap:12px;flex-wrap:wrap}
+  .theme{border:2px solid var(--brd);border-radius:var(--r-lg);padding:8px;cursor:pointer;width:150px;transition:all var(--dur)}
+  .theme.on{border-color:var(--accent)}
+  .theme .pv{height:74px;border-radius:8px;overflow:hidden;display:flex;flex-direction:column;gap:4px;padding:6px;margin-bottom:8px}
+  .theme .pv i{display:block;border-radius:3px}
+  .sw-pick{display:flex;gap:10px}
+  .sw-pick div{width:30px;height:30px;border-radius:8px;cursor:pointer;border:2px solid transparent}
+  .sw-pick div.on{border-color:var(--t1);box-shadow:0 0 0 2px var(--bg2) inset}
 </style>
 </head>
 <body>
-<div class="stage"><div class="screen" data-w="1440" data-h="1024"><img class="dark" src="../design/export/svg/S3_Settings_Dark.svg" alt="S3 · Настройки профиля"><img class="light" src="../design/export/svg/S3_Settings_Light.svg" alt="S3 · Настройки профиля"><a class="hot" href="dashboard.html" style="left:2.222%;top:1.758%;width:20.833%;height:4.297%" title="Назад к проектам"></a><a class="hot" href="#" data-act="theme_light" style="left:22.222%;top:21.094%;width:13.889%;height:12.695%" title="Светлая тема"></a><a class="hot" href="#" data-act="theme_dark" style="left:37.500%;top:21.094%;width:13.889%;height:12.695%" title="Тёмная тема"></a><a class="hot" href="dashboard.html" style="left:86.667%;top:1.953%;width:11.111%;height:3.320%" title="Сохранить настройки"></a></div></div>
-<div class="dock">
-  <a href="index.html" title="Карта экранов">▦</a>
-  <button id="tbtn" data-act="theme" title="Светлая / тёмная тема (T)">☀</button>
-  <button data-act="zones" title="Показать кликабельные зоны (H)">◎</button>
+<div class="app">
+  <header class="topbar" id="top"></header>
+  <div class="body">
+    <nav class="side" id="side"></nav>
+    <main class="main">
+      <div class="pagehead"><h2>Настройки профиля</h2></div>
+
+      <div class="sec">
+        <h3>Профиль</h3>
+        <p class="mut" style="font-size:13px">Данные сохраняются в браузере</p>
+        <div style="display:flex;align-items:center;gap:16px;margin-bottom:18px">
+          <div style="width:64px;height:64px;border-radius:50%;background:var(--grad);color:#fff;
+            display:grid;place-items:center;font-size:22px;font-weight:700" id="av">ИС</div>
+          <div><b id="who">—</b><div class="dim" id="who2" style="font-size:12px">—</div></div>
+          <span class="spacer"></span>
+          <button class="btn" id="out">Выйти из аккаунта</button>
+        </div>
+        <label class="field"><span>Имя</span><input class="input" id="s-name"></label>
+        <label class="field"><span>E-mail</span><input class="input" id="s-mail" type="email"></label>
+        <button class="btn primary" id="save-profile">Сохранить профиль</button>
+      </div>
+
+      <div class="sec">
+        <h3>Внешний вид</h3>
+        <p class="mut" style="font-size:13px">Тема применяется ко всему сайту сразу</p>
+        <div class="themes" id="themes"></div>
+        <div class="line" style="margin-top:18px">
+          <div class="lbl"><b>Акцентный цвет</b><small>Кнопки, активные элементы, фокус</small></div>
+          <div class="sw-pick" id="accents">
+            <div data-accent-pick="violet" style="background:#6C4CF1"></div>
+            <div data-accent-pick="blue" style="background:#3E8BFF"></div>
+            <div data-accent-pick="green" style="background:#16A34A"></div>
+            <div data-accent-pick="pink" style="background:#F14CA6"></div>
+            <div data-accent-pick="orange" style="background:#F5A623"></div>
+          </div>
+        </div>
+        <div class="line">
+          <div class="lbl"><b>Масштаб интерфейса</b><small>Размер текста и элементов</small></div>
+          <span class="chip" data-scale-pick="100">100 %</span>
+          <span class="chip" data-scale-pick="115">115 %</span>
+          <span class="chip" data-scale-pick="130">130 %</span>
+        </div>
+      </div>
+
+      <div class="sec">
+        <h3>Поведение</h3>
+        <div class="line">
+          <div class="lbl"><b>Подсказки при первом действии</b><small>Показывать советы новичкам</small></div>
+          <label class="switch"><input type="checkbox" id="o-hints" checked><i></i></label>
+        </div>
+        <div class="line">
+          <div class="lbl"><b>Автосохранение</b><small>Сохранять проект каждые 30 секунд</small></div>
+          <label class="switch"><input type="checkbox" id="o-auto" checked><i></i></label>
+        </div>
+        <div class="line">
+          <div class="lbl"><b>Режим новичка</b><small>Скрывать продвинутые панели</small></div>
+          <label class="switch"><input type="checkbox" id="o-simple"><i></i></label>
+        </div>
+      </div>
+
+      <div class="sec">
+        <h3>Хранилище и данные</h3>
+        <div class="line">
+          <div class="lbl"><b>Проекты в браузере</b><small id="st-info">—</small></div>
+          <button class="btn" id="seed">Сбросить к примерам</button>
+          <button class="btn danger" id="wipe">Удалить все проекты</button>
+        </div>
+        <div class="line">
+          <div class="lbl"><b>Все локальные данные</b><small>Тема, аккаунт, проекты, настройки</small></div>
+          <button class="btn danger" id="wipe-all">Полный сброс</button>
+        </div>
+      </div>
+    </main>
+  </div>
 </div>
-<div class="tip" id="tip"></div>
+<script src="assets/js/app.js"></script>
 <script>
-(function(){
-  var h=document.documentElement;
-  function setTheme(t){h.dataset.theme=t;try{localStorage.setItem('pf-theme',t)}catch(e){}
-    var b=document.getElementById('tbtn');if(b)b.textContent=(t==='dark')?'\u2600':'\u263E';}
-  try{var st=localStorage.getItem('pf-theme');if(st)h.dataset.theme=st;}catch(e){}
-  setTheme(h.dataset.theme||'dark');
+(function () {
+  var $ = function (i) { return document.getElementById(i); };
+  if (!PF.User.require('settings.html')) return;
+  PF.header($('top'), { left: '<a class="btn ghost" href="index.html">Карта сайта</a>' });
+  var n = PF.Projects.all().length;
+  $('side').innerHTML =
+    '<a href="dashboard.html">' + PF.icon('grid') + 'Мои проекты<span class="count">' + n + '</span></a>' +
+    '<a href="templates.html">' + PF.icon('star') + 'Шаблоны</a>' +
+    '<a href="export.html">' + PF.icon('download') + 'Экспорты</a>' +
+    '<a href="editor.html">' + PF.icon('brush') + 'Редактор</a>' +
+    '<a class="on" href="settings.html">' + PF.icon('settings') + 'Настройки</a>' +
+    '<a href="admin.html">' + PF.icon('users') + 'Администрирование</a>';
 
-  function fit(){
-    var s=document.querySelector('.screen');if(!s)return;
-    var W=+s.dataset.w,H=+s.dataset.h;
-    var k=Math.min(window.innerWidth/W,(window.innerHeight)/H);
-    s.style.width=Math.round(W*k)+'px';s.style.height=Math.round(H*k)+'px';
+  function profile() {
+    var u = PF.User.get() || { name: 'Гость', email: '' };
+    $('s-name').value = u.name; $('s-mail').value = u.email;
+    $('av').textContent = PF.User.initials();
+    $('who').textContent = u.name; $('who2').textContent = u.email || '—';
   }
-  window.addEventListener('resize',fit);fit();window.addEventListener('load',fit);
+  profile();
 
-  document.addEventListener('click',function(e){
-    var el=e.target.closest('[data-act]');if(!el)return;
-    var a=el.dataset.act;
-    if(a==='theme'){e.preventDefault();setTheme(h.dataset.theme==='dark'?'light':'dark');}
-    if(a==='theme_light'){e.preventDefault();setTheme('light');}
-    if(a==='theme_dark'){e.preventDefault();setTheme('dark');}
-    if(a==='zones'){document.body.classList.toggle('zones');el.classList.toggle('on');}
+  $('themes').innerHTML = [
+    ['dark', 'Тёмная', '#121218', '#1B1B23', '#0E0E13'],
+    ['light', 'Светлая', '#F7F7FA', '#FFFFFF', '#EFF0F5'],
+    ['system', 'Как в системе', '#121218', '#F7F7FA', '#6C4CF1']
+  ].map(function (t) {
+    return '<div class="theme" data-th="' + t[0] + '"><div class="pv" style="background:' + t[1] + '">' +
+      '<i style="background:' + t[2] + ';height:16px"></i>' +
+      '<i style="background:' + t[3] + ';height:34px"></i>' +
+      '<i style="background:' + t[2] + ';height:10px;width:60%"></i></div>' +
+      '<div style="font-size:13px;font-weight:600;text-align:center">' + t[1] + '</div></div>';
+  }).join('');
+  function markTheme() {
+    var cur = PF.Theme.get();
+    Array.prototype.forEach.call($('themes').children, function (c) {
+      c.classList.toggle('on', c.dataset.th === cur);
+    });
+    Array.prototype.forEach.call($('accents').children, function (c) {
+      c.classList.toggle('on', c.dataset.accentPick === PF.Accent.get());
+    });
+    Array.prototype.forEach.call(document.querySelectorAll('[data-scale-pick]'), function (c) {
+      c.classList.toggle('on', +c.dataset.scalePick === PF.Scale.get());
+    });
+  }
+  $('themes').addEventListener('click', function (e) {
+    var el = e.target.closest('[data-th]'); if (!el) return;
+    if (el.dataset.th === 'system') {
+      var dark = matchMedia('(prefers-color-scheme: dark)').matches;
+      PF.Theme.set(dark ? 'dark' : 'light');
+      PF.toast('Тема выбрана по системной настройке', 'info');
+    } else PF.Theme.set(el.dataset.th);
+    markTheme();
   });
+  document.addEventListener('click', function () { setTimeout(markTheme, 0); });
+  markTheme();
 
-  var tip=document.getElementById('tip');
-  document.addEventListener('mouseover',function(e){
-    var el=e.target.closest('.hot');if(!el||!tip)return;
-    var t=el.getAttribute('title');if(t){tip.innerHTML='<b>'+(el.tagName==='A'?'\u2192 ':'')+'</b>'+t;tip.classList.add('on');}
-  });
-  document.addEventListener('mouseout',function(e){
-    if(tip)tip.classList.remove('on');
-  });
-  document.addEventListener('keydown',function(e){
-    if(e.key==='t'||e.key==='T'||e.key==='\u0435'||e.key==='\u0415')setTheme(h.dataset.theme==='dark'?'light':'dark');
-    if(e.key==='h'||e.key==='H'||e.key==='\u0440'||e.key==='\u0420'){document.body.classList.toggle('zones');}
-  });
+  $('save-profile').onclick = function () {
+    var nm = $('s-name').value.trim(), ml = $('s-mail').value.trim();
+    if (nm.length < 2) { PF.toast('Введите имя', 'err'); return; }
+    if (ml && !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(ml)) { PF.toast('Проверьте e-mail', 'err'); return; }
+    PF.User.set({ name: nm, email: ml });
+    profile(); PF.toast('Профиль сохранён', '', 'Готово');
+  };
+  $('out').onclick = function () {
+    PF.User.out(); PF.toast('Вы вышли из аккаунта', 'warn');
+    setTimeout(function () { location.href = 'login.html'; }, 500);
+  };
+
+  function st() {
+    var l = PF.Projects.all();
+    $('st-info').textContent = l.length + ' проектов · примерно ' +
+      Math.max(1, Math.round(JSON.stringify(l).length / 1024)) + ' КБ';
+  }
+  st();
+  $('seed').onclick = function () { PF.Projects.seed(); st(); PF.toast('Проекты сброшены к примерам'); };
+  $('wipe').onclick = function () {
+    if (!confirm('Удалить все проекты?')) return;
+    PF.Projects.save([]); st(); PF.toast('Все проекты удалены', 'warn');
+  };
+  $('wipe-all').onclick = function () {
+    if (!confirm('Полный сброс: тема, аккаунт, проекты, настройки. Продолжить?')) return;
+    try { localStorage.clear(); } catch (e) {}
+    location.href = 'login.html';
+  };
 })();
 </script>
 </body>

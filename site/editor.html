@@ -3,84 +3,889 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>S2 · Редактор — холст — PixelForge</title>
+<title>Редактор — PixelForge</title>
+<link rel="stylesheet" href="assets/css/app.css">
 <style>
-*{box-sizing:border-box}
-html,body{margin:0;height:100%;font-family:Inter,'Segoe UI',Roboto,Arial,sans-serif;
-  background:#08080B;color:#F2F2F7;overflow:hidden}
-html[data-theme=light] body{background:#E9E9EF}
-.stage{position:fixed;inset:0;display:flex;align-items:center;justify-content:center}
-.screen{position:relative;box-shadow:0 24px 70px rgba(0,0,0,.55)}
-html[data-theme=light] .screen{box-shadow:0 24px 70px rgba(20,20,40,.22)}
-.screen img{position:absolute;inset:0;width:100%;height:100%;display:block}
-html[data-theme=dark] img.light,html[data-theme=light] img.dark{display:none}
-.hot{position:absolute;display:block;border-radius:8px;background:rgba(108,76,241,0);
-  transition:background .15s,box-shadow .15s;text-decoration:none}
-a.hot{cursor:pointer}
-.hot:hover{background:rgba(108,76,241,.26);box-shadow:inset 0 0 0 3px #8A73F5}
-.hot.info:hover{background:rgba(43,217,195,.20);box-shadow:inset 0 0 0 3px #2BD9C3}
-body.zones .hot{background:rgba(108,76,241,.16);box-shadow:inset 0 0 0 2px #6C4CF1}
-body.zones .hot.info{background:rgba(43,217,195,.13);box-shadow:inset 0 0 0 2px #2BD9C3}
-.dock{position:fixed;right:14px;bottom:14px;display:flex;gap:8px;z-index:9}
-.dock a,.dock button{width:42px;height:42px;border-radius:13px;border:1px solid #2F2F3B;
-  background:rgba(27,27,35,.92);color:#F2F2F7;display:flex;align-items:center;
-  justify-content:center;font-size:17px;cursor:pointer;text-decoration:none;
-  backdrop-filter:blur(8px);transition:background .15s,border-color .15s}
-.dock a:hover,.dock button:hover{background:#2E2E3A;border-color:#6C4CF1}
-.dock button.on{background:#2A2440;border-color:#8A73F5;color:#8A73F5}
-.tip{position:fixed;left:50%;top:16px;transform:translateX(-50%);z-index:9;
-  background:rgba(27,27,35,.94);border:1px solid #2F2F3B;border-radius:10px;
-  padding:8px 14px;font-size:12.5px;color:#A8A8B8;opacity:0;transition:opacity .2s;
-  pointer-events:none;backdrop-filter:blur(8px)}
-.tip.on{opacity:1}
-.tip b{color:#F2F2F7;font-weight:600}
+  .ed{display:flex;flex-direction:column;height:100vh;height:100dvh}
+  .ed .topbar{flex:0 0 auto}
+  .name-in{background:transparent;border:1px solid transparent;border-radius:6px;color:var(--t1);
+    font-size:14px;font-weight:600;padding:5px 8px;max-width:260px;outline:none}
+  .name-in:hover{border-color:var(--brd);background:var(--bg3)}
+  .name-in:focus{border-color:var(--accent);background:var(--bg3)}
+  .work{flex:1 1 auto;display:flex;min-height:0}
+  .tools{width:60px;flex:0 0 auto;background:var(--bg2);border-right:1px solid var(--brd);
+    display:flex;flex-direction:column;align-items:center;padding:12px 0;gap:4px;overflow:auto}
+  .tool{width:40px;height:40px;border-radius:10px;border:0;background:transparent;color:var(--t2);
+    display:grid;place-items:center;cursor:pointer;transition:all var(--dur);position:relative}
+  .tool:hover{background:var(--bg3);color:var(--t1)}
+  .tool.on{background:var(--accent);color:#fff}
+  .tool .k{position:absolute;right:3px;bottom:2px;font-size:8px;opacity:.6;font-family:var(--mono)}
+  .tsep{width:32px;height:1px;background:var(--brd);margin:6px 0}
+  .center{flex:1 1 auto;display:flex;flex-direction:column;min-width:0;background:var(--canvas)}
+  .opts{height:44px;flex:0 0 auto;display:flex;align-items:center;gap:14px;padding:0 14px;
+    background:var(--bg1);border-bottom:1px solid var(--brd);overflow-x:auto;white-space:nowrap}
+  .opts .o{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--t2)}
+  .opts .o b{color:var(--t1);font-weight:500}
+  .stagewrap{flex:1 1 auto;position:relative;overflow:hidden;display:grid;place-items:center;padding:28px}
+  canvas#cv{box-shadow:0 20px 60px rgba(0,0,0,.5);background:#fff;cursor:crosshair;display:block}
+  .zoombar{position:absolute;left:14px;bottom:14px;display:flex;align-items:center;gap:6px;
+    background:var(--bg2);border:1px solid var(--brd);border-radius:var(--r-md);padding:4px 6px;font-size:12px}
+  .zoombar button{border:0;background:transparent;color:var(--t2);cursor:pointer;padding:4px 8px;border-radius:6px;font-size:13px}
+  .zoombar button:hover{background:var(--bg3);color:var(--t1)}
+  .status{position:absolute;right:14px;bottom:14px;background:var(--bg2);border:1px solid var(--brd);
+    border-radius:var(--r-md);padding:6px 12px;font-family:var(--mono);font-size:11px;color:var(--t2)}
+  .panel{width:312px;flex:0 0 auto;background:var(--bg2);border-left:1px solid var(--brd);
+    display:flex;flex-direction:column;min-height:0}
+  .ptabs{display:flex;gap:2px;padding:8px;border-bottom:1px solid var(--brd);flex:0 0 auto}
+  .ptabs button{flex:1;height:34px;border:0;border-radius:8px;background:transparent;color:var(--t2);
+    cursor:pointer;display:grid;place-items:center;transition:all var(--dur)}
+  .ptabs button:hover{background:var(--bg3);color:var(--t1)}
+  .ptabs button.on{background:var(--accent-soft);color:var(--accent)}
+  .pbody{flex:1 1 auto;overflow:auto;padding:12px}
+  .pane{display:none}.pane.on{display:block}
+  .layer{display:flex;align-items:center;gap:9px;padding:8px;border-radius:8px;cursor:pointer;
+    margin-bottom:3px;transition:background var(--dur)}
+  .layer:hover{background:var(--bg3)}
+  .layer.on{background:var(--accent-soft);box-shadow:inset 0 0 0 1px var(--accent)}
+  .layer .th{width:30px;height:30px;border-radius:6px;background:var(--bg4);display:grid;place-items:center;
+    font-size:11px;font-weight:700;color:var(--t2);flex:0 0 auto}
+  .layer .nm{flex:1;min-width:0}
+  .layer .nm b{display:block;font-size:12.5px;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .layer .nm small{color:var(--t3);font-size:10px}
+  .layer .ic{width:22px;height:22px;border:0;background:transparent;color:var(--t3);cursor:pointer;border-radius:5px}
+  .layer .ic:hover{background:var(--bg4);color:var(--t1)}
+  .layer .ic.off{opacity:.35}
+  .filters{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  .f{border:1px solid var(--brd);border-radius:8px;padding:8px;cursor:pointer;font-size:12px;text-align:center;
+    transition:all var(--dur);background:var(--bg3)}
+  .f:hover{border-color:var(--t3)}
+  .f.on{border-color:var(--accent);background:var(--accent-soft);color:var(--accent);font-weight:600}
+  .steps{font-size:12.5px}
+  .step{display:flex;align-items:center;gap:9px;padding:8px;border-radius:8px;cursor:pointer}
+  .step:hover{background:var(--bg3)}
+  .step.on{background:var(--accent-soft)}
+  .step.future{opacity:.45}
+  .step .n{width:22px;height:22px;border-radius:50%;background:var(--bg4);display:grid;place-items:center;
+    font-size:10px;font-family:var(--mono);flex:0 0 auto}
+  .row{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+  .row span{font-size:12px;color:var(--t2);min-width:74px}
+  .sep2{height:1px;background:var(--brd);margin:14px 0}
+  .swatches{display:flex;gap:8px;flex-wrap:wrap}
+  .sw{width:26px;height:26px;border-radius:6px;cursor:pointer;border:2px solid transparent}
+  .sw.on{border-color:var(--accent)}
 </style>
 </head>
 <body>
-<div class="stage"><div class="screen" data-w="1440" data-h="1024"><img class="dark" src="../design/export/svg/S2_Canvas_Dark.svg" alt="S2 · Редактор — холст"><img class="light" src="../design/export/svg/S2_Canvas_Light.svg" alt="S2 · Редактор — холст"><a class="hot" href="dashboard.html" style="left:0.833%;top:1.172%;width:2.778%;height:3.906%" title="Вернуться в мои проекты"></a><a class="hot" href="export.html" style="left:76.111%;top:1.172%;width:9.028%;height:3.125%" title="Экспортировать"></a><div class="hot info" style="left:68.056%;top:1.172%;width:7.500%;height:3.125%" title="Поделиться проектом"></div><a class="hot" href="#" data-act="theme" style="left:86.111%;top:1.172%;width:2.222%;height:3.125%" title="Переключить тему"></a><a class="hot" href="settings.html" style="left:92.083%;top:1.172%;width:7.917%;height:3.125%" title="Меню профиля"></a><a class="hot" href="layers.html" style="left:80.833%;top:11.328%;width:2.778%;height:3.906%" title="Панель «Слои»"></a><a class="hot" href="history.html" style="left:83.889%;top:11.328%;width:2.778%;height:3.906%" title="Панель «История»"></a><a class="hot" href="brushes.html" style="left:90.000%;top:11.328%;width:2.778%;height:3.906%" title="Панель «Кисти»"></a><a class="hot" href="filters.html" style="left:93.056%;top:11.328%;width:2.778%;height:3.906%" title="Панель «Фильтры»"></a><a class="hot" href="brushes.html" style="left:0.833%;top:23.828%;width:2.778%;height:3.906%" title="Инструмент «Кисть»"></a><div class="hot info" style="left:0.833%;top:19.336%;width:2.778%;height:3.906%" title="Инструмент «Рамка»"></div><a class="hot" href="layers.html" style="left:0.833%;top:59.766%;width:2.778%;height:3.906%" title="Инструмент «Быстрая маска»"></a><a class="hot" href="brushes.html" style="left:0.972%;top:65.625%;width:2.778%;height:3.906%" title="Цвет переднего плана"></a></div></div>
-<div class="dock">
-  <a href="index.html" title="Карта экранов">▦</a>
-  <button id="tbtn" data-act="theme" title="Светлая / тёмная тема (T)">☀</button>
-  <button data-act="zones" title="Показать кликабельные зоны (H)">◎</button>
+<div class="ed">
+  <header class="topbar" id="top"></header>
+  <div class="work">
+    <div class="tools" id="tools"></div>
+
+    <div class="center">
+      <div class="opts" id="opts"></div>
+      <div class="stagewrap" id="stagewrap">
+        <canvas id="cv"></canvas>
+        <div class="zoombar">
+          <button id="z-out">−</button><span id="z-val" class="mono">78%</span><button id="z-in">+</button>
+          <span style="width:1px;height:18px;background:var(--brd)"></span>
+          <button id="z-fit">Вписать</button><button id="z-100">100%</button>
+        </div>
+        <div class="status" id="status"></div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="ptabs" id="ptabs"></div>
+      <div class="pbody" id="pbody"></div>
+    </div>
+  </div>
 </div>
-<div class="tip" id="tip"></div>
+
+<!-- экспорт -->
+<div class="modal" id="m-export">
+  <div class="box wide">
+    <header><div><h3>Экспорт</h3>
+      <p class="mut" style="margin:6px 0 0;font-size:13px" id="ex-sub"></p></div></header>
+    <div class="content" style="display:grid;grid-template-columns:1fr 300px;gap:24px">
+      <div>
+        <div class="up" style="margin-bottom:10px">Предпросмотр</div>
+        <div style="background:var(--canvas);border-radius:10px;padding:16px;display:grid;place-items:center">
+          <img id="ex-prev" style="max-width:100%;max-height:260px;box-shadow:0 8px 30px rgba(0,0,0,.4)">
+        </div>
+        <p class="hint" id="ex-size"></p>
+      </div>
+      <div>
+        <span class="up" style="display:block;margin-bottom:8px">Пресеты платформ</span>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:18px" id="ex-presets"></div>
+        <label class="field"><span>Формат</span>
+          <select class="input" id="ex-format">
+            <option value="image/png">PNG (без потерь)</option>
+            <option value="image/jpeg">JPG</option>
+            <option value="image/webp">WEBP</option>
+          </select></label>
+        <label class="field"><span>Масштаб</span>
+          <select class="input" id="ex-scale">
+            <option value="1">100 %</option><option value="0.5">50 %</option>
+            <option value="2">200 %</option><option value="0.25">25 %</option>
+          </select></label>
+        <label class="field" id="ex-q-wrap"><span>Качество: <b id="ex-q-val">90</b> %</span>
+          <input type="range" id="ex-q" min="10" max="100" value="90"></label>
+        <label class="field" id="ex-wh"><span>Размер</span>
+          <input class="input" id="ex-dims" readonly></label>
+      </div>
+    </div>
+    <footer>
+      <button class="btn" data-close type="button">Отмена</button>
+      <button class="btn" id="ex-copy" type="button">Скопировать</button>
+      <button class="btn primary" id="ex-go" type="button">Скачать файл</button>
+    </footer>
+  </div>
+</div>
+
+<script src="assets/js/app.js"></script>
 <script>
-(function(){
-  var h=document.documentElement;
-  function setTheme(t){h.dataset.theme=t;try{localStorage.setItem('pf-theme',t)}catch(e){}
-    var b=document.getElementById('tbtn');if(b)b.textContent=(t==='dark')?'\u2600':'\u263E';}
-  try{var st=localStorage.getItem('pf-theme');if(st)h.dataset.theme=st;}catch(e){}
-  setTheme(h.dataset.theme||'dark');
+(function () {
+  var $ = function (i) { return document.getElementById(i); };
+  if (!PF.User.require('editor.html')) return;
 
-  function fit(){
-    var s=document.querySelector('.screen');if(!s)return;
-    var W=+s.dataset.w,H=+s.dataset.h;
-    var k=Math.min(window.innerWidth/W,(window.innerHeight)/H);
-    s.style.width=Math.round(W*k)+'px';s.style.height=Math.round(H*k)+'px';
+  var params = new URLSearchParams(location.search);
+  var project = PF.Projects.get(params.get('p')) || PF.Projects.all()[0];
+  if (!project) { location.href = 'dashboard.html'; return; }
+
+  var W = project.w, H = project.h;
+  var cv = $('cv'), ctx = cv.getContext('2d');
+  cv.width = W; cv.height = H;
+
+  /* ================= МОДЕЛЬ ================= */
+  var TOOLS = [
+    { id: 'move', ic: 'move', k: 'V', t: 'Перемещение' },
+    { id: 'select', ic: 'select', k: 'M', t: 'Прямоугольное выделение' },
+    { id: 'lasso', ic: 'lasso', k: 'L', t: 'Лассо' },
+    { id: 'crop', ic: 'crop', k: 'C', t: 'Рамка / кадрирование' },
+    { id: 'sep' },
+    { id: 'brush', ic: 'brush', k: 'B', t: 'Кисть' },
+    { id: 'eraser', ic: 'eraser', k: 'E', t: 'Ластик' },
+    { id: 'fill', ic: 'fill', k: 'G', t: 'Заливка' },
+    { id: 'text', ic: 'text', k: 'T', t: 'Текст' },
+    { id: 'shape', ic: 'shape', k: 'U', t: 'Фигуры' },
+    { id: 'sep' },
+    { id: 'pipette', ic: 'pipette', k: 'I', t: 'Пипетка' },
+    { id: 'zoom', ic: 'zoom', k: 'Z', t: 'Масштаб' },
+    { id: 'hand', ic: 'hand', k: 'H', t: 'Рука (панорама)' }
+  ];
+
+  var FILTERS = [
+    { id: 'none', n: 'Оригинал', fn: function () { return 'none'; } },
+    { id: 'warm', n: 'Тёплый закат', fn: function (k) { return 'sepia(' + (.45 * k) + ') saturate(' + (1 + .5 * k) + ') hue-rotate(-12deg) contrast(' + (1 + .08 * k) + ')'; } },
+    { id: 'cold', n: 'Холодное утро', fn: function (k) { return 'hue-rotate(18deg) saturate(' + (1 - .2 * k) + ') brightness(' + (1 + .08 * k) + ') contrast(' + (1 + .06 * k) + ')'; } },
+    { id: 'film', n: 'Киноплёнка', fn: function (k) { return 'sepia(' + (.3 * k) + ') contrast(' + (1 + .3 * k) + ') saturate(' + (1 - .15 * k) + ') brightness(' + (1 - .04 * k) + ')'; } },
+    { id: 'bw', n: 'Чёрно-белое', fn: function (k) { return 'grayscale(' + k + ') contrast(' + (1 + .12 * k) + ')'; } },
+    { id: 'neon', n: 'Неон', fn: function (k) { return 'saturate(' + (1 + 1.1 * k) + ') contrast(' + (1 + .25 * k) + ') hue-rotate(' + (-40 * k) + 'deg)'; } },
+    { id: 'blur', n: 'Размытие', fn: function (k) { return 'blur(' + (5 * k) + 'px)'; } },
+    { id: 'sharp', n: 'Резкость', fn: function (k) { return 'contrast(' + (1 + .35 * k) + ') saturate(' + (1 + .15 * k) + ')'; } },
+    { id: 'bright', n: 'Ярче', fn: function (k) { return 'brightness(' + (1 + .3 * k) + ') contrast(' + (1 + .06 * k) + ')'; } },
+    { id: 'vintage', n: 'Винтаж', fn: function (k) { return 'sepia(' + (.6 * k) + ') saturate(' + (1 - .3 * k) + ') contrast(' + (1 + .15 * k) + ') brightness(' + (1 + .05 * k) + ')'; } },
+    { id: 'sepia', n: 'Сепия', fn: function (k) { return 'sepia(' + k + ')'; } },
+    { id: 'invert', n: 'Инверсия', fn: function (k) { return 'invert(' + k + ') hue-rotate(180deg)'; } }
+  ];
+
+  function defaultLayers(p) {
+    var bg1 = p.template && p.template[0] === '#' ? p.template : '#1B1B4A';
+    var c = W / 1080;
+    return [
+      { id: 'L_bg', name: 'Фон (градиент)', type: 'grad', visible: true, opacity: 1, locked: true,
+        from: bg1, to: '#D9488B' },
+      { id: 'L_sun', name: 'Солнце', type: 'ellipse', visible: true, opacity: .85, locked: false,
+        x: 780 * c, y: 240 * c, w: 190 * c, h: 190 * c, fill: '#F5A623' },
+      { id: 'L_h1', name: 'Горы — задний план', type: 'poly', visible: true, opacity: .35, locked: false,
+        pts: [[160 * c, 610 * c], [420 * c, 250 * c], [700 * c, 610 * c]], fill: '#0E0E13' },
+      { id: 'L_h2', name: 'Горы — передний план', type: 'poly', visible: true, opacity: .5, locked: false,
+        pts: [[0, 610 * c], [280 * c, 330 * c], [620 * c, 610 * c]], fill: '#0E0E13' },
+      { id: 'L_t1', name: 'Текст: SUMMER', type: 'text', visible: true, opacity: 1, locked: false,
+        x: 70 * c, y: 240 * c, text: 'SUMMER', size: 96 * c, color: '#FFFFFF', weight: 800, track: 3 * c },
+      { id: 'L_t2', name: 'Текст: SALE 2025', type: 'text', visible: true, opacity: .88, locked: false,
+        x: 70 * c, y: 340 * c, text: 'SALE 2025', size: 96 * c, color: '#FFFFFF', weight: 800, track: 3 * c },
+      { id: 'L_btn', name: 'Кнопка «Смотреть»', type: 'rect', visible: true, opacity: 1, locked: false,
+        x: 70 * c, y: 396 * c, w: 320 * c, h: 84 * c, r: 42 * c, fill: '#F14CA6' },
+      { id: 'L_brush', name: 'Кисть (рисование)', type: 'brush', visible: true, opacity: 1, locked: false,
+        strokes: [] }
+    ];
   }
-  window.addEventListener('resize',fit);fit();window.addEventListener('load',fit);
 
-  document.addEventListener('click',function(e){
-    var el=e.target.closest('[data-act]');if(!el)return;
-    var a=el.dataset.act;
-    if(a==='theme'){e.preventDefault();setTheme(h.dataset.theme==='dark'?'light':'dark');}
-    if(a==='theme_light'){e.preventDefault();setTheme('light');}
-    if(a==='theme_dark'){e.preventDefault();setTheme('dark');}
-    if(a==='zones'){document.body.classList.toggle('zones');el.classList.toggle('on');}
+  var st = {
+    layers: project.layers || defaultLayers(project),
+    sel: (project.layers || defaultLayers(project))[0].id,
+    tool: 'move',
+    zoom: 'fit',
+    fitScale: 1,
+    filter: project.filter || 'none',
+    intensity: 100,
+    applied: null,
+    panel: 'layers',
+    brush: { size: Math.round(24 * (W / 1080) * 2), color: '#FFFFFF', soft: true },
+    shape: 'rect',
+    text: { size: Math.round(64 * (W / 1080) * 2), color: '#FFFFFF' },
+    history: [],
+    hIndex: -1,
+    drawing: null,
+    dragging: null,
+    showOriginal: false
+  };
+  if (st.layers[0] && st.layers[0].id !== 'L_brush') st.sel = st.layers[st.layers.length - 2].id;
+
+  function sel() { return st.layers.filter(function (l) { return l.id === st.sel; })[0]; }
+
+  /* ================= ОТРИСОВКА ================= */
+  function filterStr() {
+    if (st.showOriginal) return 'none';
+    var f = st.applied || (st.panel === 'filters' ? st.filter : null);
+    if (!f || f === 'none') return 'none';
+    var def = FILTERS.filter(function (x) { return x.id === f; })[0];
+    return def ? def.fn((st.applied ? 100 : st.intensity) / 100) : 'none';
+  }
+
+  function roundRect(c, x, y, w, h, r) {
+    r = Math.min(r, w / 2, h / 2);
+    c.beginPath();
+    c.moveTo(x + r, y); c.lineTo(x + w - r, y); c.quadraticCurveTo(x + w, y, x + w, y + r);
+    c.lineTo(x + w, y + h - r); c.quadraticCurveTo(x + w, y + h, x + w - r, y + h);
+    c.lineTo(x + r, y + h); c.quadraticCurveTo(x, y + h, x, y + h - r);
+    c.lineTo(x, y + r); c.quadraticCurveTo(x, y, x + r, y); c.closePath();
+  }
+
+  function drawLayer(c, l) {
+    c.save();
+    c.globalAlpha = l.opacity == null ? 1 : l.opacity;
+    c.filter = l.filter || 'none';
+    if (l.type === 'grad') {
+      var g = c.createLinearGradient(0, 0, W, H);
+      g.addColorStop(0, l.from); g.addColorStop(.62, l.to);
+      g.addColorStop(1, '#F14CA6');
+      c.fillStyle = g; c.fillRect(0, 0, W, H);
+    } else if (l.type === 'rect') {
+      c.fillStyle = l.fill; roundRect(c, l.x, l.y, l.w, l.h, l.r || 0); c.fill();
+    } else if (l.type === 'ellipse') {
+      c.beginPath(); c.ellipse(l.x + l.w / 2, l.y + l.h / 2, l.w / 2, l.h / 2, 0, 0, 6.2832);
+      c.fillStyle = l.fill; c.fill();
+    } else if (l.type === 'poly') {
+      c.beginPath(); l.pts.forEach(function (p, i) { i ? c.lineTo(p[0], p[1]) : c.moveTo(p[0], p[1]); });
+      c.closePath(); c.fillStyle = l.fill; c.fill();
+    } else if (l.type === 'text') {
+      c.font = l.weight + ' ' + l.size + 'px Inter, "Segoe UI", Arial, sans-serif';
+      c.fillStyle = l.color;
+      c.textBaseline = 'alphabetic';
+      if (l.track) {
+        var x = l.x;
+        for (var i = 0; i < l.text.length; i++) { c.fillText(l.text[i], x, l.y); x += c.measureText(l.text[i]).width + l.track; }
+      } else c.fillText(l.text, l.x, l.y);
+    } else if (l.type === 'brush') {
+      c.lineJoin = 'round'; c.lineCap = 'round';
+      l.strokes.forEach(function (s) {
+        if (s.pts.length < 2) {
+          c.beginPath(); c.arc(s.pts[0][0], s.pts[0][1], s.size / 2, 0, 6.2832);
+          c.fillStyle = s.color; c.fill(); return;
+        }
+        c.beginPath(); c.moveTo(s.pts[0][0], s.pts[0][1]);
+        for (var i = 1; i < s.pts.length - 1; i++) {
+          var mx = (s.pts[i][0] + s.pts[i + 1][0]) / 2, my = (s.pts[i][1] + s.pts[i + 1][1]) / 2;
+          c.quadraticCurveTo(s.pts[i][0], s.pts[i][1], mx, my);
+        }
+        c.strokeStyle = s.color; c.lineWidth = s.size; c.globalAlpha = s.opacity == null ? 1 : s.opacity;
+        c.stroke(); c.globalAlpha = l.opacity == null ? 1 : l.opacity;
+      });
+    }
+    c.restore();
+  }
+
+  function render() {
+    ctx.save();
+    ctx.setTransform(1, 0, 0, 1, 0, 0);
+    ctx.clearRect(0, 0, W, H);
+    ctx.fillStyle = '#ffffff'; ctx.fillRect(0, 0, W, H);
+    var f = filterStr();
+    ctx.filter = f;
+    st.layers.forEach(function (l) { if (l.visible) drawLayer(ctx, l); });
+    ctx.filter = 'none';
+    // рамка выделения
+    var s = sel();
+    if (s && (s.type === 'rect' || s.type === 'ellipse' || s.type === 'text') && !st.hiddenFrames) {
+      var b = bounds(s);
+      if (b) {
+        ctx.strokeStyle = '#8A73F5'; ctx.lineWidth = Math.max(2, W / 700);
+        ctx.setLineDash([W / 90, W / 160]);
+        ctx.strokeRect(b.x - 6, b.y - 6, b.w + 12, b.h + 12);
+        ctx.setLineDash([]);
+      }
+    }
+    ctx.restore();
+    updateStatus();
+  }
+
+  function bounds(l) {
+    if (l.type === 'rect' || l.type === 'ellipse') return { x: l.x, y: l.y, w: l.w, h: l.h };
+    if (l.type === 'text') {
+      ctx.save(); ctx.font = l.weight + ' ' + l.size + 'px Inter, "Segoe UI", Arial, sans-serif';
+      var w = ctx.measureText(l.text).width + (l.track || 0) * l.text.length;
+      ctx.restore();
+      return { x: l.x, y: l.y - l.size * .78, w: w, h: l.size * 1.02 };
+    }
+    return null;
+  }
+
+  /* ================= ИСТОРИЯ ================= */
+  function snapshot(label) {
+    var copy = JSON.parse(JSON.stringify(st.layers.map(function (l) {
+      var o = {}; for (var k in l) if (k[0] !== '_') o[k] = l[k]; return o;
+    })));
+    st.history = st.history.slice(0, st.hIndex + 1);
+    st.history.push({ label: label, layers: copy, filter: st.applied, time: Date.now() });
+    if (st.history.length > 40) st.history.shift();
+    st.hIndex = st.history.length - 1;
+    if (st.panel === 'history') panel();
+  }
+  function restore(i) {
+    if (i < 0 || i >= st.history.length) return;
+    st.hIndex = i;
+    var h = st.history[i];
+    st.layers = JSON.parse(JSON.stringify(h.layers));
+    st.applied = h.filter;
+    st.sel = st.layers[Math.min(st.layers.length - 2, Math.max(0, indexOfSel()))] ? st.sel : st.layers[0].id;
+    if (!st.layers.filter(function (l) { return l.id === st.sel; }).length) st.sel = st.layers[0].id;
+    render(); panel();
+  }
+  function indexOfSel() { return st.layers.map(function (l) { return l.id; }).indexOf(st.sel); }
+  function undo() { if (st.hIndex > 0) { restore(st.hIndex - 1); PF.toast('Отменено: ' + st.history[st.hIndex + 1].label, 'info'); } }
+  function redo() { if (st.hIndex < st.history.length - 1) { restore(st.hIndex + 1); PF.toast('Повторено: ' + st.history[st.hIndex].label, 'info'); } }
+
+  /* ================= ЗУМ ================= */
+  function fit() {
+    var wrap = $('stagewrap');
+    var k = Math.min((wrap.clientWidth - 56) / W, (wrap.clientHeight - 56) / H);
+    st.fitScale = k;
+    st.zoom = 'fit';
+    applyZoom();
+  }
+  function applyZoom() {
+    var k = st.zoom === 'fit' ? st.fitScale : st.zoom;
+    cv.style.width = Math.round(W * k) + 'px';
+    cv.style.height = Math.round(H * k) + 'px';
+    $('z-val').textContent = Math.round(k * 100) + '%';
+  }
+  $('z-in').onclick = function () { st.zoom = Math.min(4, (st.zoom === 'fit' ? st.fitScale : st.zoom) * 1.25); applyZoom(); };
+  $('z-out').onclick = function () { st.zoom = Math.max(.05, (st.zoom === 'fit' ? st.fitScale : st.zoom) / 1.25); applyZoom(); };
+  $('z-fit').onclick = fit;
+  $('z-100').onclick = function () { st.zoom = 1; applyZoom(); };
+
+  /* ================= СТАТУС ================= */
+  function updateStatus() {
+    $('status').textContent = W + ' × ' + H + ' px · ' + st.layers.length + ' слоёв · ' +
+      (st.applied ? 'фильтр: ' + name(st.applied) : 'без фильтра');
+  }
+  function name(id) { var f = FILTERS.filter(function (x) { return x.id === id; })[0]; return f ? f.n : id; }
+
+  /* ================= ОПЦИИ ИНСТРУМЕНТА ================= */
+  function optionsBar() {
+    var t = st.tool, h = '';
+    function o(label, ctrl) { return '<div class="o"><span>' + label + '</span>' + ctrl + '</div>'; }
+    if (t === 'move' || t === 'select') {
+      h = o('Автовыбор', '<input type="checkbox" checked>') +
+          o('Выравнивать по пикселям', '<input type="checkbox">') +
+          '<div class="o"><span class="kbd">Перетащите объект</span></div>';
+    } else if (t === 'crop') {
+      h = o('Соотношение', '<select class="input" style="height:28px;width:120px"><option>Свободно</option><option>1:1</option><option>4:5</option><option>16:9</option></select>') +
+          o('Правило третей', '<input type="checkbox" checked>') +
+          '<button class="btn sm" id="do-crop">Применить к размеру холста</button>';
+    } else if (t === 'brush' || t === 'eraser') {
+      h = o('Размер', '<input type="range" id="br-size" min="2" max="400" value="' + st.brush.size + '" style="width:120px"><b id="br-size-v">' + st.brush.size + '</b>') +
+          o('Цвет', '<input type="color" id="br-color" value="' + st.brush.color + '" style="width:32px;height:28px">') +
+          o('Форма', '<select class="input" id="br-soft" style="height:28px;width:120px"><option value="1">Мягкая</option><option value="0">Жёсткая</option></select>');
+    } else if (t === 'text') {
+      h = o('Добавить текст', '<button class="btn sm" id="add-text">+ Текст на холст</button>') +
+          o('Кегль', '<input type="range" id="tx-size" min="12" max="400" value="' + st.text.size + '" style="width:120px">') +
+          o('Цвет', '<input type="color" id="tx-color" value="' + st.text.color + '" style="width:32px;height:28px">');
+    } else if (t === 'shape') {
+      h = o('Фигура', '<select class="input" id="sh-type" style="height:28px;width:150px"><option value="rect">Прямоугольник</option><option value="ellipse">Эллипс</option></select>') +
+          o('Цвет', '<input type="color" id="sh-color" value="#6C4CF1" style="width:32px;height:28px">') +
+          '<button class="btn sm" id="add-shape">+ Добавить фигуру</button>';
+    } else if (t === 'fill') {
+      h = o('Цвет холста', '<input type="color" id="fl-color" value="#1B1B4A" style="width:32px;height:28px">') +
+          '<button class="btn sm" id="do-fill">Залить фон</button>';
+    } else if (t === 'pipette') {
+      h = '<div class="o"><span>Кликните по холсту, чтобы взять цвет</span></div>' +
+          '<div class="o"><b id="pip-out">—</b></div>';
+    } else if (t === 'zoom') {
+      h = '<div class="o"><span>ЛКМ — увеличить, Alt + ЛКМ — уменьшить</span></div>';
+    } else if (t === 'hand') {
+      h = '<div class="o"><span>Зажмите и тяните, чтобы сдвинуть холст</span></div>';
+    } else if (t === 'lasso') {
+      h = o('Растушёвка', '<input type="range" min="0" max="50" value="0" style="width:100px">');
+    }
+    $('opts').innerHTML = h + '<span style="flex:1"></span>' +
+      '<div class="o"><button class="btn sm" id="undo-b">↶ Отменить</button>' +
+      '<button class="btn sm" id="redo-b">↷ Повторить</button></div>';
+    wireOptions();
+  }
+
+  function wireOptions() {
+    var b = $('br-size'); if (b) b.oninput = function () { st.brush.size = +this.value; $('br-size-v').textContent = this.value; };
+    var bc = $('br-color'); if (bc) bc.oninput = function () { st.brush.color = this.value; };
+    var bs = $('br-soft'); if (bs) bs.onchange = function () { st.brush.soft = this.value === '1'; };
+    var ts = $('tx-size'); if (ts) ts.oninput = function () { st.text.size = +this.value; };
+    var tc = $('tx-color'); if (tc) tc.oninput = function () { st.text.color = this.value; };
+    var at = $('add-text'); if (at) at.onclick = addText;
+    var as = $('add-shape'); if (as) as.onclick = addShape;
+    var df = $('do-fill'); if (df) df.onclick = function () {
+      var c = $('fl-color').value, bg = st.layers[0];
+      bg.from = c; snapshot('Заливка фона'); render();
+    };
+    var dc = $('do-crop'); if (dc) dc.onclick = function () {
+      PF.toast('Холст обрезан до ' + W + '×' + H + ' (демонстрация)', 'info');
+    };
+    var ub = $('undo-b'); if (ub) ub.onclick = undo;
+    var rb = $('redo-b'); if (rb) rb.onclick = redo;
+  }
+
+  function addText() {
+    var l = { id: PF.uid('L'), name: 'Текст', type: 'text', visible: true, opacity: 1, locked: false,
+      x: W * .12, y: H * .5, text: 'Новый текст', size: st.text.size, color: st.text.color, weight: 700, track: 0 };
+    st.layers.splice(st.layers.length - 1, 0, l);
+    st.sel = l.id; snapshot('Добавлен текст'); render(); panel();
+    PF.toast('Текст добавлен — измените его в панели «Слои»');
+  }
+  function addShape() {
+    var t = $('sh-type').value, c = $('sh-color').value;
+    var l = { id: PF.uid('L'), name: t === 'rect' ? 'Прямоугольник' : 'Эллипс', type: t,
+      visible: true, opacity: 1, locked: false,
+      x: W * .3, y: H * .3, w: W * .3, h: H * .22, r: t === 'rect' ? W * .02 : 0, fill: c };
+    st.layers.splice(st.layers.length - 1, 0, l);
+    st.sel = l.id; snapshot('Добавлена фигура'); render(); panel();
+  }
+
+  /* ================= ПАНЕЛИ ================= */
+  var PANELS = [
+    { id: 'layers', ic: 'layers', t: 'Слои' },
+    { id: 'filters', ic: 'sparkle', t: 'Фильтры' },
+    { id: 'history', ic: 'history', t: 'История' },
+    { id: 'brush', ic: 'brush', t: 'Кисть' }
+  ];
+
+  function panel() {
+    $('ptabs').innerHTML = PANELS.map(function (p) {
+      return '<button data-p="' + p.id + '" class="' + (st.panel === p.id ? 'on' : '') + '" title="' + p.t + '">' +
+        PF.icon(p.ic, 18) + '</button>';
+    }).join('');
+    Array.prototype.forEach.call($('ptabs').children, function (b) {
+      b.onclick = function () { st.panel = b.dataset.p; if (st.panel !== 'filters') { st.filter = 'none'; } render(); panel(); };
+    });
+
+    var h = '';
+    if (st.panel === 'layers') {
+      h = '<div class="up" style="margin-bottom:10px">Слои <span class="dim">(' + st.layers.length + ')</span></div>';
+      h += st.layers.slice().reverse().map(function (l) {
+        var ico = { text: 'T', rect: '▭', ellipse: '◯', poly: '▲', grad: '▤', brush: '✎' }[l.type] || '▢';
+        return '<div class="layer ' + (l.id === st.sel ? 'on' : '') + '" data-l="' + l.id + '">' +
+          '<div class="th">' + ico + '</div><div class="nm"><b>' + l.name + '</b>' +
+          '<small>' + Math.round((l.opacity == null ? 1 : l.opacity) * 100) + ' %' + (l.filter ? ' · fx' : '') + '</small></div>' +
+          '<button class="ic ' + (l.visible ? '' : 'off') + '" data-vis="' + l.id + '" title="Видимость">' +
+            PF.icon(l.visible ? 'eye' : 'eyeoff', 15) + '</button>' +
+          '<button class="ic ' + (l.locked ? '' : 'off') + '" data-lock="' + l.id + '" title="Блокировка">' +
+            PF.icon('lock', 15) + '</button></div>';
+      }).join('');
+      var s = sel();
+      h += '<div class="sep2"></div><div class="up" style="margin-bottom:10px">Свойства слоя</div>';
+      if (s) {
+        h += '<div class="row"><span>Название</span><input class="input" id="p-name" value="' + s.name + '"></div>';
+        h += '<div class="row"><span>Прозрачность</span><input type="range" id="p-op" min="0" max="100" value="' +
+          Math.round((s.opacity == null ? 1 : s.opacity) * 100) + '"><b class="mono" id="p-op-v">' +
+          Math.round((s.opacity == null ? 1 : s.opacity) * 100) + '</b></div>';
+        if (s.type === 'text') {
+          h += '<div class="row"><span>Текст</span><input class="input" id="p-text" value="' + s.text + '"></div>';
+          h += '<div class="row"><span>Кегль</span><input type="range" id="p-size" min="12" max="400" value="' + Math.round(s.size) + '"></div>';
+          h += '<div class="row"><span>Цвет</span><input type="color" id="p-color" value="' + s.color + '"></div>';
+        }
+        if (s.type === 'rect' || s.type === 'ellipse' || s.type === 'poly') {
+          h += '<div class="row"><span>Заливка</span><input type="color" id="p-fill" value="' + s.fill + '"></div>';
+        }
+        if (s.type === 'rect' || s.type === 'ellipse') {
+          h += '<div class="row"><span>X</span><input class="input mono" id="p-x" value="' + Math.round(s.x) + '" style="width:70px">' +
+               '<span>Y</span><input class="input mono" id="p-y" value="' + Math.round(s.y) + '" style="width:70px"></div>';
+        }
+        h += '<div style="display:flex;gap:8px;margin-top:12px;flex-wrap:wrap">' +
+          '<button class="btn sm" id="l-up">Выше</button><button class="btn sm" id="l-down">Ниже</button>' +
+          '<button class="btn sm" id="l-dup">Дублировать</button>' +
+          '<button class="btn sm danger" id="l-del">Удалить</button></div>';
+      }
+      h += '<div class="sep2"></div><div style="display:flex;gap:8px">' +
+        '<button class="btn sm" id="l-add-text">+ Текст</button>' +
+        '<button class="btn sm" id="l-add-rect">+ Фигура</button></div>';
+    }
+    else if (st.panel === 'filters') {
+      h = '<div class="up" style="margin-bottom:10px">Фильтры и эффекты</div><div class="filters">' +
+        FILTERS.map(function (f) {
+          return '<div class="f ' + (st.filter === f.id ? 'on' : '') + '" data-f="' + f.id + '">' + f.n + '</div>';
+        }).join('') + '</div>';
+      h += '<div class="sep2"></div><div class="row"><span>Интенсивность</span>' +
+        '<input type="range" id="f-int" min="0" max="100" value="' + st.intensity + '"><b class="mono" id="f-int-v">' + st.intensity + '</b></div>';
+      h += '<div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:6px">' +
+        '<button class="btn sm" id="f-before" title="Удерживайте">До / После</button>' +
+        '<button class="btn sm" id="f-reset">Сбросить</button>' +
+        '<button class="btn sm primary" id="f-apply">Применить</button></div>';
+      if (st.applied) h += '<p class="hint" style="margin-top:12px">Применён фильтр: <b>' + name(st.applied) + '</b></p>';
+    }
+    else if (st.panel === 'history') {
+      h = '<div class="up" style="margin-bottom:10px">История действий</div>';
+      if (!st.history.length) h += '<p class="hint">Пока нет действий — сделайте что-нибудь на холсте</p>';
+      h += '<div class="steps">' + st.history.map(function (s, i) {
+        return '<div class="step ' + (i === st.hIndex ? 'on' : '') + (i > st.hIndex ? ' future' : '') +
+          '" data-h="' + i + '"><div class="n">' + (i + 1) + '</div><div><b>' + s.label + '</b>' +
+          '<small class="dim" style="display:block">' + new Date(s.time).toLocaleTimeString('ru-RU') + '</small></div></div>';
+      }).join('') + '</div>';
+      h += '<div class="sep2"></div><div style="display:flex;gap:8px">' +
+        '<button class="btn sm" id="h-undo">↶ Отменить</button><button class="btn sm" id="h-redo">↷ Повторить</button></div>';
+    }
+    else if (st.panel === 'brush') {
+      h = '<div class="up" style="margin-bottom:10px">Кисть</div>';
+      h += '<div class="row"><span>Размер</span><input type="range" id="b2-size" min="2" max="400" value="' + st.brush.size + '"><b class="mono" id="b2-v">' + st.brush.size + '</b></div>';
+      h += '<div class="row"><span>Цвет</span><input type="color" id="b2-color" value="' + st.brush.color + '"></div>';
+      h += '<div class="up" style="margin:14px 0 8px">Палитра</div><div class="swatches">' +
+        ['#FFFFFF', '#0E0E13', '#6C4CF1', '#F14CA6', '#2BD9C3', '#F5A623', '#E5484D', '#3E8BFF', '#16A34A']
+          .map(function (c) { return '<div class="sw" data-c="' + c + '" style="background:' + c + '"></div>'; }).join('') +
+        '</div>';
+      h += '<div class="sep2"></div><div class="up" style="margin-bottom:8px">Кисти</div>' +
+        ['Мягкая круглая', 'Жёсткая круглая', 'Карандаш', 'Акварель', 'Неон', 'Искры']
+          .map(function (n, i) { return '<div class="layer' + (i === 0 ? ' on' : '') + '" data-brush="' + n + '">' +
+            '<div class="th">✎</div><div class="nm"><b>' + n + '</b><small>' + (i > 3 ? 'PRO' : 'Базовые') + '</small></div></div>'; }).join('');
+      h += '<p class="hint" style="margin-top:12px">Выберите инструмент «Кисть» (B) и рисуйте прямо на холсте.</p>';
+      h += '<button class="btn sm wide" id="b-clear" style="margin-top:8px">Очистить слой рисования</button>';
+    }
+    $('pbody').innerHTML = h;
+    wirePanel();
+  }
+
+  function wirePanel() {
+    $('pbody').querySelectorAll('[data-l]').forEach(function (el) {
+      el.onclick = function (e) {
+        if (e.target.closest('[data-vis]') || e.target.closest('[data-lock]')) return;
+        st.sel = el.dataset.l; render(); panel();
+      };
+    });
+    $('pbody').querySelectorAll('[data-vis]').forEach(function (b) {
+      b.onclick = function (e) {
+        e.stopPropagation();
+        var l = st.layers.filter(function (x) { return x.id === b.dataset.vis; })[0];
+        l.visible = !l.visible; snapshot((l.visible ? 'Показан слой: ' : 'Скрыт слой: ') + l.name);
+        render(); panel();
+      };
+    });
+    $('pbody').querySelectorAll('[data-lock]').forEach(function (b) {
+      b.onclick = function (e) {
+        e.stopPropagation();
+        var l = st.layers.filter(function (x) { return x.id === b.dataset.lock; })[0];
+        l.locked = !l.locked; panel();
+      };
+    });
+    var n = $('p-name'); if (n) n.oninput = function () { sel().name = this.value; panel(); };
+    var op = $('p-op');
+    if (op) op.oninput = function () {
+      sel().opacity = +this.value / 100; $('p-op-v').textContent = this.value; render();
+    };
+    if (op) op.onchange = function () { snapshot('Прозрачность: ' + this.value + ' %'); };
+    var pt = $('p-text'); if (pt) pt.oninput = function () { sel().text = this.value; render(); };
+    if (pt) pt.onchange = function () { snapshot('Изменён текст'); };
+    var ps = $('p-size'); if (ps) ps.oninput = function () { sel().size = +this.value; render(); };
+    var pc = $('p-color'); if (pc) pc.oninput = function () { sel().color = this.value; render(); };
+    var pf = $('p-fill'); if (pf) pf.oninput = function () { sel().fill = this.value; render(); };
+    var px = $('p-x'); if (px) px.oninput = function () { sel().x = +this.value; render(); };
+    var py = $('p-y'); if (py) py.oninput = function () { sel().y = +this.value; render(); };
+    var lu = $('l-up'); if (lu) lu.onclick = function () { move(1); };
+    var ld = $('l-down'); if (ld) ld.onclick = function () { move(-1); };
+    var lp = $('l-dup'); if (lp) lp.onclick = function () {
+      var c = JSON.parse(JSON.stringify(sel())); c.id = PF.uid('L'); c.name += ' (копия)'; c.y += 20; c.x += 20;
+      st.layers.splice(indexOfSel() + 1, 0, c); st.sel = c.id; snapshot('Дублирован слой'); render(); panel();
+    };
+    var lx = $('l-del'); if (lx) lx.onclick = function () {
+      if (st.layers.length <= 1) { PF.toast('Нельзя удалить последний слой', 'err'); return; }
+      var i = indexOfSel();
+      st.layers.splice(i, 1); st.sel = st.layers[Math.max(0, i - 1)].id;
+      snapshot('Удалён слой'); render(); panel();
+    };
+    var lt = $('l-add-text'); if (lt) lt.onclick = addText;
+    var lr = $('l-add-rect'); if (lr) lr.onclick = addShape;
+
+    $('pbody').querySelectorAll('[data-f]').forEach(function (el) {
+      el.onclick = function () {
+        st.filter = el.dataset.f;
+        st.applied = null;
+        render(); panel();
+      };
+    });
+    var fi = $('f-int');
+    if (fi) fi.oninput = function () { st.intensity = +this.value; $('f-int-v').textContent = this.value; render(); };
+    var fb = $('f-before');
+    if (fb) {
+      fb.onmousedown = function () { st.showOriginal = true; render(); };
+      fb.onmouseup = fb.onmouseleave = function () { st.showOriginal = false; render(); };
+    }
+    var fr = $('f-reset'); if (fr) fr.onclick = function () { st.filter = 'none'; st.applied = null; st.intensity = 100; render(); panel(); };
+    var fa = $('f-apply');
+    if (fa) fa.onclick = function () {
+      if (st.filter === 'none') { PF.toast('Выберите фильтр', 'warn'); return; }
+      st.applied = st.filter; st.filter = 'none';
+      snapshot('Фильтр «' + name(st.applied) + '»');
+      render(); panel();
+      PF.toast('Фильтр «' + name(st.applied) + '» применён', '', 'Готово');
+    };
+    $('pbody').querySelectorAll('[data-h]').forEach(function (el) {
+      el.onclick = function () { restore(+el.dataset.h); };
+    });
+    var hu = $('h-undo'); if (hu) hu.onclick = undo;
+    var hr = $('h-redo'); if (hr) hr.onclick = redo;
+
+    var b2 = $('b2-size');
+    if (b2) b2.oninput = function () { st.brush.size = +this.value; $('b2-v').textContent = this.value; };
+    var b2c = $('b2-color'); if (b2c) b2c.oninput = function () { st.brush.color = this.value; };
+    $('pbody').querySelectorAll('[data-c]').forEach(function (el) {
+      el.onclick = function () {
+        st.brush.color = el.dataset.c;
+        $('pbody').querySelectorAll('[data-c]').forEach(function (x) { x.classList.remove('on'); });
+        el.classList.add('on');
+      };
+    });
+    var bc = $('b-clear');
+    if (bc) bc.onclick = function () {
+      var l = st.layers.filter(function (x) { return x.type === 'brush'; })[0];
+      if (l) { l.strokes = []; snapshot('Очищен слой рисования'); render(); }
+    };
+  }
+
+  function move(dir) {
+    var i = indexOfSel(), j = i + dir;
+    if (j < 1 || j >= st.layers.length) return;
+    var t = st.layers[i]; st.layers[i] = st.layers[j]; st.layers[j] = t;
+    snapshot('Изменён порядок слоёв'); render(); panel();
+  }
+
+  /* ================= ВЗАИМОДЕЙСТВИЕ С ХОЛСТОМ ================= */
+  function toCanvas(e) {
+    var r = cv.getBoundingClientRect();
+    return { x: (e.clientX - r.left) / r.width * W, y: (e.clientY - r.top) / r.height * H };
+  }
+
+  cv.addEventListener('pointerdown', function (e) {
+    var p = toCanvas(e);
+    if (st.tool === 'pipette') {
+      var d = ctx.getImageData(Math.round(p.x), Math.round(p.y), 1, 1).data;
+      var hex = '#' + [d[0], d[1], d[2]].map(function (v) { return ('0' + v.toString(16)).slice(-2); }).join('');
+      var s = sel();
+      if (s && (s.type === 'rect' || s.type === 'text' || s.type === 'poly' || s.type === 'ellipse')) {
+        if (s.type === 'text') s.color = hex; else s.fill = hex;
+        render(); panel();
+      }
+      PF.toast('Цвет ' + hex.toUpperCase() + ' взят пипеткой');
+      return;
+    }
+    if (st.tool === 'zoom') { st.zoom = Math.min(4, (st.zoom === 'fit' ? st.fitScale : st.zoom) * (e.altKey ? .8 : 1.25)); applyZoom(); return; }
+    if (st.tool === 'brush' || st.tool === 'eraser') {
+      var bl = st.layers.filter(function (x) { return x.type === 'brush'; })[0];
+      if (!bl.visible) { PF.toast('Слой рисования скрыт — включите его в панели «Слои»', 'warn'); return; }
+      st.drawing = { layer: bl, size: st.brush.size * (W / 1080), color: st.tool === 'eraser' ? '#FFFFFF' : st.brush.color,
+        pts: [[p.x, p.y]] };
+      if (st.tool === 'eraser') st.drawing.erase = true;
+      cv.setPointerCapture(e.pointerId);
+      return;
+    }
+    if (st.tool === 'move' || st.tool === 'select') {
+      var s = sel();
+      var b = s && bounds(s);
+      if (s && b && !s.locked && p.x >= b.x - 12 && p.x <= b.x + b.w + 12 && p.y >= b.y - 12 && p.y <= b.y + b.h + 12) {
+        st.dragging = { layer: s, dx: p.x, dy: p.y, ox: s.x, oy: s.y, moved: false };
+      } else {
+        var hit = null;
+        for (var i = st.layers.length - 1; i >= 0; i--) {
+          var l = st.layers[i], bb = bounds(l);
+          if (l.visible && bb && p.x >= bb.x && p.x <= bb.x + bb.w && p.y >= bb.y && p.y <= bb.y + bb.h) { hit = l; break; }
+        }
+        if (hit) { st.sel = hit.id; st.dragging = { layer: hit, dx: p.x, dy: p.y, ox: hit.x, oy: hit.y, moved: true }; render(); panel(); }
+      }
+    }
   });
 
-  var tip=document.getElementById('tip');
-  document.addEventListener('mouseover',function(e){
-    var el=e.target.closest('.hot');if(!el||!tip)return;
-    var t=el.getAttribute('title');if(t){tip.innerHTML='<b>'+(el.tagName==='A'?'\u2192 ':'')+'</b>'+t;tip.classList.add('on');}
+  cv.addEventListener('pointermove', function (e) {
+    var p = toCanvas(e);
+    if (st.drawing) {
+      st.drawing.pts.push([p.x, p.y]);
+      if (st.drawing.pts.length % 2 === 0) render();
+      return;
+    }
+    if (st.dragging) {
+      st.dragging.layer.x = Math.round(st.dragging.ox + (p.x - st.dragging.dx));
+      st.dragging.layer.y = Math.round(st.dragging.oy + (p.y - st.dragging.dy));
+      render();
+    }
   });
-  document.addEventListener('mouseout',function(e){
-    if(tip)tip.classList.remove('on');
+
+  window.addEventListener('pointerup', function () {
+    if (st.drawing) {
+      var d = st.drawing; st.drawing = null;
+      if (d.erase) {
+        // ластик: удаляем близкие точки
+        var bl = d.layer;
+        bl.strokes = bl.strokes.filter(function (s) {
+          return !s.pts.some(function (pt) {
+            return Math.abs(pt[0] - d.pts[0][0]) < 60 && Math.abs(pt[1] - d.pts[0][1]) < 60;
+          });
+        });
+        snapshot('Ластик');
+      } else if (d.pts.length) {
+        d.layer.strokes.push({ color: d.color, size: d.size, pts: d.pts });
+        snapshot('Кисть (' + Math.round(d.size) + ' px)');
+      }
+      render(); panel();
+    }
+    if (st.dragging) { if (st.dragging.moved) snapshot('Перемещён слой'); st.dragging = null; panel(); }
   });
-  document.addEventListener('keydown',function(e){
-    if(e.key==='t'||e.key==='T'||e.key==='\u0435'||e.key==='\u0415')setTheme(h.dataset.theme==='dark'?'light':'dark');
-    if(e.key==='h'||e.key==='H'||e.key==='\u0440'||e.key==='\u0420'){document.body.classList.toggle('zones');}
+
+  /* ================= ЭКСПОРТ ================= */
+  var EXPORT_PRESETS = [
+    { n: 'Оригинал', w: W, h: H }, { n: 'Instagram', w: 1080, h: 1080 },
+    { n: 'Сторис', w: 1080, h: 1920 }, { n: 'VK', w: 1200, h: 800 }
+  ];
+  var exPreset = 0;
+
+  function exportScale() { return +$('ex-scale').value; }
+  function exportW() { return Math.round(EXPORT_PRESETS[exPreset].w * exportScale()); }
+  function exportH() { return Math.round(EXPORT_PRESETS[exPreset].h * exportScale()); }
+
+  function makeExport() {
+    var c = document.createElement('canvas');
+    c.width = exportW(); c.height = exportH();
+    var g = c.getContext('2d');
+    g.filter = st.applied ? FILTERS.filter(function (f) { return f.id === st.applied; })[0].fn(1) : 'none';
+    g.drawImage(cv, 0, 0, c.width, c.height);
+    return c;
+  }
+
+  function updateExport() {
+    var c = makeExport();
+    var fmt = $('ex-format').value;
+    var q = +$('ex-q').value / 100;
+    $('ex-prev').src = c.toDataURL('image/png');
+    $('ex-dims').value = c.width + ' × ' + c.height + ' px';
+    $('ex-sub').textContent = 'Проект «' + project.name + '» · ' + W + '×' + H + ' px';
+    $('ex-q-wrap').style.display = fmt === 'image/png' ? 'none' : '';
+    var url = c.toDataURL(fmt, q);
+    var kb = Math.round(url.length * .75 / 1024);
+    $('ex-size').textContent = 'Формат: ' + fmt.split('/')[1].toUpperCase() + ' · примерно ' + kb + ' КБ';
+  }
+
+  $('ex-presets').innerHTML = EXPORT_PRESETS.map(function (p, i) {
+    return '<div class="preset' + (i === 0 ? ' on' : '') + '" data-ep="' + i + '"><b>' + p.n +
+      '</b><small>' + p.w + '×' + p.h + '</small></div>';
+  }).join('');
+  $('ex-presets').addEventListener('click', function (e) {
+    var el = e.target.closest('[data-ep]'); if (!el) return;
+    exPreset = +el.dataset.ep;
+    Array.prototype.forEach.call(this.children, function (c) { c.classList.remove('on'); });
+    el.classList.add('on'); updateExport();
   });
+  ['ex-format', 'ex-scale', 'ex-q'].forEach(function (i) {
+    $(i).addEventListener('input', function () { if (i === 'ex-q') $('ex-q-val').textContent = this.value; updateExport(); });
+  });
+  $('ex-go').onclick = function () {
+    var c = makeExport();
+    var fmt = $('ex-format').value;
+    var ext = { 'image/png': 'png', 'image/jpeg': 'jpg', 'image/webp': 'webp' }[fmt];
+    var a = document.createElement('a');
+    a.href = c.toDataURL(fmt, +$('ex-q').value / 100);
+    a.download = project.name.replace(/\s+/g, '_').toLowerCase() + '_' + c.width + 'x' + c.height + '.' + ext;
+    a.click();
+    PF.closeModal('m-export');
+    PF.toast('Файл ' + a.download + ' сохранён', '', 'Экспортировано');
+    snapshot('Экспорт ' + ext.toUpperCase() + ' ' + c.width + '×' + c.height);
+  };
+  $('ex-copy').onclick = function () {
+    makeExport().toBlob(function (b) {
+      if (navigator.clipboard && window.ClipboardItem) {
+        navigator.clipboard.write([new ClipboardItem({ 'image/png': b })]).then(function () {
+          PF.toast('Изображение в буфере обмена', '', 'Скопировано');
+        })['catch'](function () { PF.toast('Браузер не разрешил копирование', 'warn'); });
+      } else PF.toast('Копирование не поддерживается', 'warn');
+    }, 'image/png');
+  };
+
+  /* ================= ТУЛБАР И ШАПКА ================= */
+  function toolbar() {
+    $('tools').innerHTML = TOOLS.map(function (t) {
+      if (t.id === 'sep') return '<div class="tsep"></div>';
+      return '<button class="tool' + (st.tool === t.id ? ' on' : '') + '" data-tool="' + t.id + '" title="' + t.t + ' (' + t.k + ')">' +
+        PF.icon(t.ic, 20) + '<span class="k">' + t.k + '</span></button>';
+    }).join('');
+    Array.prototype.forEach.call($('tools').querySelectorAll('[data-tool]'), function (b) {
+      b.onclick = function () { st.tool = b.dataset.tool; toolbar(); optionsBar(); };
+    });
+  }
+
+  function topbar() {
+    var el = $('top');
+    el.innerHTML =
+      '<a href="dashboard.html" class="logo" title="Мои проекты"></a>' +
+      '<input class="name-in" id="pname" value="' + project.name + '">' +
+      '<span class="dim" id="save-state" style="font-size:11px">✓ Сохранено</span>' +
+      '<span class="spacer"></span>' +
+      '<button class="btn ghost sm" id="btn-undo" title="Отменить (Ctrl+Z)">↶</button>' +
+      '<button class="btn ghost sm" id="btn-redo" title="Повторить (Ctrl+Shift+Z)">↷</button>' +
+      '<button class="btn ghost icon" data-theme-toggle>☀</button>' +
+      '<button class="btn primary sm" id="btn-export">Экспортировать</button>' +
+      '<a class="btn ghost icon" href="settings.html" title="Профиль" style="border-radius:50%">' +
+      PF.icon('user', 18) + '</a>';
+    $('pname').onchange = function () {
+      project.name = this.value.trim() || 'Без названия';
+      PF.Projects.update(project.id, { name: project.name });
+      saveState('✓ Сохранено');
+    };
+    $('btn-undo').onclick = undo;
+    $('btn-redo').onclick = redo;
+    $('btn-export').onclick = function () { updateExport(); PF.openModal('m-export'); };
+  }
+  function saveState(t) {
+    var e = $('save-state'); if (!e) return;
+    e.textContent = t;
+    if (t !== '✓ Сохранено') setTimeout(function () { e.textContent = '✓ Сохранено'; }, 1600);
+  }
+
+  function save(silent) {
+    PF.Projects.update(project.id, { layers: st.layers, w: W, h: H, filter: st.applied });
+    if (!silent) PF.toast('Проект сохранён', '', 'Готово');
+  }
+
+  /* ================= КЛАВИАТУРА ================= */
+  document.addEventListener('keydown', function (e) {
+    var tag = (e.target.tagName || '').toLowerCase();
+    if (tag === 'input' || tag === 'textarea' || tag === 'select') return;
+    if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'z') { e.preventDefault(); e.shiftKey ? redo() : undo(); return; }
+    if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 's') { e.preventDefault(); save(false); return; }
+    if (e.key === 'Delete' || e.key === 'Backspace') {
+      var i = indexOfSel();
+      if (st.layers.length > 1) { st.layers.splice(i, 1); st.sel = st.layers[Math.max(0, i - 1)].id; snapshot('Удалён слой'); render(); panel(); }
+      return;
+    }
+    if (e.key === '[') { st.brush.size = Math.max(2, st.brush.size - 4); optionsBar(); return; }
+    if (e.key === ']') { st.brush.size = Math.min(400, st.brush.size + 4); optionsBar(); return; }
+    var t = TOOLS.filter(function (x) { return x.k && x.k.toLowerCase() === e.key.toLowerCase(); })[0];
+    if (t) { st.tool = t.id; toolbar(); optionsBar(); }
+  });
+
+  window.addEventListener('resize', function () { if (st.zoom === 'fit') fit(); });
+
+  /* ================= СТАРТ ================= */
+  topbar(); toolbar(); optionsBar(); panel();
+  fit(); render();
+  snapshot('Открыт проект');
+  if (!project.layers) { PF.Projects.update(project.id, { layers: st.layers }); }
+  if (params.get('export') === '1') { setTimeout(function () { updateExport(); PF.openModal('m-export'); }, 300); }
+  if (params.get('filter')) {
+    st.panel = 'filters'; st.filter = params.get('filter'); panel(); render();
+  }
 })();
 </script>
 </body>

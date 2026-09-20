@@ -3,84 +3,220 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>S1 · Вход / Регистрация — PixelForge</title>
+<title>Вход — PixelForge</title>
+<link rel="stylesheet" href="assets/css/app.css">
 <style>
-*{box-sizing:border-box}
-html,body{margin:0;height:100%;font-family:Inter,'Segoe UI',Roboto,Arial,sans-serif;
-  background:#08080B;color:#F2F2F7;overflow:hidden}
-html[data-theme=light] body{background:#E9E9EF}
-.stage{position:fixed;inset:0;display:flex;align-items:center;justify-content:center}
-.screen{position:relative;box-shadow:0 24px 70px rgba(0,0,0,.55)}
-html[data-theme=light] .screen{box-shadow:0 24px 70px rgba(20,20,40,.22)}
-.screen img{position:absolute;inset:0;width:100%;height:100%;display:block}
-html[data-theme=dark] img.light,html[data-theme=light] img.dark{display:none}
-.hot{position:absolute;display:block;border-radius:8px;background:rgba(108,76,241,0);
-  transition:background .15s,box-shadow .15s;text-decoration:none}
-a.hot{cursor:pointer}
-.hot:hover{background:rgba(108,76,241,.26);box-shadow:inset 0 0 0 3px #8A73F5}
-.hot.info:hover{background:rgba(43,217,195,.20);box-shadow:inset 0 0 0 3px #2BD9C3}
-body.zones .hot{background:rgba(108,76,241,.16);box-shadow:inset 0 0 0 2px #6C4CF1}
-body.zones .hot.info{background:rgba(43,217,195,.13);box-shadow:inset 0 0 0 2px #2BD9C3}
-.dock{position:fixed;right:14px;bottom:14px;display:flex;gap:8px;z-index:9}
-.dock a,.dock button{width:42px;height:42px;border-radius:13px;border:1px solid #2F2F3B;
-  background:rgba(27,27,35,.92);color:#F2F2F7;display:flex;align-items:center;
-  justify-content:center;font-size:17px;cursor:pointer;text-decoration:none;
-  backdrop-filter:blur(8px);transition:background .15s,border-color .15s}
-.dock a:hover,.dock button:hover{background:#2E2E3A;border-color:#6C4CF1}
-.dock button.on{background:#2A2440;border-color:#8A73F5;color:#8A73F5}
-.tip{position:fixed;left:50%;top:16px;transform:translateX(-50%);z-index:9;
-  background:rgba(27,27,35,.94);border:1px solid #2F2F3B;border-radius:10px;
-  padding:8px 14px;font-size:12.5px;color:#A8A8B8;opacity:0;transition:opacity .2s;
-  pointer-events:none;backdrop-filter:blur(8px)}
-.tip.on{opacity:1}
-.tip b{color:#F2F2F7;font-weight:600}
+  body{overflow:auto}
+  .wrap{display:flex;min-height:100vh}
+  .left{flex:0 0 560px;padding:48px 80px;display:flex;flex-direction:column}
+  .right{flex:1 1 auto;background:var(--grad);position:relative;overflow:hidden;display:flex;
+    flex-direction:column;justify-content:center;padding:60px}
+  .right::before,.right::after{content:"";position:absolute;border-radius:50%;background:#fff;opacity:.06}
+  .right::before{width:520px;height:520px;top:-140px;right:-160px}
+  .right::after{width:400px;height:400px;bottom:-120px;left:-100px}
+  .right h2{color:#fff;font-size:30px;margin-bottom:10px}
+  .right p{color:rgba(255,255,255,.88);font-size:15px;margin:0 0 34px}
+  .stats{display:flex;gap:44px;position:relative;z-index:1}
+  .stats div b{display:block;font-size:26px;color:#fff;font-weight:700}
+  .stats div span{font-size:12.5px;color:rgba(255,255,255,.78)}
+  .card-mini{position:absolute;background:rgba(255,255,255,.13);border-radius:12px;padding:14px;
+    backdrop-filter:blur(6px);z-index:1}
+  .card-mini i{display:block;height:8px;border-radius:4px;background:rgba(255,255,255,.45);margin-bottom:8px}
+  .cm1{width:220px;top:76px;left:60px}
+  .cm2{width:260px;top:190px;right:70px}
+  .cm3{width:200px;bottom:150px;left:110px}
+  .tabs{display:flex;gap:4px;background:var(--bg3);padding:4px;border-radius:10px;width:280px;margin-bottom:26px}
+  .tabs button{flex:1;height:36px;border:0;border-radius:8px;background:transparent;color:var(--t2);
+    font-size:13.5px;font-weight:600;cursor:pointer;transition:all var(--dur)}
+  .tabs button.on{background:var(--accent);color:#fff}
+  .oauth{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:6px}
+  .or{display:flex;align-items:center;gap:14px;color:var(--t3);font-size:12px;margin:22px 0}
+  .or::before,.or::after{content:"";flex:1;height:1px;background:var(--brd)}
+  @media(max-width:1080px){.right{display:none}.left{flex:1;padding:40px}}
 </style>
 </head>
 <body>
-<div class="stage"><div class="screen" data-w="1440" data-h="1024"><img class="dark" src="../design/export/svg/S1_Auth_Dark.svg" alt="S1 · Вход / Регистрация"><img class="light" src="../design/export/svg/S1_Auth_Light.svg" alt="S1 · Вход / Регистрация"><a class="hot" href="dashboard.html" style="left:7.778%;top:58.594%;width:34.444%;height:4.688%" title="Войти"></a><a class="hot" href="dashboard.html" style="left:7.778%;top:68.750%;width:16.667%;height:4.688%" title="Вход через Google"></a><a class="hot" href="dashboard.html" style="left:25.556%;top:68.750%;width:16.667%;height:4.688%" title="Вход через Apple"></a><div class="hot info" style="left:29.861%;top:30.859%;width:12.361%;height:4.688%" title="Вкладка «Регистрация»"></div></div></div>
-<div class="dock">
-  <a href="index.html" title="Карта экранов">▦</a>
-  <button id="tbtn" data-act="theme" title="Светлая / тёмная тема (T)">☀</button>
-  <button data-act="zones" title="Показать кликабельные зоны (H)">◎</button>
+<div class="wrap">
+  <div class="left">
+    <a href="index.html" style="display:flex;align-items:center;gap:10px;text-decoration:none;color:inherit">
+      <span class="logo"></span><span class="brand">PixelForge</span>
+    </a>
+
+    <div style="margin:auto 0;max-width:496px;width:100%">
+      <h1 id="ttl" style="margin-bottom:8px">С возвращением</h1>
+      <p class="mut" id="sub" style="margin:0 0 28px">Продолжите работу над своими проектами</p>
+
+      <div class="tabs">
+        <button id="tab-in" class="on" type="button">Вход</button>
+        <button id="tab-up" type="button">Регистрация</button>
+      </div>
+
+      <form id="form" novalidate>
+        <label class="field" id="f-name" style="display:none">
+          <span>Имя</span>
+          <input class="input" id="name" type="text" placeholder="Как к вам обращаться" autocomplete="name">
+          <div class="err-text" id="e-name">Введите имя (минимум 2 символа)</div>
+        </label>
+
+        <label class="field">
+          <span>E-mail</span>
+          <input class="input" id="email" type="email" placeholder="you@example.com" autocomplete="email">
+          <div class="err-text" id="e-email">Проверьте формат: например name@domain.ru</div>
+        </label>
+
+        <label class="field">
+          <span>Пароль</span>
+          <input class="input" id="pass" type="password" placeholder="••••••••" autocomplete="current-password">
+          <div class="err-text" id="e-pass">Минимум 8 символов, хотя бы одна цифра</div>
+          <div class="hint" id="strength" style="display:none">Надёжность: <b id="strength-t">слабая</b></div>
+        </label>
+
+        <div style="display:flex;align-items:center;justify-content:space-between;margin:4px 0 22px">
+          <label class="check" id="f-remember"><input type="checkbox" id="remember" checked><i></i>Запомнить меня</label>
+          <a href="#" id="forgot" style="font-size:12.5px">Забыли пароль?</a>
+        </div>
+
+        <button class="btn primary lg wide" id="submit" type="submit">Войти</button>
+
+        <label class="check" id="f-terms" style="display:none;margin-top:16px">
+          <input type="checkbox" id="terms"><i></i>
+          <span style="font-size:12.5px">Я принимаю <a href="#" onclick="return false">условия использования</a> и <a href="#" onclick="return false">политику конфиденциальности</a></span>
+        </label>
+      </form>
+
+      <div class="or">или</div>
+      <div class="oauth">
+        <button class="btn" id="google" type="button">Продолжить с Google</button>
+        <button class="btn" id="apple" type="button">Apple</button>
+      </div>
+
+      <p class="mut" style="text-align:center;margin-top:24px;font-size:12.5px">
+        <span id="switch-text">Нет аккаунта?</span>
+        <a href="#" id="switch-link">Создать</a>
+      </p>
+    </div>
+
+    <p class="dim" style="font-size:12px;margin-top:32px">
+      <a href="index.html">Карта сайта</a> · Условия использования · Конфиденциальность · © 2025 PixelForge
+    </p>
+  </div>
+
+  <div class="right">
+    <div class="card-mini cm1"><i style="width:70%"></i><i style="width:45%"></i></div>
+    <div class="card-mini cm2"><i style="width:55%"></i><i style="width:85%"></i><i style="width:35%"></i></div>
+    <div class="card-mini cm3"><i style="width:60%"></i><i style="width:40%"></i></div>
+    <h2>Графический редактор</h2>
+    <p>для тех, кто рисует каждый день</p>
+    <div class="stats">
+      <div><b>120+</b><span>фильтров</span></div>
+      <div><b>148</b><span>иконок</span></div>
+      <div><b>3</b><span>UI-кита</span></div>
+    </div>
+  </div>
 </div>
-<div class="tip" id="tip"></div>
+
+<!-- модалка восстановления пароля -->
+<div class="modal" id="m-forgot">
+  <div class="box" style="max-width:440px">
+    <header><div><h3>Восстановление пароля</h3>
+      <p class="mut" style="margin:6px 0 0;font-size:13px">Пришлём ссылку для сброса на вашу почту</p></div></header>
+    <div class="content">
+      <label class="field"><span>E-mail</span>
+        <input class="input" id="forgot-email" type="email" placeholder="you@example.com"></label>
+    </div>
+    <footer>
+      <button class="btn" data-close type="button">Отмена</button>
+      <button class="btn primary" id="forgot-send" type="button">Отправить ссылку</button>
+    </footer>
+  </div>
+</div>
+
+<script src="assets/js/app.js"></script>
 <script>
-(function(){
-  var h=document.documentElement;
-  function setTheme(t){h.dataset.theme=t;try{localStorage.setItem('pf-theme',t)}catch(e){}
-    var b=document.getElementById('tbtn');if(b)b.textContent=(t==='dark')?'\u2600':'\u263E';}
-  try{var st=localStorage.getItem('pf-theme');if(st)h.dataset.theme=st;}catch(e){}
-  setTheme(h.dataset.theme||'dark');
+(function () {
+  var mode = 'in';
+  var $ = function (id) { return document.getElementById(id); };
+  var next = new URLSearchParams(location.search).get('next') || 'dashboard.html';
 
-  function fit(){
-    var s=document.querySelector('.screen');if(!s)return;
-    var W=+s.dataset.w,H=+s.dataset.h;
-    var k=Math.min(window.innerWidth/W,(window.innerHeight)/H);
-    s.style.width=Math.round(W*k)+'px';s.style.height=Math.round(H*k)+'px';
+  // уже вошли — сразу в дашборд
+  if (PF.User.get()) { location.replace(next); return; }
+
+  function setMode(m) {
+    mode = m;
+    var up = m === 'up';
+    $('tab-in').classList.toggle('on', !up);
+    $('tab-up').classList.toggle('on', up);
+    $('f-name').style.display = up ? '' : 'none';
+    $('f-terms').style.display = up ? '' : 'none';
+    $('f-remember').style.display = up ? 'none' : '';
+    $('ttl').textContent = up ? 'Создайте аккаунт' : 'С возвращением';
+    $('sub').textContent = up ? 'Бесплатно, 2 ГБ хранилища, без карты' : 'Продолжите работу над своими проектами';
+    $('submit').textContent = up ? 'Создать аккаунт' : 'Войти';
+    $('switch-text').textContent = up ? 'Уже есть аккаунт?' : 'Нет аккаунта?';
+    $('switch-link').textContent = up ? 'Войти' : 'Создать';
+    $('strength').style.display = up ? '' : 'none';
+    clearErrors();
   }
-  window.addEventListener('resize',fit);fit();window.addEventListener('load',fit);
+  function clearErrors() {
+    ['e-name', 'e-email', 'e-pass'].forEach(function (i) { $(i).classList.remove('on'); });
+    ['name', 'email', 'pass'].forEach(function (i) { $(i).classList.remove('err'); });
+  }
+  function fail(field, errId) { $(field).classList.add('err'); $(errId).classList.add('on'); }
 
-  document.addEventListener('click',function(e){
-    var el=e.target.closest('[data-act]');if(!el)return;
-    var a=el.dataset.act;
-    if(a==='theme'){e.preventDefault();setTheme(h.dataset.theme==='dark'?'light':'dark');}
-    if(a==='theme_light'){e.preventDefault();setTheme('light');}
-    if(a==='theme_dark'){e.preventDefault();setTheme('dark');}
-    if(a==='zones'){document.body.classList.toggle('zones');el.classList.toggle('on');}
+  $('tab-in').onclick = function () { setMode('in'); };
+  $('tab-up').onclick = function () { setMode('up'); };
+  $('switch-link').onclick = function (e) { e.preventDefault(); setMode(mode === 'in' ? 'up' : 'in'); };
+
+  $('pass').addEventListener('input', function () {
+    if (mode !== 'up') return;
+    var v = this.value, s = 0;
+    if (v.length >= 8) s++;
+    if (/[0-9]/.test(v)) s++;
+    if (/[A-ZА-Я]/.test(v)) s++;
+    if (/[^A-Za-zА-Яа-я0-9]/.test(v)) s++;
+    var t = $('strength-t');
+    t.textContent = ['очень слабая', 'слабая', 'средняя', 'хорошая', 'надёжная'][s];
+    t.style.color = s < 2 ? 'var(--err)' : s < 3 ? 'var(--warn)' : 'var(--success)';
   });
 
-  var tip=document.getElementById('tip');
-  document.addEventListener('mouseover',function(e){
-    var el=e.target.closest('.hot');if(!el||!tip)return;
-    var t=el.getAttribute('title');if(t){tip.innerHTML='<b>'+(el.tagName==='A'?'\u2192 ':'')+'</b>'+t;tip.classList.add('on');}
+  $('form').addEventListener('submit', function (e) {
+    e.preventDefault();
+    clearErrors();
+    var ok = true;
+    var name = $('name').value.trim(), email = $('email').value.trim(), pass = $('pass').value;
+    if (mode === 'up' && name.length < 2) { fail('name', 'e-name'); ok = false; }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) { fail('email', 'e-email'); ok = false; }
+    if (pass.length < 8 || (mode === 'up' && !/[0-9]/.test(pass))) { fail('pass', 'e-pass'); ok = false; }
+    if (mode === 'up' && !$('terms').checked) { PF.toast('Подтвердите согласие с условиями', 'warn', 'Нужно подтверждение'); ok = false; }
+    if (!ok) return;
+
+    var btn = $('submit'), label = btn.textContent;
+    btn.disabled = true; btn.textContent = 'Подключаемся…';
+    setTimeout(function () {
+      PF.User.set({ name: mode === 'up' ? name : (email.split('@')[0].replace(/[._-]/g, ' ').replace(/\b\w/g, function (c) { return c.toUpperCase(); })), email: email });
+      PF.toast('Добро пожаловать, ' + PF.User.full() + '!', '', mode === 'up' ? 'Аккаунт создан' : 'Вход выполнен');
+      btn.textContent = label; btn.disabled = false;
+      location.href = next;
+    }, 650);
   });
-  document.addEventListener('mouseout',function(e){
-    if(tip)tip.classList.remove('on');
-  });
-  document.addEventListener('keydown',function(e){
-    if(e.key==='t'||e.key==='T'||e.key==='\u0435'||e.key==='\u0415')setTheme(h.dataset.theme==='dark'?'light':'dark');
-    if(e.key==='h'||e.key==='H'||e.key==='\u0440'||e.key==='\u0420'){document.body.classList.toggle('zones');}
-  });
+
+  function oauth(provider) {
+    PF.User.set({ name: provider === 'Google' ? 'Ирина Соколова' : 'Артём Петров', email: 'user@' + provider.toLowerCase() + '.com' });
+    PF.toast('Вход через ' + provider + ' выполнен', '', 'Успешно');
+    setTimeout(function () { location.href = next; }, 500);
+  }
+  $('google').onclick = function () { oauth('Google'); };
+  $('apple').onclick = function () { oauth('Apple'); };
+
+  $('forgot').onclick = function (e) { e.preventDefault(); PF.openModal('m-forgot'); };
+  $('forgot-send').onclick = function () {
+    var v = $('forgot-email').value.trim();
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v)) { PF.toast('Введите корректный e-mail', 'err'); return; }
+    PF.closeModal('m-forgot');
+    PF.toast('Ссылка отправлена на ' + v, '', 'Письмо отправлено');
+  };
+
+  setMode('in');
 })();
 </script>
 </body>

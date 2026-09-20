@@ -3,84 +3,296 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>S0 · Мои проекты — PixelForge</title>
+<title>Мои проекты — PixelForge</title>
+<link rel="stylesheet" href="assets/css/app.css">
 <style>
-*{box-sizing:border-box}
-html,body{margin:0;height:100%;font-family:Inter,'Segoe UI',Roboto,Arial,sans-serif;
-  background:#08080B;color:#F2F2F7;overflow:hidden}
-html[data-theme=light] body{background:#E9E9EF}
-.stage{position:fixed;inset:0;display:flex;align-items:center;justify-content:center}
-.screen{position:relative;box-shadow:0 24px 70px rgba(0,0,0,.55)}
-html[data-theme=light] .screen{box-shadow:0 24px 70px rgba(20,20,40,.22)}
-.screen img{position:absolute;inset:0;width:100%;height:100%;display:block}
-html[data-theme=dark] img.light,html[data-theme=light] img.dark{display:none}
-.hot{position:absolute;display:block;border-radius:8px;background:rgba(108,76,241,0);
-  transition:background .15s,box-shadow .15s;text-decoration:none}
-a.hot{cursor:pointer}
-.hot:hover{background:rgba(108,76,241,.26);box-shadow:inset 0 0 0 3px #8A73F5}
-.hot.info:hover{background:rgba(43,217,195,.20);box-shadow:inset 0 0 0 3px #2BD9C3}
-body.zones .hot{background:rgba(108,76,241,.16);box-shadow:inset 0 0 0 2px #6C4CF1}
-body.zones .hot.info{background:rgba(43,217,195,.13);box-shadow:inset 0 0 0 2px #2BD9C3}
-.dock{position:fixed;right:14px;bottom:14px;display:flex;gap:8px;z-index:9}
-.dock a,.dock button{width:42px;height:42px;border-radius:13px;border:1px solid #2F2F3B;
-  background:rgba(27,27,35,.92);color:#F2F2F7;display:flex;align-items:center;
-  justify-content:center;font-size:17px;cursor:pointer;text-decoration:none;
-  backdrop-filter:blur(8px);transition:background .15s,border-color .15s}
-.dock a:hover,.dock button:hover{background:#2E2E3A;border-color:#6C4CF1}
-.dock button.on{background:#2A2440;border-color:#8A73F5;color:#8A73F5}
-.tip{position:fixed;left:50%;top:16px;transform:translateX(-50%);z-index:9;
-  background:rgba(27,27,35,.94);border:1px solid #2F2F3B;border-radius:10px;
-  padding:8px 14px;font-size:12.5px;color:#A8A8B8;opacity:0;transition:opacity .2s;
-  pointer-events:none;backdrop-filter:blur(8px)}
-.tip.on{opacity:1}
-.tip b{color:#F2F2F7;font-weight:600}
+  .head{display:flex;align-items:center;gap:12px;margin-bottom:18px;flex-wrap:wrap}
+  .head .grow{flex:1 1 auto}
+  .row{display:flex;align-items:center;gap:12px;margin:26px 0 14px}
+  .row h3{font-size:17px}
+  .list .pcard{display:flex;align-items:center;gap:14px;padding:10px;cursor:pointer}
+  .list .pcard .thumb{width:80px;height:56px;border-radius:8px;flex:0 0 auto;padding:0}
+  .list .pcard .info{padding:0;flex:1}
+  .menu{position:absolute;z-index:60;background:var(--bg2);border:1px solid var(--brd);border-radius:var(--r-lg);
+    padding:6px;box-shadow:var(--shadow);min-width:200px;display:none}
+  .menu.on{display:block}
+  .menu button{display:flex;align-items:center;gap:10px;width:100%;height:34px;padding:0 10px;border:0;
+    background:transparent;color:var(--t1);border-radius:var(--r-md);cursor:pointer;font-size:13px;text-align:left}
+  .menu button:hover{background:var(--bg3)}
+  .menu button.red{color:var(--err)}
+  .menu hr{border:0;border-top:1px solid var(--brd);margin:5px 0}
+  .presets{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+  .preset{border:1px solid var(--brd);background:var(--bg3);border-radius:var(--r-md);padding:10px;
+    cursor:pointer;text-align:center;transition:all var(--dur)}
+  .preset:hover{border-color:var(--t3)}
+  .preset.on{border-color:var(--accent);background:var(--accent-soft)}
+  .preset b{display:block;font-size:12.5px}
+  .preset small{color:var(--t3);font-size:10.5px}
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 </style>
 </head>
 <body>
-<div class="stage"><div class="screen" data-w="1440" data-h="1024"><img class="dark" src="../design/export/svg/S0_Dashboard_Dark.svg" alt="S0 · Мои проекты"><img class="light" src="../design/export/svg/S0_Dashboard_Light.svg" alt="S0 · Мои проекты"><a class="hot" href="editor.html" style="left:83.056%;top:1.758%;width:15.278%;height:3.711%" title="Создать проект"></a><a class="hot" href="editor.html" style="left:18.333%;top:12.500%;width:25.417%;height:20.312%" title="Продолжить работу над проектом"></a><a class="hot" href="editor.html" style="left:18.333%;top:40.234%;width:18.889%;height:23.438%" title="Открыть проект"></a><a class="hot" href="templates.html" style="left:1.111%;top:14.062%;width:14.444%;height:3.906%" title="Шаблоны"></a><a class="hot" href="export.html" style="left:1.111%;top:22.656%;width:14.444%;height:3.906%" title="Экспорты"></a><a class="hot" href="admin.html" style="left:1.111%;top:31.250%;width:14.444%;height:3.906%" title="Администрирование"></a><a class="hot" href="settings.html" style="left:1.111%;top:92.969%;width:14.444%;height:4.297%" title="Профиль и настройки"></a><a class="hot" href="templates.html" style="left:28.472%;top:92.383%;width:10.417%;height:6.055%" title="Шаблоны для вас"></a></div></div>
-<div class="dock">
-  <a href="index.html" title="Карта экранов">▦</a>
-  <button id="tbtn" data-act="theme" title="Светлая / тёмная тема (T)">☀</button>
-  <button data-act="zones" title="Показать кликабельные зоны (H)">◎</button>
+<div class="app">
+  <header class="topbar" id="top"></header>
+  <div class="body">
+    <nav class="side" id="side"></nav>
+    <main class="main">
+      <div class="head">
+        <input class="input" id="q" placeholder="Найти проект…" style="max-width:320px">
+        <span class="chip on" data-filter="all">Все</span>
+        <span class="chip" data-filter="recent">За последнюю неделю</span>
+        <span class="chip" data-filter="big">Больше 1500 px</span>
+        <span class="grow"></span>
+        <select class="input" id="sort" style="width:190px">
+          <option value="new">Сначала новые</option>
+          <option value="old">Сначала старые</option>
+          <option value="name">По имени (А–Я)</option>
+          <option value="size">По размеру</option>
+        </select>
+        <button class="btn ghost icon" id="view" title="Вид: сетка / список">▦</button>
+        <button class="btn primary" id="create">Создать проект</button>
+      </div>
+
+      <div id="continue-row" style="display:none">
+        <div class="row"><h3>Продолжить с места</h3></div>
+        <div class="grid g3" id="continue"></div>
+      </div>
+
+      <div class="row"><h3>Все проекты</h3><span class="dim mono" id="count"></span></div>
+      <div class="grid g4" id="list"></div>
+      <div id="empty"></div>
+    </main>
+  </div>
 </div>
-<div class="tip" id="tip"></div>
+
+<!-- создать проект -->
+<div class="modal" id="m-create">
+  <div class="box">
+    <header><div><h3>Новый проект</h3>
+      <p class="mut" style="margin:6px 0 0;font-size:13px">Задайте название и размер холста</p></div></header>
+    <div class="content">
+      <label class="field"><span>Название</span>
+        <input class="input" id="c-name" placeholder="Например: Креатив для Instagram"></label>
+
+      <span class="up" style="display:block;margin:6px 0 8px">Пресеты</span>
+      <div class="presets" id="presets"></div>
+
+      <div class="two" style="margin-top:16px">
+        <label class="field"><span>Ширина, px</span><input class="input" id="c-w" type="number" value="1080" min="64" max="8000"></label>
+        <label class="field"><span>Высота, px</span><input class="input" id="c-h" type="number" value="1080" min="64" max="8000"></label>
+      </div>
+      <label class="field"><span>Цвет фона</span>
+        <div style="display:flex;gap:10px;align-items:center">
+          <input type="color" id="c-bg" value="#1b1b4a">
+          <span class="dim" style="font-size:12px">фон холста</span>
+        </div>
+      </label>
+      <p class="hint" id="c-hint">Итог: 1080 × 1080 px, соотношение 1:1</p>
+    </div>
+    <footer>
+      <button class="btn" data-close type="button">Отмена</button>
+      <button class="btn primary" id="c-go" type="button">Создать и открыть</button>
+    </footer>
+  </div>
+</div>
+
+<!-- переименовать -->
+<div class="modal" id="m-rename">
+  <div class="box" style="max-width:440px">
+    <header><h3>Переименовать проект</h3></header>
+    <div class="content"><label class="field"><span>Название</span>
+      <input class="input" id="r-name"></label></div>
+    <footer><button class="btn" data-close type="button">Отмена</button>
+      <button class="btn primary" id="r-go" type="button">Сохранить</button></footer>
+  </div>
+</div>
+
+<div class="menu" id="menu"></div>
+
+<script src="assets/js/app.js"></script>
 <script>
-(function(){
-  var h=document.documentElement;
-  function setTheme(t){h.dataset.theme=t;try{localStorage.setItem('pf-theme',t)}catch(e){}
-    var b=document.getElementById('tbtn');if(b)b.textContent=(t==='dark')?'\u2600':'\u263E';}
-  try{var st=localStorage.getItem('pf-theme');if(st)h.dataset.theme=st;}catch(e){}
-  setTheme(h.dataset.theme||'dark');
+(function () {
+  var $ = function (i) { return document.getElementById(i); };
+  if (!PF.User.require('dashboard.html')) return;
 
-  function fit(){
-    var s=document.querySelector('.screen');if(!s)return;
-    var W=+s.dataset.w,H=+s.dataset.h;
-    var k=Math.min(window.innerWidth/W,(window.innerHeight)/H);
-    s.style.width=Math.round(W*k)+'px';s.style.height=Math.round(H*k)+'px';
+  var view = 'grid', filter = 'all', sort = 'new', query = '';
+  var renameId = null;
+
+  PF.header($('top'), { left: '<a class="btn ghost" href="index.html">Карта сайта</a>' });
+
+  var list = PF.Projects.all();
+  var n = list.length;
+  $('side').innerHTML =
+    '<a class="on" href="dashboard.html">' + PF.icon('grid') + 'Мои проекты<span class="count">' + n + '</span></a>' +
+    '<a href="templates.html">' + PF.icon('star') + 'Шаблоны</a>' +
+    '<a href="export.html">' + PF.icon('download') + 'Экспорты</a>' +
+    '<a href="editor.html">' + PF.icon('brush') + 'Редактор</a>' +
+    '<a href="settings.html">' + PF.icon('settings') + 'Настройки</a>' +
+    '<a href="admin.html">' + PF.icon('users') + 'Администрирование</a>' +
+    '<div style="flex:1"></div>' +
+    '<div style="padding:12px 12px 4px">' +
+      '<div class="up" style="margin-bottom:8px">Хранилище</div>' +
+      '<div style="height:6px;border-radius:3px;background:var(--bg4);overflow:hidden">' +
+        '<div style="width:62%;height:100%;background:var(--grad)"></div></div>' +
+      '<div class="dim" style="font-size:11.5px;margin-top:7px">1,24 ГБ из 2 ГБ</div>' +
+    '</div>';
+
+  /* ---------- пресеты ---------- */
+  var PRESETS = [
+    { n: 'Instagram', w: 1080, h: 1080, bg: '#1b1b4a' },
+    { n: 'Сторис', w: 1080, h: 1920, bg: '#5a2e96' },
+    { n: 'VK', w: 1200, h: 800, bg: '#d9488b' },
+    { n: 'YouTube', w: 1280, h: 720, bg: '#0e0e13' },
+    { n: 'Печать A4', w: 2480, h: 3508, bg: '#ffffff' },
+    { n: 'Своё', w: 0, h: 0, bg: '#6c4cf1' }
+  ];
+  $('presets').innerHTML = PRESETS.map(function (p, i) {
+    return '<div class="preset' + (i === 0 ? ' on' : '') + '" data-i="' + i + '"><b>' + p.n +
+      '</b><small>' + (p.w ? p.w + '×' + p.h : 'вручную') + '</small></div>';
+  }).join('');
+
+  $('presets').addEventListener('click', function (e) {
+    var el = e.target.closest('.preset'); if (!el) return;
+    Array.prototype.forEach.call(this.children, function (c) { c.classList.remove('on'); });
+    el.classList.add('on');
+    var p = PRESETS[+el.dataset.i];
+    if (p.w) { $('c-w').value = p.w; $('c-h').value = p.h; $('c-bg').value = p.bg; }
+    hint();
+  });
+  function hint() {
+    var w = +$('c-w').value || 0, h = +$('c-h').value || 0;
+    var g = (function (a, b) { while (b) { var t = b; b = a % b; a = t; } return a; })(w || 1, h || 1);
+    $('c-hint').textContent = 'Итог: ' + w + ' × ' + h + ' px, соотношение ' + ((w / g) || 1) + ':' + ((h / g) || 1);
   }
-  window.addEventListener('resize',fit);fit();window.addEventListener('load',fit);
+  ['c-w', 'c-h'].forEach(function (i) { $(i).addEventListener('input', hint); });
 
-  document.addEventListener('click',function(e){
-    var el=e.target.closest('[data-act]');if(!el)return;
-    var a=el.dataset.act;
-    if(a==='theme'){e.preventDefault();setTheme(h.dataset.theme==='dark'?'light':'dark');}
-    if(a==='theme_light'){e.preventDefault();setTheme('light');}
-    if(a==='theme_dark'){e.preventDefault();setTheme('dark');}
-    if(a==='zones'){document.body.classList.toggle('zones');el.classList.toggle('on');}
+  /* ---------- рендер ---------- */
+  function filtered() {
+    var l = PF.Projects.all();
+    if (query) {
+      var q = query.toLowerCase();
+      l = l.filter(function (p) { return p.name.toLowerCase().indexOf(q) >= 0; });
+    }
+    if (filter === 'recent') l = l.filter(function (p) { return Date.now() - p.updated < 7 * 86400e3; });
+    if (filter === 'big') l = l.filter(function (p) { return p.w > 1500 || p.h > 1500; });
+    l.sort(function (a, b) {
+      if (sort === 'old') return a.updated - b.updated;
+      if (sort === 'name') return a.name.localeCompare(b.name, 'ru');
+      if (sort === 'size') return (b.w * b.h) - (a.w * a.h);
+      return b.updated - a.updated;
+    });
+    return l;
+  }
+
+  function card(p, compact) {
+    return '<div class="pcard" data-id="' + p.id + '">' +
+      '<div class="thumb ' + p.grad + '"><span>' + p.name.split(' ')[0].toUpperCase() + '</span>' +
+      '<button class="menu-btn" data-menu="' + p.id + '">⋯</button></div>' +
+      '<div class="info"><b>' + p.name + '</b>' +
+      '<small>' + PF.size(p.w, p.h) + ' px · ' + PF.when(p.updated) + '</small></div></div>';
+  }
+
+  function render() {
+    var l = filtered();
+    var all = PF.Projects.all();
+    $('count').textContent = l.length + (l.length !== all.length ? ' из ' + all.length : '');
+    $('list').className = 'grid ' + (view === 'grid' ? 'g4' : 'g3');
+    $('list').innerHTML = l.map(function (p) { return card(p); }).join('');
+
+    var recent = all.slice().sort(function (a, b) { return b.updated - a.updated; }).slice(0, 3);
+    $('continue-row').style.display = (recent.length >= 2 && !query && filter === 'all') ? '' : 'none';
+    $('continue').innerHTML = recent.map(function (p) { return card(p); }).join('');
+
+    if (!l.length) {
+      $('empty').innerHTML = '<div class="empty"><div class="ic">' + (query ? '🔍' : '📁') + '</div>' +
+        '<h3>' + (query ? 'Ничего не найдено' : 'Пока нет проектов') + '</h3>' +
+        '<p class="mut" style="margin:8px 0 18px">' +
+        (query ? 'Попробуйте другой запрос или сбросьте фильтр' : 'Создайте первый проект — это займёт 10 секунд') +
+        '</p>' + (query
+          ? '<button class="btn" id="reset-q">Сбросить поиск</button>'
+          : '<button class="btn primary" id="empty-create">Создать проект</button>') + '</div>';
+      var rq = $('reset-q'), ec = $('empty-create');
+      if (rq) rq.onclick = function () { $('q').value = ''; query = ''; render(); };
+      if (ec) ec.onclick = function () { PF.openModal('m-create'); };
+    } else $('empty').innerHTML = '';
+  }
+
+  /* ---------- события ---------- */
+  $('q').addEventListener('input', function () { query = this.value.trim(); render(); });
+  $('sort').onchange = function () { sort = this.value; render(); };
+  $('view').onclick = function () {
+    view = view === 'grid' ? 'list' : 'grid';
+    this.textContent = view === 'grid' ? '▦' : '☰';
+    render();
+  };
+  document.querySelectorAll('[data-filter]').forEach(function (c) {
+    c.onclick = function () {
+      document.querySelectorAll('[data-filter]').forEach(function (x) { x.classList.remove('on'); });
+      c.classList.add('on'); filter = c.dataset.filter; render();
+    };
   });
 
-  var tip=document.getElementById('tip');
-  document.addEventListener('mouseover',function(e){
-    var el=e.target.closest('.hot');if(!el||!tip)return;
-    var t=el.getAttribute('title');if(t){tip.innerHTML='<b>'+(el.tagName==='A'?'\u2192 ':'')+'</b>'+t;tip.classList.add('on');}
+  document.addEventListener('click', function (e) {
+    var mb = e.target.closest('[data-menu]');
+    if (mb) {
+      e.stopPropagation();
+      var p = PF.Projects.get(mb.dataset.menu);
+      var m = $('menu'), r = mb.getBoundingClientRect();
+      m.innerHTML =
+        '<button data-act="open">' + PF.icon('brush', 15) + 'Открыть в редакторе</button>' +
+        '<button data-act="rename">' + PF.icon('text', 15) + 'Переименовать</button>' +
+        '<button data-act="dup">' + PF.icon('copy', 15) + 'Дублировать</button>' +
+        '<hr><button class="red" data-act="del">' + PF.icon('trash', 15) + 'Удалить</button>';
+      m.style.left = Math.min(r.left, innerWidth - 220) + 'px';
+      m.style.top = (r.bottom + 6) + 'px';
+      m.classList.add('on');
+      m.dataset.id = p.id;
+      return;
+    }
+    var act = e.target.closest('[data-act]');
+    if (act && $('menu').classList.contains('on')) {
+      var id = $('menu').dataset.id, proj = PF.Projects.get(id);
+      var a = act.dataset.act;
+      $('menu').classList.remove('on');
+      if (a === 'open') location.href = 'editor.html?p=' + id;
+      if (a === 'dup') { PF.Projects.duplicate(id); PF.toast('Создана копия проекта', '', 'Дублировано'); render(); }
+      if (a === 'rename') { renameId = id; $('r-name').value = proj.name; PF.openModal('m-rename'); }
+      if (a === 'del') {
+        if (confirm('Удалить проект «' + proj.name + '»? Действие необратимо.')) {
+          PF.Projects.remove(id); PF.toast('Проект удалён', 'warn'); render();
+        }
+      }
+      return;
+    }
+    $('menu').classList.remove('on');
+
+    var c = e.target.closest('.pcard');
+    if (c) location.href = 'editor.html?p=' + c.dataset.id;
   });
-  document.addEventListener('mouseout',function(e){
-    if(tip)tip.classList.remove('on');
-  });
-  document.addEventListener('keydown',function(e){
-    if(e.key==='t'||e.key==='T'||e.key==='\u0435'||e.key==='\u0415')setTheme(h.dataset.theme==='dark'?'light':'dark');
-    if(e.key==='h'||e.key==='H'||e.key==='\u0440'||e.key==='\u0420'){document.body.classList.toggle('zones');}
-  });
+
+  $('r-go').onclick = function () {
+    var v = $('r-name').value.trim();
+    if (!v) { PF.toast('Введите название', 'err'); return; }
+    PF.Projects.update(renameId, { name: v });
+    PF.closeModal('m-rename'); render(); PF.toast('Проект переименован');
+  };
+
+  $('create').onclick = function () {
+    $('c-name').value = '';
+    PF.openModal('m-create');
+  };
+  $('c-go').onclick = function () {
+    var name = $('c-name').value.trim() || 'Новый проект';
+    var w = Math.max(64, Math.min(8000, +$('c-w').value || 1080));
+    var h = Math.max(64, Math.min(8000, +$('c-h').value || 1080));
+    var p = PF.Projects.create({ name: name, w: w, h: h, grad: PF.GRADS[Math.floor(Math.random() * 6)],
+                                 template: $('c-bg').value });
+    PF.closeModal('m-create');
+    PF.toast('Проект «' + name + '» создан', '', 'Готово');
+    setTimeout(function () { location.href = 'editor.html?p=' + p.id; }, 420);
+  };
+
+  render();
 })();
 </script>
 </body>

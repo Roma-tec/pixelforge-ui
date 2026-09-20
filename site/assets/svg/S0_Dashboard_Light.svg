@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="1024" viewBox="0 0 1440 1024">
+
+<defs>
+  <linearGradient id="hue" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#FF3B30"/>
+    <stop offset="17%" stop-color="#FF9500"/>
+    <stop offset="33%" stop-color="#FFD60A"/>
+    <stop offset="50%" stop-color="#34C759"/>
+    <stop offset="67%" stop-color="#00C7BE"/>
+    <stop offset="83%" stop-color="#0A84FF"/>
+    <stop offset="100%" stop-color="#BF5AF2"/>
+  </linearGradient>
+  <linearGradient id="shade" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.95"/>
+    <stop offset="45%" stop-color="#FFFFFF" stop-opacity="0"/>
+    <stop offset="55%" stop-color="#000000" stop-opacity="0"/>
+    <stop offset="100%" stop-color="#000000" stop-opacity="0.85"/>
+  </linearGradient>
+  <linearGradient id="brand" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0%" stop-color="#6C4CF1"/>
+    <stop offset="50%" stop-color="#B14CF1"/>
+    <stop offset="100%" stop-color="#F14CA6"/>
+  </linearGradient>
+  <linearGradient id="cool" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#6C4CF1"/>
+    <stop offset="100%" stop-color="#3E8BFF"/>
+  </linearGradient>
+  <linearGradient id="skywarm" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#F5A623"/>
+    <stop offset="100%" stop-color="#F14CA6"/>
+  </linearGradient>
+  <linearGradient id="photo" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0%" stop-color="#1B1B4A"/>
+    <stop offset="55%" stop-color="#5A2E96"/>
+    <stop offset="100%" stop-color="#D9488B"/>
+  </linearGradient>
+  <linearGradient id="sun" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0%" stop-color="#F5A623"/>
+    <stop offset="100%" stop-color="#F14CA6"/>
+  </linearGradient>
+  <pattern id="checker" width="24" height="24" patternUnits="userSpaceOnUse">
+    <rect width="24" height="24" fill="#2A2A34"/>
+    <rect width="12" height="12" fill="#22222B"/>
+    <rect x="12" y="12" width="12" height="12" fill="#22222B"/>
+  </pattern>
+  <pattern id="checkerL" width="24" height="24" patternUnits="userSpaceOnUse">
+    <rect width="24" height="24" fill="#FFFFFF"/>
+    <rect width="12" height="12" fill="#E6E6EC"/>
+    <rect x="12" y="12" width="12" height="12" fill="#E6E6EC"/>
+  </pattern>
+  <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
+    <path d="M32 0 L0 0 0 32" fill="none" stroke="#2A2A34" stroke-width="1"/>
+  </pattern>
+</defs>
+<rect x="0" y="0" width="1440" height="1024" fill="#F7F7FA"/>
+<rect x="0" y="0" width="240" height="1024" rx="0" fill="#FFFFFF"/>
+<line x1="240" y1="0" x2="240" y2="1024" stroke="#E4E4EC" stroke-width="1" stroke-linecap="round"/>
+<circle cx="38" cy="36" r="13" fill="url(#brand)"/>
+<text x="58" y="42" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="16" font-weight="700" fill="#0F0F14" text-anchor="start">PixelForge</text>
+<rect x="16" y="100" width="208" height="40" rx="8" fill="#EDE9FE"/>
+<circle cx="27" cy="115" r="1.5" fill="#6C4CF1"/>
+<rect x="31" y="114" width="11" height="2" rx="1" fill="#6C4CF1"/>
+<circle cx="27" cy="120" r="1.5" fill="#6C4CF1"/>
+<rect x="31" y="119" width="11" height="2" rx="1" fill="#6C4CF1"/>
+<circle cx="27" cy="125" r="1.5" fill="#6C4CF1"/>
+<rect x="31" y="124" width="11" height="2" rx="1" fill="#6C4CF1"/>
+<text x="54" y="125" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="14" font-weight="500" fill="#6C4CF1" text-anchor="start">Мои проекты</text>
+<text x="212" y="125" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="11" font-weight="400" fill="#8E8E9E" text-anchor="end">12</text>
+<rect x="26" y="156" width="4" height="4" rx="1" fill="#5A5A6E"/>
+<rect x="26" y="162" width="4" height="4" rx="1" fill="#5A5A6E"/>
+<rect x="26" y="168" width="4" height="4" rx="1" fill="#5A5A6E"/>
+<rect x="32" y="156" width="4" height="4" rx="1" fill="#5A5A6E"/>
+<rect x="32" y="162" width="4" height="4" rx="1" fill="#5A5A6E"/>
+<rect x="32" y="168" width="4" height="4" rx="1" fill="#5A5A6E"/>
+<rect x="38" y="156" width="4" height="4" rx="1" fill="#5A5A6E"/>
+<rect x="38" y="162" width="4" height="4" rx="1" fill="#5A5A6E"/>
+<rect x="38" y="168" width="4" height="4" rx="1" fill="#5A5A6E"/>
+<text x="54" y="169" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="14" font-weight="400" fill="#0F0F14" text-anchor="start">Шаблоны</text>
+<path d="M34 201 L34 212" fill="none" stroke="#5A5A6E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M34 212 l-5 -5 M34 212 l5 -5" fill="none" stroke="#5A5A6E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M26 217 L42 217" fill="none" stroke="#5A5A6E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="54" y="213" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="14" font-weight="400" fill="#0F0F14" text-anchor="start">Экспорты</text>
+<text x="212" y="213" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="11" font-weight="400" fill="#8E8E9E" text-anchor="end">4</text>
+<path d="M25 245 h14 a2 2 0 0 1 2 2 v7 a2 2 0 0 1 -2 2 h-8 l-5 4 v-4 h-1 a2 2 0 0 1 -2 -2 v-7 a2 2 0 0 1 2 -2 z" fill="none" stroke="#5A5A6E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="54" y="257" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="14" font-weight="400" fill="#0F0F14" text-anchor="start">Команды</text>
+<text x="212" y="257" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="11" font-weight="400" fill="#8E8E9E" text-anchor="end">2</text>
+<path d="M41 287 L32 298" fill="none" stroke="#5A5A6E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M30 298 q-6 2 -6 8 q6 1 8 -5 z" fill="#5A5A6E" opacity="0.9"/>
+<text x="54" y="301" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="14" font-weight="400" fill="#0F0F14" text-anchor="start">Мои наборы</text>
+<circle cx="34" cy="340" r="4" fill="none" stroke="#5A5A6E" stroke-width="1.6"/>
+<line x1="41" y1="340" x2="44" y2="340" stroke="#5A5A6E" stroke-width="1.6" stroke-linecap="round"/>
+<line x1="38.9497" y1="344.95" x2="41.0711" y2="347.071" stroke="#5A5A6E" stroke-width="1.6" stroke-linecap="round"/>
+<line x1="34" y1="347" x2="34" y2="350" stroke="#5A5A6E" stroke-width="1.6" stroke-linecap="round"/>
+<line x1="29.0503" y1="344.95" x2="26.9289" y2="347.071" stroke="#5A5A6E" stroke-width="1.6" stroke-linecap="round"/>
+<line x1="27" y1="340" x2="24" y2="340" stroke="#5A5A6E" stroke-width="1.6" stroke-linecap="round"/>
+<line x1="29.0503" y1="335.05" x2="26.9289" y2="332.929" stroke="#5A5A6E" stroke-width="1.6" stroke-linecap="round"/>
+<line x1="34" y1="333" x2="34" y2="330" stroke="#5A5A6E" stroke-width="1.6" stroke-linecap="round"/>
+<line x1="38.9497" y1="335.05" x2="41.0711" y2="332.929" stroke="#5A5A6E" stroke-width="1.6" stroke-linecap="round"/>
+<text x="54" y="345" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="14" font-weight="400" fill="#0F0F14" text-anchor="start">Администрирование</text>
+<line x1="16" y1="372" x2="224" y2="372" stroke="#E4E4EC" stroke-width="1" stroke-linecap="round"/>
+<text x="24" y="398" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="11" font-weight="600" fill="#6E6E80" text-anchor="start" letter-spacing="1.2">ХРАНИЛИЩЕ</text>
+<rect x="24" y="412" width="192" height="6" rx="3" fill="#2E2E3A"/>
+<rect x="24" y="412" width="124.8" height="6" rx="3" fill="url(#brand)"/>
+<text x="24" y="434" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="12" font-weight="400" fill="#5A5A6E" text-anchor="start">1,3 ГБ из 2 ГБ</text>
+<text x="216" y="434" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="12" font-weight="400" fill="#6C4CF1" text-anchor="end">Увеличить</text>
+<line x1="0" y1="940" x2="240" y2="940" stroke="#E4E4EC" stroke-width="1" stroke-linecap="round"/>
+<circle cx="40" cy="976" r="16" fill="#6C4CF1"/>
+<text x="40" y="981.6" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="13.6" font-weight="600" fill="#FFFFFF" text-anchor="middle">ИС</text>
+<text x="64" y="972" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="13" font-weight="500" fill="#0F0F14" text-anchor="start">Ирина Соколова</text>
+<text x="64" y="990" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="11" font-weight="400" fill="#8E8E9E" text-anchor="start">Тариф PRO</text>
+<rect x="240" y="0" width="1200" height="72" rx="0" fill="#FFFFFF"/>
+<line x1="240" y1="72" x2="1440" y2="72" stroke="#E4E4EC" stroke-width="1" stroke-linecap="round"/>
+<rect x="264" y="18" width="320" height="36" rx="8" fill="#EFF0F5" stroke="#E4E4EC" stroke-width="1"/>
+<text x="304" y="41" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="14" font-weight="400" fill="#8E8E9E" text-anchor="start">Найти проект, шаблон, экспорт</text>
+<circle cx="282" cy="34" r="6" fill="none" stroke="#8E8E9E" stroke-width="1.6"/>
+<path d="M287 39 L292 44" fill="none" stroke="#8E8E9E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="604" y="23" width="45.6" height="26" rx="13" fill="#EDE9FE"/>
+<rect x="604" y="23" width="45.6" height="26" rx="13" fill="none" stroke="#8A73F5" stroke-width="1"/>
+<text x="626.8" y="40" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="12" font-weight="500" fill="#6C4CF1" text-anchor="middle">Все</text>
+<rect x="664" y="23" width="117.6" height="26" rx="13" fill="#EFF0F5"/>
+<text x="722.8" y="40" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="12" font-weight="500" fill="#5A5A6E" text-anchor="middle">Редактируемые</text>
+<rect x="790" y="23" width="74.4" height="26" rx="13" fill="#EFF0F5"/>
+<text x="827.2" y="40" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="12" font-weight="500" fill="#5A5A6E" text-anchor="middle">Шаблоны</text>
+<rect x="880" y="23" width="60" height="26" rx="13" fill="#EFF0F5"/>
+<text x="910" y="40" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="12" font-weight="500" fill="#5A5A6E" text-anchor="middle">Архив</text>
+<text x="1000" y="41" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="13" font-weight="400" fill="#5A5A6E" text-anchor="start">Сначала новые ▾</text>
+<rect x="1120" y="24" width="56" height="26" rx="13" fill="#EFF0F5"/>
+<rect x="1122" y="26" width="26" height="22" rx="11" fill="#6C4CF1"/>
+<rect x="1127" y="29" width="4" height="4" rx="1" fill="#FFFFFF"/>
+<rect x="1127" y="35" width="4" height="4" rx="1" fill="#FFFFFF"/>
+<rect x="1127" y="41" width="4" height="4" rx="1" fill="#FFFFFF"/>
+<rect x="1133" y="29" width="4" height="4" rx="1" fill="#FFFFFF"/>
+<rect x="1133" y="35" width="4" height="4" rx="1" fill="#FFFFFF"/>
+<rect x="1133" y="41" width="4" height="4" rx="1" fill="#FFFFFF"/>
+<rect x="1139" y="29" width="4" height="4" rx="1" fill="#FFFFFF"/>
+<rect x="1139" y="35" width="4" height="4" rx="1" fill="#FFFFFF"/>
+<rect x="1139" y="41" width="4" height="4" rx="1" fill="#FFFFFF"/>
+<circle cx="1158" cy="32" r="1.5" fill="#8E8E9E"/>
+<rect x="1162" y="31" width="11" height="2" rx="1" fill="#8E8E9E"/>
+<circle cx="1158" cy="37" r="1.5" fill="#8E8E9E"/>
+<rect x="1162" y="36" width="11" height="2" rx="1" fill="#8E8E9E"/>
+<circle cx="1158" cy="42" r="1.5" fill="#8E8E9E"/>
+<rect x="1162" y="41" width="11" height="2" rx="1" fill="#8E8E9E"/>
+<rect x="1196" y="20" width="220" height="34" rx="8" fill="url(#brand)"/>
+<text x="1306" y="42" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="13" font-weight="600" fill="#FFFFFF" text-anchor="middle">Создать проект</text>
+<text x="264" y="108" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="20" font-weight="600" fill="#0F0F14" text-anchor="start">Продолжить с места</text>
+<text x="1408" y="108" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="13" font-weight="400" fill="#6C4CF1" text-anchor="end">Все проекты →</text>
+<rect x="264" y="128" width="366" height="208" rx="12" fill="#FFFFFF" stroke="#E4E4EC" stroke-width="1"/>
+<rect x="276" y="140" width="342" height="120" rx="8" fill="url(#photo)"/>
+<rect x="276" y="140" width="342" height="120" rx="8" fill="#000000" opacity="0.08"/>
+<text x="284" y="200" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="26" font-weight="700" fill="#FFFFFF" text-anchor="start" opacity="0.9">КРЕАТИВ</text>
+<text x="284" y="276" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="14" font-weight="600" fill="#0F0F14" text-anchor="start">Креатив_Instagram_03</text>
+<text x="284" y="298" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="11" font-weight="400" fill="#8E8E9E" text-anchor="start">1080×1080 · 14:32</text>
+<rect x="522" y="288" width="96" height="30" rx="8" fill="#EFF0F5" stroke="#E4E4EC" stroke-width="1"/>
+<text x="570" y="308" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="12" font-weight="600" fill="#0F0F14" text-anchor="middle">Открыть</text>
+<rect x="654" y="128" width="366" height="208" rx="12" fill="#FFFFFF" stroke="#E4E4EC" stroke-width="1"/>
+<rect x="666" y="140" width="342" height="120" rx="8" fill="url(#skywarm)"/>
+<rect x="666" y="140" width="342" height="120" rx="8" fill="#000000" opacity="0.08"/>
+<text x="674" y="200" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="26" font-weight="700" fill="#FFFFFF" text-anchor="start" opacity="0.9">БАННЕР</text>
+<text x="674" y="276" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="14" font-weight="600" fill="#0F0F14" text-anchor="start">Баннер_для_VK</text>
+<text x="674" y="298" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="11" font-weight="400" fill="#8E8E9E" text-anchor="start">1200×800 · вчера</text>
+<rect x="912" y="288" width="96" height="30" rx="8" fill="#EFF0F5" stroke="#E4E4EC" stroke-width="1"/>
+<text x="960" y="308" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="12" font-weight="600" fill="#0F0F14" text-anchor="middle">Открыть</text>
+<rect x="1044" y="128" width="366" height="208" rx="12" fill="#FFFFFF" stroke="#E4E4EC" stroke-width="1"/>
+<rect x="1056" y="140" width="342" height="120" rx="8" fill="url(#cool)"/>
+<rect x="1056" y="140" width="342" height="120" rx="8" fill="#000000" opacity="0.08"/>
+<text x="1064" y="200" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="26" font-weight="700" fill="#FFFFFF" text-anchor="start" opacity="0.9">ОБЛОЖКА</text>
+<text x="1064" y="276" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="14" font-weight="600" fill="#0F0F14" text-anchor="start">Обложка_подкаста</text>
+<text x="1064" y="298" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="11" font-weight="400" fill="#8E8E9E" text-anchor="start">1400×1400 · 2 дня назад</text>
+<rect x="1302" y="288" width="96" height="30" rx="8" fill="#EFF0F5" stroke="#E4E4EC" stroke-width="1"/>
+<text x="1350" y="308" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="12" font-weight="600" fill="#0F0F14" text-anchor="middle">Открыть</text>
+<text x="264" y="392" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="20" font-weight="600" fill="#0F0F14" text-anchor="start">Все проекты</text>
+<text x="400" y="392" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="13" font-weight="400" fill="#8E8E9E" text-anchor="start">12</text>
+<rect x="264" y="412" width="272" height="240" rx="12" fill="#FFFFFF" stroke="#E4E4EC" stroke-width="1"/>
+<rect x="265" y="413" width="270" height="148" rx="11" fill="url(#photo)"/>
+<rect x="265" y="413" width="270" height="148" rx="11" fill="#000000" opacity="0.1"/>
+<text x="276" y="588" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="14" font-weight="600" fill="#0F0F14" text-anchor="start">Летняя распродажа</text>
+<text x="276" y="608" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="11" font-weight="400" fill="#8E8E9E" text-anchor="start">1080×1080 · PNG</text>
+<text x="276" y="634" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="11" font-weight="400" fill="#8E8E9E" text-anchor="start">изменён сейчас</text>
+<text x="516" y="634" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="16" font-weight="400" fill="#5A5A6E" text-anchor="end">⋯</text>
+<rect x="560" y="412" width="272" height="240" rx="12" fill="#FFFFFF" stroke="#E4E4EC" stroke-width="1"/>
+<rect x="561" y="413" width="270" height="148" rx="11" fill="url(#cool)"/>
+<rect x="561" y="413" width="270" height="148" rx="11" fill="#000000" opacity="0.1"/>
+<text x="572" y="588" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="14" font-weight="600" fill="#0F0F14" text-anchor="start">Аватар для Telegram</text>
+<text x="572" y="608" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="11" font-weight="400" fill="#8E8E9E" text-anchor="start">1080×1080 · PNG</text>
+<text x="572" y="634" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="11" font-weight="400" fill="#8E8E9E" text-anchor="start">изменён 2 ч</text>
+<text x="812" y="634" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="16" font-weight="400" fill="#5A5A6E" text-anchor="end">⋯</text>
+<rect x="856" y="412" width="272" height="240" rx="12" fill="#FFFFFF" stroke="#E4E4EC" stroke-width="1"/>
+<rect x="857" y="413" width="270" height="148" rx="11" fill="url(#skywarm)"/>
+<rect x="857" y="413" width="270" height="148" rx="11" fill="#000000" opacity="0.1"/>
+<text x="868" y="588" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="14" font-weight="600" fill="#0F0F14" text-anchor="start">Презентация_01</text>
+<text x="868" y="608" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="11" font-weight="400" fill="#8E8E9E" text-anchor="start">1080×1080 · PNG</text>
+<text x="868" y="634" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="11" font-weight="400" fill="#8E8E9E" text-anchor="start">изменён вчера</text>
+<text x="1108" y="634" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="16" font-weight="400" fill="#5A5A6E" text-anchor="end">⋯</text>
+<rect x="1152" y="412" width="272" height="240" rx="12" fill="#FFFFFF" stroke="#E4E4EC" stroke-width="1"/>
+<rect x="1153" y="413" width="270" height="148" rx="11" fill="url(#brand)"/>
+<rect x="1153" y="413" width="270" height="148" rx="11" fill="#000000" opacity="0.1"/>
+<text x="1164" y="588" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="14" font-weight="600" fill="#0F0F14" text-anchor="start">Мем_для_сторис</text>
+<text x="1164" y="608" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="11" font-weight="400" fill="#8E8E9E" text-anchor="start">1080×1080 · PNG</text>
+<text x="1164" y="634" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="11" font-weight="400" fill="#8E8E9E" text-anchor="start">изменён 3 дня</text>
+<text x="1404" y="634" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="16" font-weight="400" fill="#5A5A6E" text-anchor="end">⋯</text>
+<rect x="264" y="672" width="272" height="240" rx="12" fill="#FFFFFF" stroke="#E4E4EC" stroke-width="1"/>
+<rect x="265" y="673" width="270" height="148" rx="11" fill="url(#cool)"/>
+<rect x="265" y="673" width="270" height="148" rx="11" fill="#000000" opacity="0.1"/>
+<text x="276" y="848" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="14" font-weight="600" fill="#0F0F14" text-anchor="start">Иллюстрация_город</text>
+<text x="276" y="868" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="11" font-weight="400" fill="#8E8E9E" text-anchor="start">1080×1080 · PNG</text>
+<text x="276" y="894" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="11" font-weight="400" fill="#8E8E9E" text-anchor="start">изменён неделю</text>
+<text x="516" y="894" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="16" font-weight="400" fill="#5A5A6E" text-anchor="end">⋯</text>
+<rect x="560" y="672" width="272" height="240" rx="12" fill="#FFFFFF" stroke="#E4E4EC" stroke-width="1"/>
+<rect x="561" y="673" width="270" height="148" rx="11" fill="url(#photo)"/>
+<rect x="561" y="673" width="270" height="148" rx="11" fill="#000000" opacity="0.1"/>
+<text x="572" y="848" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="14" font-weight="600" fill="#0F0F14" text-anchor="start">Фото_ретушь_08</text>
+<text x="572" y="868" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="11" font-weight="400" fill="#8E8E9E" text-anchor="start">1080×1080 · PNG</text>
+<text x="572" y="894" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="11" font-weight="400" fill="#8E8E9E" text-anchor="start">изменён сейчас</text>
+<text x="812" y="894" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="16" font-weight="400" fill="#5A5A6E" text-anchor="end">⋯</text>
+<rect x="856" y="672" width="272" height="240" rx="12" fill="#FFFFFF" stroke="#E4E4EC" stroke-width="1"/>
+<rect x="857" y="673" width="270" height="148" rx="11" fill="url(#skywarm)"/>
+<rect x="857" y="673" width="270" height="148" rx="11" fill="#000000" opacity="0.1"/>
+<text x="868" y="848" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="14" font-weight="600" fill="#0F0F14" text-anchor="start">Логотип_кофейни</text>
+<text x="868" y="868" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="11" font-weight="400" fill="#8E8E9E" text-anchor="start">1080×1080 · PNG</text>
+<text x="868" y="894" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="11" font-weight="400" fill="#8E8E9E" text-anchor="start">изменён 2 ч</text>
+<text x="1108" y="894" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="16" font-weight="400" fill="#5A5A6E" text-anchor="end">⋯</text>
+<rect x="1152" y="672" width="272" height="240" rx="12" fill="#FFFFFF" stroke="#E4E4EC" stroke-width="1"/>
+<rect x="1153" y="673" width="270" height="148" rx="11" fill="url(#brand)"/>
+<rect x="1153" y="673" width="270" height="148" rx="11" fill="#000000" opacity="0.1"/>
+<text x="1164" y="848" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="14" font-weight="600" fill="#0F0F14" text-anchor="start">Коллаж_осень</text>
+<text x="1164" y="868" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="11" font-weight="400" fill="#8E8E9E" text-anchor="start">1080×1080 · PNG</text>
+<text x="1164" y="894" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="11" font-weight="400" fill="#8E8E9E" text-anchor="start">изменён вчера</text>
+<text x="1404" y="894" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="16" font-weight="400" fill="#5A5A6E" text-anchor="end">⋯</text>
+<text x="264" y="968" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="16" font-weight="600" fill="#0F0F14" text-anchor="start">Шаблоны для вас</text>
+<rect x="410" y="946" width="150" height="62" rx="8" fill="#FFFFFF" stroke="#E4E4EC" stroke-width="1"/>
+<rect x="418" y="954" width="46" height="46" rx="6" fill="url(#photo)"/>
+<text x="472" y="976" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="12" font-weight="500" fill="#0F0F14" text-anchor="start">Соцсети</text>
+<text x="472" y="994" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="10" font-weight="400" fill="#8E8E9E" text-anchor="start">24 шаблона</text>
+<rect x="572" y="946" width="150" height="62" rx="8" fill="#FFFFFF" stroke="#E4E4EC" stroke-width="1"/>
+<rect x="580" y="954" width="46" height="46" rx="6" fill="url(#cool)"/>
+<text x="634" y="976" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="12" font-weight="500" fill="#0F0F14" text-anchor="start">Бизнес</text>
+<text x="634" y="994" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="10" font-weight="400" fill="#8E8E9E" text-anchor="start">24 шаблона</text>
+<rect x="734" y="946" width="150" height="62" rx="8" fill="#FFFFFF" stroke="#E4E4EC" stroke-width="1"/>
+<rect x="742" y="954" width="46" height="46" rx="6" fill="url(#skywarm)"/>
+<text x="796" y="976" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="12" font-weight="500" fill="#0F0F14" text-anchor="start">Презентации</text>
+<text x="796" y="994" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="10" font-weight="400" fill="#8E8E9E" text-anchor="start">24 шаблона</text>
+<rect x="896" y="946" width="150" height="62" rx="8" fill="#FFFFFF" stroke="#E4E4EC" stroke-width="1"/>
+<rect x="904" y="954" width="46" height="46" rx="6" fill="url(#brand)"/>
+<text x="958" y="976" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="12" font-weight="500" fill="#0F0F14" text-anchor="start">Обложки</text>
+<text x="958" y="994" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="10" font-weight="400" fill="#8E8E9E" text-anchor="start">24 шаблона</text>
+<rect x="1058" y="946" width="150" height="62" rx="8" fill="#FFFFFF" stroke="#E4E4EC" stroke-width="1"/>
+<rect x="1066" y="954" width="46" height="46" rx="6" fill="url(#cool)"/>
+<text x="1120" y="976" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="12" font-weight="500" fill="#0F0F14" text-anchor="start">Сторис</text>
+<text x="1120" y="994" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="10" font-weight="400" fill="#8E8E9E" text-anchor="start">24 шаблона</text>
+<rect x="1220" y="946" width="150" height="62" rx="8" fill="#FFFFFF" stroke="#E4E4EC" stroke-width="1"/>
+<rect x="1228" y="954" width="46" height="46" rx="6" fill="url(#photo)"/>
+<text x="1282" y="976" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="12" font-weight="500" fill="#0F0F14" text-anchor="start">Печать</text>
+<text x="1282" y="994" font-family="Inter, &apos;Segoe UI&apos;, Roboto, Arial, sans-serif" font-size="10" font-weight="400" fill="#8E8E9E" text-anchor="start">24 шаблона</text>
+</svg>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Карта сайта — PixelForge</title>
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;font-family:Inter,'Segoe UI',Roboto,Arial,sans-serif;
+  background:#08080B;color:#F2F2F7;overflow:hidden}
+html[data-theme=light] body{background:#E9E9EF}
+.stage{position:fixed;inset:0;display:flex;align-items:center;justify-content:center}
+.screen{position:relative;box-shadow:0 24px 70px rgba(0,0,0,.55)}
+html[data-theme=light] .screen{box-shadow:0 24px 70px rgba(20,20,40,.22)}
+.screen img{position:absolute;inset:0;width:100%;height:100%;display:block}
+html[data-theme=dark] img.light,html[data-theme=light] img.dark{display:none}
+.hot{position:absolute;display:block;border-radius:8px;background:rgba(108,76,241,0);
+  transition:background .15s,box-shadow .15s;text-decoration:none}
+a.hot{cursor:pointer}
+.hot:hover{background:rgba(108,76,241,.26);box-shadow:inset 0 0 0 3px #8A73F5}
+.hot.info:hover{background:rgba(43,217,195,.20);box-shadow:inset 0 0 0 3px #2BD9C3}
+body.zones .hot{background:rgba(108,76,241,.16);box-shadow:inset 0 0 0 2px #6C4CF1}
+body.zones .hot.info{background:rgba(43,217,195,.13);box-shadow:inset 0 0 0 2px #2BD9C3}
+.dock{position:fixed;right:14px;bottom:14px;display:flex;gap:8px;z-index:9}
+.dock a,.dock button{width:42px;height:42px;border-radius:13px;border:1px solid #2F2F3B;
+  background:rgba(27,27,35,.92);color:#F2F2F7;display:flex;align-items:center;
+  justify-content:center;font-size:17px;cursor:pointer;text-decoration:none;
+  backdrop-filter:blur(8px);transition:background .15s,border-color .15s}
+.dock a:hover,.dock button:hover{background:#2E2E3A;border-color:#6C4CF1}
+.dock button.on{background:#2A2440;border-color:#8A73F5;color:#8A73F5}
+.tip{position:fixed;left:50%;top:16px;transform:translateX(-50%);z-index:9;
+  background:rgba(27,27,35,.94);border:1px solid #2F2F3B;border-radius:10px;
+  padding:8px 14px;font-size:12.5px;color:#A8A8B8;opacity:0;transition:opacity .2s;
+  pointer-events:none;backdrop-filter:blur(8px)}
+.tip.on{opacity:1}
+.tip b{color:#F2F2F7;font-weight:600}
+
+html,body{overflow:auto}
+body{background:#0E0E13}
+html[data-theme=light] body{background:#F2F2F7;color:#0F0F14}
+.wrap{max-width:1280px;margin:0 auto;padding:56px 28px 96px}
+.hero{display:flex;align-items:center;gap:16px;margin-bottom:10px}
+.logo{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,#6C4CF1,#B14CF1,#F14CA6)}
+h1{font-size:32px;margin:0;letter-spacing:-.5px}
+.sub{color:#A8A8B8;font-size:14px;margin:6px 0 0}
+html[data-theme=light] .sub{color:#5A5A6E}
+h2{font-size:15px;text-transform:uppercase;letter-spacing:.12em;color:#6E6E80;
+  margin:44px 0 14px;font-weight:600}
+html[data-theme=light] h2{color:#8E8E9E}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px}
+.card{display:block;text-decoration:none;color:inherit;background:#1B1B23;border:1px solid #2F2F3B;
+  border-radius:14px;overflow:hidden;transition:border-color .18s,transform .18s,box-shadow .18s}
+html[data-theme=light] .card{background:#FFF;border-color:#E4E4EC}
+.card:hover{border-color:#8A73F5;transform:translateY(-3px);box-shadow:0 14px 34px rgba(0,0,0,.4)}
+html[data-theme=light] .card:hover{box-shadow:0 14px 34px rgba(20,20,40,.16)}
+.card .thumb{aspect-ratio:16/11;background:#121218 center/cover no-repeat;border-bottom:1px solid #2F2F3B}
+html[data-theme=light] .card .thumb{background-color:#EFF0F5;border-color:#E4E4EC}
+.card .thumb.sq{background-size:contain;background-repeat:no-repeat;background-position:center}
+.card .meta{padding:14px 16px 16px}
+.card .code{font:600 11px/1 'JetBrains Mono',Consolas,monospace;color:#8A73F5}
+.card .name{font-size:14.5px;font-weight:600;margin-top:6px}
+.card .file{font-size:11px;color:#6E6E80;margin-top:5px;font-family:'JetBrains Mono',Consolas,monospace}
+.legend{margin-top:26px;color:#6E6E80;font-size:12.5px;line-height:1.7}
+kbd{background:#24242E;border:1px solid #2F2F3B;border-bottom-width:2px;border-radius:4px;
+  padding:1px 5px;font-family:'JetBrains Mono',Consolas,monospace;font-size:11px}
+html[data-theme=light] kbd{background:#EFF0F5;border-color:#E4E4EC}
+</style>
+</head>
+<body>
+<div class="wrap"><div class="hero"><div class="logo"></div><div><h1>PixelForge — интерактивный сайт</h1><div class="sub">Графический редактор · лабораторная работа S2G11, вариант № 3 · все экраны кликабельны</div></div></div><h2>Экраны</h2><div class="grid"><a class="card" href="login.html"><div class="thumb" style="background-image:url(../design/export/screens/S1_Auth_Dark.png)"></div><div class="meta"><div class="code">S1 · Auth</div><div class="name">S1 · Вход / Регистрация</div><div class="file">login.html</div></div></a><a class="card" href="dashboard.html"><div class="thumb" style="background-image:url(../design/export/screens/S0_Dashboard_Dark.png)"></div><div class="meta"><div class="code">S0 · Dashboard</div><div class="name">S0 · Мои проекты</div><div class="file">dashboard.html</div></div></a><a class="card" href="editor.html"><div class="thumb" style="background-image:url(../design/export/screens/S2_Canvas_Dark.png)"></div><div class="meta"><div class="code">S2 · Canvas</div><div class="name">S2 · Редактор — холст</div><div class="file">editor.html</div></div></a><a class="card" href="layers.html"><div class="thumb" style="background-image:url(../design/export/screens/S4_Layers_Dark.png)"></div><div class="meta"><div class="code">S4 · Layers</div><div class="name">S4 · Слои</div><div class="file">layers.html</div></div></a><a class="card" href="filters.html"><div class="thumb" style="background-image:url(../design/export/screens/S5_Filters_Dark.png)"></div><div class="meta"><div class="code">S5 · Filters</div><div class="name">S5 · Фильтры и эффекты</div><div class="file">filters.html</div></div></a><a class="card" href="history.html"><div class="thumb" style="background-image:url(../design/export/screens/S7_History_Dark.png)"></div><div class="meta"><div class="code">S7 · History</div><div class="name">S7 · История действий</div><div class="file">history.html</div></div></a><a class="card" href="brushes.html"><div class="thumb" style="background-image:url(../design/export/screens/S8_Brushes_Dark.png)"></div><div class="meta"><div class="code">S8 · Brushes</div><div class="name">S8 · Кисти и палитра</div><div class="file">brushes.html</div></div></a><a class="card" href="export.html"><div class="thumb" style="background-image:url(../design/export/screens/S6_Export_Dark.png)"></div><div class="meta"><div class="code">S6 · Export</div><div class="name">S6 · Экспорт</div><div class="file">export.html</div></div></a><a class="card" href="templates.html"><div class="thumb" style="background-image:url(../design/export/screens/S10_Templates_Dark.png)"></div><div class="meta"><div class="code">S10 · Templates</div><div class="name">S10 · Библиотека шаблонов</div><div class="file">templates.html</div></div></a><a class="card" href="settings.html"><div class="thumb" style="background-image:url(../design/export/screens/S3_Settings_Dark.png)"></div><div class="meta"><div class="code">S3 · Settings</div><div class="name">S3 · Настройки профиля</div><div class="file">settings.html</div></div></a><a class="card" href="admin.html"><div class="thumb" style="background-image:url(../design/export/screens/S11_Admin_Dark.png)"></div><div class="meta"><div class="code">S11 · Admin</div><div class="name">S11 · Администрирование</div><div class="file">admin.html</div></div></a></div><h2>Мобильные</h2><div class="grid"><a class="card" href="mobile.html"><div class="thumb sq" style="background-image:url(../design/export/screens/S9_Mobile_Portrait_Dark.png)"></div><div class="meta"><div class="code">S9 · Portrait</div><div class="name">S9 · Мобильная — портрет</div><div class="file">mobile.html</div></div></a><a class="card" href="mobile-editor.html"><div class="thumb" style="background-image:url(../design/export/screens/S9_Mobile_Landscape_Dark.png)"></div><div class="meta"><div class="code">S9 · Landscape</div><div class="name">S9 · Мобильная — ландшафт</div><div class="file">mobile-editor.html</div></div></a></div><h2>Дизайн-система</h2><div class="grid"><a class="card" href="ui-kit.html"><div class="thumb sq" style="background-image:url(../design/export/screens/UI_Kit_Dark.png)"></div><div class="meta"><div class="code">UI · Kit</div><div class="name">UI-кит · компоненты</div><div class="file">ui-kit.html</div></div></a><a class="card" href="moodboard.html"><div class="thumb sq" style="background-image:url(../design/export/screens/Moodboard.png)"></div><div class="meta"><div class="code">Moodboard</div><div class="name">Moodboard · стилистика</div><div class="file">moodboard.html</div></div></a></div><h2>Диаграммы</h2><div class="grid"><a class="card" href="flow-map.html"><div class="thumb sq" style="background-image:url(../design/export/screens/A4_User_Flow_Map.png)"></div><div class="meta"><div class="code">FlowMap</div><div class="name">User Flow Map (лист A4)</div><div class="file">flow-map.html</div></div></a><a class="card" href="use-case.html"><div class="thumb sq" style="background-image:url(../design/export/screens/UML_UseCase.png)"></div><div class="meta"><div class="code">UseCase</div><div class="name">UML Use-Case</div><div class="file">use-case.html</div></div></a></div><div class="legend">Управление: <kbd>T</kbd> — светлая / тёмная тема · <kbd>H</kbd> — показать кликабельные зоны · <b>◉</b> справа внизу — то же самое. Переходы между страницами обычные — работает кнопка «назад» в браузере.</div></div>
+<div class="dock">
+  <a href="index.html" title="Карта экранов">▦</a>
+  <button id="tbtn" data-act="theme" title="Светлая / тёмная тема (T)">☀</button>
+  <button data-act="zones" title="Показать кликабельные зоны (H)">◎</button>
+</div>
+<div class="tip" id="tip"></div>
+<script>
+(function(){
+  var h=document.documentElement;
+  function setTheme(t){h.dataset.theme=t;try{localStorage.setItem('pf-theme',t)}catch(e){}
+    var b=document.getElementById('tbtn');if(b)b.textContent=(t==='dark')?'\u2600':'\u263E';}
+  try{var st=localStorage.getItem('pf-theme');if(st)h.dataset.theme=st;}catch(e){}
+  setTheme(h.dataset.theme||'dark');
+
+  function fit(){
+    var s=document.querySelector('.screen');if(!s)return;
+    var W=+s.dataset.w,H=+s.dataset.h;
+    var k=Math.min(window.innerWidth/W,(window.innerHeight)/H);
+    s.style.width=Math.round(W*k)+'px';s.style.height=Math.round(H*k)+'px';
+  }
+  window.addEventListener('resize',fit);fit();window.addEventListener('load',fit);
+
+  document.addEventListener('click',function(e){
+    var el=e.target.closest('[data-act]');if(!el)return;
+    var a=el.dataset.act;
+    if(a==='theme'){e.preventDefault();setTheme(h.dataset.theme==='dark'?'light':'dark');}
+    if(a==='theme_light'){e.preventDefault();setTheme('light');}
+    if(a==='theme_dark'){e.preventDefault();setTheme('dark');}
+    if(a==='zones'){document.body.classList.toggle('zones');el.classList.toggle('on');}
+  });
+
+  var tip=document.getElementById('tip');
+  document.addEventListener('mouseover',function(e){
+    var el=e.target.closest('.hot');if(!el||!tip)return;
+    var t=el.getAttribute('title');if(t){tip.innerHTML='<b>'+(el.tagName==='A'?'\u2192 ':'')+'</b>'+t;tip.classList.add('on');}
+  });
+  document.addEventListener('mouseout',function(e){
+    if(tip)tip.classList.remove('on');
+  });
+  document.addEventListener('keydown',function(e){
+    if(e.key==='t'||e.key==='T'||e.key==='\u0435'||e.key==='\u0415')setTheme(h.dataset.theme==='dark'?'light':'dark');
+    if(e.key==='h'||e.key==='H'||e.key==='\u0440'||e.key==='\u0420'){document.body.classList.toggle('zones');}
+  });
+})();
+</script>
+</body>
+</html>
