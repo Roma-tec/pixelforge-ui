@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>S1 · Вход / Регистрация — PixelForge</title>
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;font-family:Inter,'Segoe UI',Roboto,Arial,sans-serif;
+  background:#08080B;color:#F2F2F7;overflow:hidden}
+html[data-theme=light] body{background:#E9E9EF}
+.stage{position:fixed;inset:0;display:flex;align-items:center;justify-content:center}
+.screen{position:relative;box-shadow:0 24px 70px rgba(0,0,0,.55)}
+html[data-theme=light] .screen{box-shadow:0 24px 70px rgba(20,20,40,.22)}
+.screen img{position:absolute;inset:0;width:100%;height:100%;display:block}
+html[data-theme=dark] img.light,html[data-theme=light] img.dark{display:none}
+.hot{position:absolute;display:block;border-radius:8px;background:rgba(108,76,241,0);
+  transition:background .15s,box-shadow .15s;text-decoration:none}
+a.hot{cursor:pointer}
+.hot:hover{background:rgba(108,76,241,.26);box-shadow:inset 0 0 0 3px #8A73F5}
+.hot.info:hover{background:rgba(43,217,195,.20);box-shadow:inset 0 0 0 3px #2BD9C3}
+body.zones .hot{background:rgba(108,76,241,.16);box-shadow:inset 0 0 0 2px #6C4CF1}
+body.zones .hot.info{background:rgba(43,217,195,.13);box-shadow:inset 0 0 0 2px #2BD9C3}
+.dock{position:fixed;right:14px;bottom:14px;display:flex;gap:8px;z-index:9}
+.dock a,.dock button{width:42px;height:42px;border-radius:13px;border:1px solid #2F2F3B;
+  background:rgba(27,27,35,.92);color:#F2F2F7;display:flex;align-items:center;
+  justify-content:center;font-size:17px;cursor:pointer;text-decoration:none;
+  backdrop-filter:blur(8px);transition:background .15s,border-color .15s}
+.dock a:hover,.dock button:hover{background:#2E2E3A;border-color:#6C4CF1}
+.dock button.on{background:#2A2440;border-color:#8A73F5;color:#8A73F5}
+.tip{position:fixed;left:50%;top:16px;transform:translateX(-50%);z-index:9;
+  background:rgba(27,27,35,.94);border:1px solid #2F2F3B;border-radius:10px;
+  padding:8px 14px;font-size:12.5px;color:#A8A8B8;opacity:0;transition:opacity .2s;
+  pointer-events:none;backdrop-filter:blur(8px)}
+.tip.on{opacity:1}
+.tip b{color:#F2F2F7;font-weight:600}
+</style>
+</head>
+<body>
+<div class="stage"><div class="screen" data-w="1440" data-h="1024"><img class="dark" src="../design/export/svg/S1_Auth_Dark.svg" alt="S1 · Вход / Регистрация"><img class="light" src="../design/export/svg/S1_Auth_Light.svg" alt="S1 · Вход / Регистрация"><a class="hot" href="dashboard.html" style="left:7.778%;top:58.594%;width:34.444%;height:4.688%" title="Войти"></a><a class="hot" href="dashboard.html" style="left:7.778%;top:68.750%;width:16.667%;height:4.688%" title="Вход через Google"></a><a class="hot" href="dashboard.html" style="left:25.556%;top:68.750%;width:16.667%;height:4.688%" title="Вход через Apple"></a><div class="hot info" style="left:29.861%;top:30.859%;width:12.361%;height:4.688%" title="Вкладка «Регистрация»"></div></div></div>
+<div class="dock">
+  <a href="index.html" title="Карта экранов">▦</a>
+  <button id="tbtn" data-act="theme" title="Светлая / тёмная тема (T)">☀</button>
+  <button data-act="zones" title="Показать кликабельные зоны (H)">◎</button>
+</div>
+<div class="tip" id="tip"></div>
+<script>
+(function(){
+  var h=document.documentElement;
+  function setTheme(t){h.dataset.theme=t;try{localStorage.setItem('pf-theme',t)}catch(e){}
+    var b=document.getElementById('tbtn');if(b)b.textContent=(t==='dark')?'\u2600':'\u263E';}
+  try{var st=localStorage.getItem('pf-theme');if(st)h.dataset.theme=st;}catch(e){}
+  setTheme(h.dataset.theme||'dark');
+
+  function fit(){
+    var s=document.querySelector('.screen');if(!s)return;
+    var W=+s.dataset.w,H=+s.dataset.h;
+    var k=Math.min(window.innerWidth/W,(window.innerHeight)/H);
+    s.style.width=Math.round(W*k)+'px';s.style.height=Math.round(H*k)+'px';
+  }
+  window.addEventListener('resize',fit);fit();window.addEventListener('load',fit);
+
+  document.addEventListener('click',function(e){
+    var el=e.target.closest('[data-act]');if(!el)return;
+    var a=el.dataset.act;
+    if(a==='theme'){e.preventDefault();setTheme(h.dataset.theme==='dark'?'light':'dark');}
+    if(a==='theme_light'){e.preventDefault();setTheme('light');}
+    if(a==='theme_dark'){e.preventDefault();setTheme('dark');}
+    if(a==='zones'){document.body.classList.toggle('zones');el.classList.toggle('on');}
+  });
+
+  var tip=document.getElementById('tip');
+  document.addEventListener('mouseover',function(e){
+    var el=e.target.closest('.hot');if(!el||!tip)return;
+    var t=el.getAttribute('title');if(t){tip.innerHTML='<b>'+(el.tagName==='A'?'\u2192 ':'')+'</b>'+t;tip.classList.add('on');}
+  });
+  document.addEventListener('mouseout',function(e){
+    if(tip)tip.classList.remove('on');
+  });
+  document.addEventListener('keydown',function(e){
+    if(e.key==='t'||e.key==='T'||e.key==='\u0435'||e.key==='\u0415')setTheme(h.dataset.theme==='dark'?'light':'dark');
+    if(e.key==='h'||e.key==='H'||e.key==='\u0440'||e.key==='\u0420'){document.body.classList.toggle('zones');}
+  });
+})();
+</script>
+</body>
+</html>
